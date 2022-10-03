@@ -1,78 +1,271 @@
 
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>2022总结</title>
-</head>
-<body><h1 id='2022总结'>2022总结</h1>
-<h2 id='遇到的问题及其解决办法或者还没有施行的解决思路'>遇到的问题及其解决办法或者还没有施行的解决思路</h2>
-<h3 id='技术方面的问题'>技术方面的问题</h3>
-<h4 id='1光电门'>1.光电门</h4>
-<p>使用光电门时，没有上车之前测试正常，在没有开强电时也测试正常，开强电后出现频繁响应，和预计的工作状态完全不一致。问题的本质：外部中断是不稳定的，尤其是触发点和mcu中间的线很长或者特定形状时，大概率是因为电磁干扰的原因，会一直出现0和1的跳变。用于按键时，由于一般按键都在板子上面，所以不明显，因为我做了手柄肩键，中间是飞线连接的，发现当两根线按照一种特定的缠绕方式时，会出现一旦有物体接近，外部中断就触发的现象，和车上面的外部中断现象类似。而且发现无论怎么样配置io口的模式问题都没有解决。</p>
-<p>解决办法：我是将光电门换成了传输串口数字信号的激光雷达来解决的（<a href='http://www.benewake.com/'>激光雷达传感器<em>激光测距模块</em>固态激光雷达-北醒光子激光雷达 (benewake.com)</a>），我们使用的是TF-miniplus型号的，大概误差在1mm到2mm，在需要光电门的使用场景，这个精度已经够用了。并且它具有有官方例程，输出的是数字信号，受干扰程度小的优点，并且处理起来很简单。我能够想到的其他解决办法，在使用光电门的时候做一个紧贴光电门的读取板，在板子上将一个开关信号转化成数字信号然后传输，不过我觉得还是用激光雷达替代光电门比较好。因为我后面和学长学姐了解，不仅是今年出过问题，之前也有，不过由于之前车上面干扰源比较小，所以写防抖算法就能去除影响。但是我想以后车上面的情况肯定不会越来越简单，除非在设计初期就考虑到这样的问题。</p>
-<h4 id='2dt和微距及其其他的输出模拟信号传感器'>2.DT和微距及其其他的输出模拟信号传感器</h4>
-<p>同样是电磁干扰的问题，由于去年比赛各种因素的干扰，设计时间和调试时间并没有那么足够，并且定位方案完全出来的时间也不早了，所以出现了我们需要用传感器去定位，但是在车身设计的时候又没有给传感器留出合适的位置的问题。这样就会导致用于电机一些特定且未知的转动和温度随着调试时间的上升，会出现很难解决的问题，而且在前期不一定稳定出现，这样的问题是最让人心态出现问题也最浪费时间的。</p>
-<p>解决办法：在最后几代车设计初期，要考虑到如何定位的问题，不仅是车和场地的定位，还有道具和车之间的定位，比如去年夹拉戈里的定位。可以多考虑使用机械定位，因为问题比较可视，使用传感器确实有很多优点，如果方案做到完美，可能会有很高很高的上限，但是我觉得我们可能还没有那么强的能力去解决很多设计上面干扰的问题，或者防护的问题，这样就会让我们的调试难度上升对心态影响很大。</p>
-<p>其他解决办法：用屏蔽线之类的东西对传输线进行包裹，在一定和电机或者电调接触的地方用一些隔离材质隔开。</p>
-<h4 id='3串口屏和摇杆及其蓝牙'>3.串口屏和摇杆及其蓝牙</h4>
-<p>最开始队里面调试是单一的矩阵键盘加串口屏调试，蓝牙最开始用的是hc系列的但是丢包严重，甚至稍微远一点就会断连。后面换成了鼎新图的蓝牙，几乎不会断连和丢包（<a href='https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-1995590688.18.174e2b2epqM4ky&amp;id=13372486232'>DXT3C100米蓝牙串口TTL功能板拨码切换波特率密码主从距离含使能-淘宝网 (taobao.com)</a>）。摇杆就是用stm32f405内置的adc做的采样效果还不错。单个来看，由于串口屏我们是直接购买的，用厂商给的上位机开发也很简单，所以其实控制器的制作很简单。但是问题在于把它封装成一个好用的安全系数高的产品并不简单。在画壳子和布线还有做短路保护的方面，一直都很有欠缺。</p>
-<p>解决办法：硬件组的人学习画模型，这样把布线的任务和模型的任务结合起来，会更加工业一点，安全系数应该可以提高。还有一个方法就是去年调狗的时候从实验室学长那里学习了用unitiy写一个手机上位机用来调试，具有便宜而且硬件不容易出问题的优点，但是可能会增加机构组的学习成本。后面我打算尝试用手机配摇杆作为控制器的方式。</p>
-<h4 id='4can总线'>4.can总线</h4>
-<p>用线做的can总线有可以自由定制节点位置的优点。但是用于是需要人去做的线从某种意义上是增加了整个can路的风险系数，在can路上面节点很多的时候，做debug工作是很复杂的，但是用于机械设计和布线者不是一直沟通着的，使用pcbcan总线可能会导致一些极端长度的can线出现。</p>
-<p>解决办法：改进做can总线的工艺，可以寻找良好的两股线的通信线，制作时尽量认真。在设计和确定各种板子的位置的时候考虑更周全，然后使用设计更良好的pcbcan总线板。比如可以每一个can口的旁边用丝印打上序号，然后按id号进行拔插，这样在车上面线太多的情况下，可以很快找到对应的线，从而减少排查问题的时间，因为一般can有问题都是线或者接口的问题，甚至如果有时间的话可以做一个有数据传输就亮的灯，应该也不会太难。</p>
-<h4 id='5主控板'>5.主控板</h4>
-<p>去年的轮子can突然失联,导致疯转,浪费了很多调试时间,而且带来了很大的精神压力。当时把所有线和can总线都排查过包括一些接触不良的地方，结果把问题全部排查了一遍还是会出现，在用2006的轮系上面，疯转是一件很恐怖的事情。最后发现是主控板的问题。因为最重要的主控板，也就是真正的主控板，使用了两个串口，两路can和很多io口，并且不是一个新的芯片，对于一个老的芯片来说负载太大了，所以会间断地出现断流的问题。</p>
-<p>解决办法：在选择最关键的要与控制器和无线调试器并且调度其他主控板的核心主控板时，要做好测试，并且在比赛之前进行更换。</p>
-<p>或者可以对于最关键的板子进行重新设计，对重要的io加合适的mos（主要看频率）进行增加io口驱动能力，减小芯片的负载量。</p>
-<h4 id='6远程制动开关'>6.远程制动开关</h4>
-<p>用于去年调试过程中经常疯转，人去关闭可能有被吓到反应慢和容易受伤的问题，所以去找了远程继电器（<a href='https://item.taobao.com/item.htm?spm=a1z09.2.0.0.38662e8djAh9CK&amp;id=669761740292&amp;_u=h201e2t0b8bcc9'>遥控开关12V24V36V48V直流汽车电瓶通断灯带电灯水泵无线控制器-淘宝网 (taobao.com)</a>），在淘宝搜的话应该教直流大功率遥控开关，可以远程一键关闭，可以在强电上面使用，去年使用没有出现过任何问题，价格大概100以内，尽量选功率大的。</p>
-<h4 id='7冗余电源'>7.冗余电源</h4>
-<p>由于小电脑反复关机会伤害电脑，而且浪费时间，但是换电池是一件很频繁的事情。借鉴大疆无人机不断电换电池的原理，在网上找了冗余电源（<a href='https://item.taobao.com/item.htm?spm=a1z09.2.0.0.38662e8djAh9CK&amp;id=589712326222&amp;_u=h201e2t0b8871b'>二路直流电源切换模块 双路低压差理想二极管15A 多电源冗余供电-淘宝网 (taobao.com)</a>），发现这种设计不仅是可以做到不断电换电池，而且有防反接电源还有浪涌电流冲击的作用，在类似于小电脑的这种比较昂贵的电子器件上面都可以使用，可以做一个专门用冗余电源的电源板然后上面接金贵的仪器。（<a href='https://www.eefocus.com/baike/482440'>什么是冗余电源<em>冗余电源工作原理</em>冗余电源作用-与非网 (eefocus.com)</a>）。有时间和兴趣的话也可以自己尝试制作。</p>
-<h4 id='8接口和线材'>8.接口和线材</h4>
-<p>现在队里面由于这么多年的沉积和很多地方使用购买的pcb的原因，接口是非常多的，这会导致无论是管理线和原材料还是做线上面都带来了很大的压力，而且很多地方的接口并不好用</p>
-<p>解决办法：准备找个时间去实体店尝试一下接口，选一些好用的，现在队里面大部分用的mx1.25和mx3.0的线和座子，要是找不到更好的大概率就是这两个了。对于排针或者购买来和队里面接口不同可以使用转接板转换成统一的座子（设计的时候麻烦，做了一次之后终身受益）。</p>
-<h4 id='9电磁阀控制板'>9.电磁阀控制板</h4>
-<p>因为移位寄存器结构并不是非常稳定,所以去年国际赛的时候出现了很奇怪的现象,会因为泡沫垫的挥动,电磁阀打开或者关闭。</p>
-<p>解决办法：我们目前是改代码的，从开关都只发一次，变成需要什么状态，就以一定频率不间断地给电磁阀发。这样可以解决异常关断的问题。</p>
-<p>或者可以尝试用锁存器代替移位寄存器。</p>
-<h4 id='10转压模块'>10.转压模块</h4>
-<p>由于小电脑的性能的区别，队里面现有的转压模块的功率是不够的。</p>
-<p>解决办法：由于最后一台小电脑决定上车时，只有不到一个星期了，我采用了一个土办法，就是把转压模块并联起来，用来增大功率。（说这个只是为了拓广大家的思路，比赛就和行军打仗一样，在没有办法的时候只能出奇招）。</p>
-<p>应该的解决办法：寻找到合适的转压模块或者自己设计（比较难，因为大功率转压要考虑散热，但也不是特别难）。</p>
-<h3 id='用电设备和电子元件管理和购买上面的问题'>用电设备和电子元件管理和购买上面的问题</h3>
-<h4 id='电子器件的管理'>电子器件的管理</h4>
-<p>分芯片,电阻，电容，电子管来分放，由于只有去年只有我的原因，所以东西很乱，这一点以后应该更严格的管理，会减少很多时间。</p>
-<h4 id='电路板的管理'>电路板的管理</h4>
-<p>各类电路板最好分人放好，取用的时候可以做记录，损坏和丢失如果减少的话，可以把板子做的更精致，更工业，也就是说，如果保管不好的话，要大批量制作可能要就考虑经济和时间成本做出来的东西可能就不会太好。</p>
-<h3 id='其他的问题'>其他的问题</h3>
-<h4 id='和其他组的沟通'>和其他组的沟通</h4>
-<p>机器人队从来就不是一个按组或者个体的能力来评价的，沟通和协调能力和专业能力同样重要，在这一点上去年团队因为各种原因，时间上的还有课程上的做的不是很好。首先我觉得传感器组在模型出来之后，就大概需要知道要用哪些传感器或者小电脑，而且要知道它们的供电和通信，硬件组有空也应该主动去问，因为这个适配是要硬件组去做的。还有就是要多和机械组的沟通，这一点我去年做的不是很好。</p>
-<h2 id='以后发展的方向'>以后发展的方向</h2>
-<h3 id='一些和比赛进程息息相关的技术'>一些和比赛进程息息相关的技术</h3>
-<h4 id='adc模块'>ADC模块</h4>
-<p>随着芯片行业的变化，很多模拟芯片价格很高或者买不到，并且老的芯片价格高性能也不一定好，所以很多地方的芯片可能要换，但是很多地方可以参照之前的设计，基准电压源我也找到了很便宜而且没有什么问题的（2元，精度是千分之一），但是我没有换adc，adc的价格去年买的时候是60多元，其实还可以接受。但是这是一个长期的工作，每一届的人都应该多关注一下市场的变化。adc的技术我觉得是最考验一个学校硬件组的，adc的精度很大程度上会影响定位时间和定位精度。</p>
-<h4 id='主控板'>主控板</h4>
-<p>有一天我们会离开stm32f405（我们之前选择这个是因为当时大疆的控制是用的这个，而且市面上这个是使用最多的芯片，开源的东西很多，方便写代码，但是如果我们熟练使用类似stm32cubemx之类厂商配套的开发软件，其实更换难度会降低，但是过程中困难肯定也很多，而且代码可能要重写。但是现在的芯片有几个痛点，第一是贵，因为大家都用加上芯片荒；第二是不稳定，芯片不稳定带来的问题很难排查，这个不稳定因为市面上流通的都是比较老的二手货，负载大的时候可能会出现奇怪的问题，因为这个芯片太老了；第三是只有两路can，流量不大，我之前做过三路can方案但是第三路只支持不需要实时运算的通信，因为定时器里面会有无法避免的延时。大家可以尝试去使用stm32H7系列带三路can的，但是我之前都买不到，或者价格三百以上。或者不追求三路can，大家可以去尝试便宜的国产32，例如gd32之类的。或者为了稳定，可以去尝试英飞凌，三星之类工业机器人用的多的芯片。反正大家可以针对三个痛点去做尝试，虽然最后可能还是用目前的方案，但是这个工作是未来，之前很多年大家都摆烂，我来之后想做，但是没有时间，所以希望大家去尝试一下，应该也不是非常难，网上面也有开源方案，但是需要有人多去练习写代码，或者专门找一个机构组，就是之前说的机构研发组）。</p>
-<h4 id='编码器'>编码器</h4>
-<p>寻找通用的编码器芯片（我的设想里面是vesc，elmo，odrive，dgm都可以用，现在队里面用的as5047p，因为abz模式下的线数只有1024，跑的时候很抖，所以要找spi模式和abz模式下同时可以超过4096线的，关于编码器和电机参数我发的机构组网站上面有，自己也可以去找一下。同时用spi的时候通信协议可能有细微的差别所以可能要一定程度上看源码，我之前找了一个满足条件的，但是vesc不改源码的情况下可能会有一点问题）。</p>
-<h3 id='一些强校应该具有的更高水平的技术'>一些强校应该具有的更高水平的技术</h3>
-<h4 id='驱动器'>驱动器</h4>
-<p>有很多开源的驱动器，dgm，vesc，odrive，今年硬件组的人很多，加上我今年还会很多时间在这，我觉得应该可以做出很完善的驱动器。可以减少队里面很大一部分花销，而且自己做驱动器，可以增加对固件的了解，并且出问题的时候修起来也会方便很多。</p>
-<h4 id='电滑环'>电滑环</h4>
-<p>这是轮系的一个痛点问题，我们的轮系免不了会转超过180度，这样实际上线一定程度上是绕起来的，会增大风险，而且只要是用轴转180度之上的机构，布线的时候都会很麻烦，所以找一个可用的好用的电滑环是非常有必要的，现在新轮系上面用的还是电刷滑环，但是在一些电流比较小的机构上面可以考虑尝试更小的水银滑环。</p>
-<h3 id='一些可以尝试让调试更简单或者省钱的技术'>一些可以尝试让调试更简单或者省钱的技术</h3>
-<h4 id='canable'>canable</h4>
-<p>开源的can分析仪方案，硬件固件全开源，并且是隔离can分析仪，并且上位机也是开源的。（<a href='https://canable.io/'>An Open-Source USB to CAN Adapter - CANable</a>），不自己做的话，可以买回来试一下（<a href='https://s.taobao.com/search?q=canable&amp;imgfile=&amp;js=1&amp;stats_click=search_radio_all%3A1&amp;initiative_id=staobaoz_20220917&amp;ie=utf8'>canable_淘宝搜索 (taobao.com)</a>）。</p>
-<h4 id='jlink'>jlink</h4>
-<p>有空可以自己做。</p>
-<h4 id='无线调试器'>无线调试器</h4>
-<p>基于cmsis-dap的开源调试器。（<a href='https://github.com/wuxx/nanoDAP-wireless'>wuxx/nanoDAP-wireless: nanoDAP-wireless无线仿真器用户手册 (github.com)</a>）</p>
-<p>或者也有jink的无线调试器，有空可以去尝试。</p>
-<h3 id='一些对于焊接和布线的改进'>一些对于焊接和布线的改进</h3>
-<p>焊接板子慢慢由原来的焊锡丝和焊刀的模式已经快转变成锡膏加风枪，我觉得不久的将来我们会变成恒温加热台加锡膏的模式。还有就是很多焊接技巧学长们的技巧可能并不是很好的很新的，可以自己多去看一些论坛或者视频。</p>
-<p>关于布线，我觉得轧带可以使用一些更方便的东西替代，等我找好之后再发出来，还有一些固定在平面上的胶，有一些生活用的桌面布线装置，后面可以买回来试一下。</p>
-<p>&nbsp;</p>
-</body>
+	<head>
+		<title>Directive by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+				<span class="logo icon fa-paper-plane"></span>
+				<h1>Hi. This is Directive.</h1>
+				<p>A responsive HTML5 + CSS3 site template designed by <a href="http://html5up.net">HTML5 UP</a>
+				<br />
+				and released for free under the <a href="http://html5up.net/license">Creative Commons license</a>.</p>
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<header class="major container medium">
+					<h2>We conduct experiments that
+					<br />
+					may or may not seriously
+					<br />
+					break the universe</h2>
+					<!--
+					<p>Tellus erat mauris ipsum fermentum<br />
+					etiam vivamus nunc nibh morbi.</p>
+					-->
+				</header>
+
+				<div class="box alt container">
+					<section class="feature left">
+						<a href="#" class="image icon solid fa-signal"><img src="images/pic01.jpg" alt="" /></a>
+						<div class="content">
+							<h3>The First Thing</h3>
+							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+						</div>
+					</section>
+					<section class="feature right">
+						<a href="#" class="image icon solid fa-code"><img src="images/pic02.jpg" alt="" /></a>
+						<div class="content">
+							<h3>The Second Thing</h3>
+							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+						</div>
+					</section>
+					<section class="feature left">
+						<a href="#" class="image icon solid fa-mobile-alt"><img src="images/pic03.jpg" alt="" /></a>
+						<div class="content">
+							<h3>The Third Thing</h3>
+							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
+						</div>
+					</section>
+				</div>
+
+				<!--
+				<div class="box container">
+					<header>
+						<h2>A lot of generic stuff</h2>
+					</header>
+					<section>
+						<header>
+							<h3>Paragraph</h3>
+							<p>This is the subtitle for this particular heading</p>
+						</header>
+						<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
+						habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
+						leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
+						amet risus elit.</p>
+					</section>
+					<section>
+						<header>
+							<h3>Blockquote</h3>
+						</header>
+						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+						tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
+					</section>
+					<section>
+						<header>
+							<h3>Divider</h3>
+						</header>
+						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+						posuere cubilia.</p>
+						<hr />
+						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+						posuere cubilia.</p>
+					</section>
+					<section>
+						<header>
+							<h3>Unordered List</h3>
+						</header>
+						<ul class="default">
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						</ul>
+					</section>
+					<section>
+						<header>
+							<h3>Ordered List</h3>
+						</header>
+						<ol class="default">
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
+						</ol>
+					</section>
+					<section>
+						<header>
+							<h3>Table</h3>
+						</header>
+						<div class="table-wrapper">
+							<table class="default">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Name</th>
+										<th>Description</th>
+										<th>Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>45815</td>
+										<td>Something</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>24524</td>
+										<td>Nothing</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>19.99</td>
+									</tr>
+									<tr>
+										<td>45815</td>
+										<td>Something</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>29.99</td>
+									</tr>
+									<tr>
+										<td>24524</td>
+										<td>Nothing</td>
+										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
+										<td>19.99</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="3"></td>
+										<td>100.00</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</section>
+					<section>
+						<header>
+							<h3>Form</h3>
+						</header>
+						<form method="post" action="#">
+							<div class="row">
+								<div class="col-6 col-12-mobilep">
+									<label for="name">Name</label>
+									<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
+								</div>
+								<div class="col-6 col-12-mobilep">
+									<label for="email">Email</label>
+									<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+								</div>
+								<div class="col-12">
+									<label for="subject">Subject</label>
+									<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+								</div>
+								<div class="col-12">
+									<label for="subject">Message</label>
+									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+								</div>
+								<div class="col-12">
+									<ul class="actions special">
+										<li><input type="submit" value="Send" /></li>
+										<li><input type="reset" value="Reset" class="alt" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+				-->
+
+				<footer class="major container medium">
+					<h3>Get shady with science</h3>
+					<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
+					<ul class="actions special">
+						<li><a href="#" class="button">Join our crew</a></li>
+					</ul>
+				</footer>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				<div class="container medium">
+
+					<header class="major last">
+						<h2>Questions or comments?</h2>
+					</header>
+
+					<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor
+					orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
+
+					<form method="post" action="#">
+						<div class="row">
+							<div class="col-6 col-12-mobilep">
+								<input type="text" name="name" placeholder="Name" />
+							</div>
+							<div class="col-6 col-12-mobilep">
+								<input type="email" name="email" placeholder="Email" />
+							</div>
+							<div class="col-12">
+								<textarea name="message" placeholder="Message" rows="6"></textarea>
+							</div>
+							<div class="col-12">
+								<ul class="actions special">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
-theme: hacker
