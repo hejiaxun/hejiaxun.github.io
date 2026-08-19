@@ -14,8 +14,9 @@ This repository is the public portfolio for Jiaxun He. Keep it concise, technica
 
 ## Site structure
 
-- `_pages/` contains the five top-level pages: Home, Research, Projects, Experience, and CV.
+- `_pages/` contains the top-level pages: Home, Research, Projects, Competitions, Experience, and CV.
 - `_projects/` contains one page per public project.
+- `_competitions/` contains one page per public competition experience; describe technical contributions inside the competition context rather than relabeling the experience as a project.
 - `_bibliography/papers.bib` is the publication source of truth for the Research page.
 - `assets/img/` contains only assets cleared for public use.
 - `assets/css/site.css` is the self-contained public layout. Do not reintroduce external CSS/JS as a critical layout dependency.
