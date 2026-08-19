@@ -28,11 +28,11 @@ description: 贺加勋的机器人研究与工程个人主页。
 
 ## 代表性学术成果
 
-<a class="featured-work" href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">
+<div class="featured-work">
   <img src="{{ '/assets/img/ral/problem.png' | relative_url }}" alt="绳驱超冗余机械臂及张力估计问题">
   <div class="featured-work-body">
     <span class="tag">IEEE RA-L · 第一作者 · 2026</span>
-    <h3>绳驱超冗余机械臂张力状态估计与真机闭环验证</h3>
+    <h3><a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">绳驱超冗余机械臂张力状态估计与真机闭环验证</a></h3>
     <p class="paper-title">Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</p>
     <div class="metric-row">
       <div class="metric"><strong>70.2%</strong><span>张力 RMSE 降幅</span></div>
@@ -41,7 +41,7 @@ description: 贺加勋的机器人研究与工程个人主页。
       <div class="metric"><strong>44–51%</strong><span>稳定时间缩短</span></div>
     </div>
   </div>
-</a>
+</div>
 
 ## 精选项目
 
