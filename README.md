@@ -1,16 +1,16 @@
-# Jiaxun He's research portfolio
+# 贺加勋的机器人研究与工程主页
 
 This repository hosts the public source for [hejiaxun.github.io](https://hejiaxun.github.io).
 
-## Information architecture
+## 信息架构
 
-- **Home** — research identity and selected work.
-- **Research** — peer-reviewed publications.
-- **Projects** — research, embodied-intelligence, and robot-system project pages.
-- **Experience** — public education and experience outline.
-- **CV** — placeholder for a privacy-reviewed downloadable CV.
+- **首页** — 研究定位与代表性成果。
+- **学术研究** — 正式发表论文与公开项目解读。
+- **项目** — 机器人研究、具身智能与软硬件系统。
+- **经历** — 公开教育与研究经历。
+- **简历** — 完成隐私和披露边界审查后的中英文简历入口。
 
-The first complete project page covers the published IEEE RA-L work on tendon-state estimation. Other pages are intentionally staged as reviewed placeholders and will be expanded from verified public materials.
+首个完整项目页为已发表的 IEEE RA-L 绳张力状态估计工作，其他页面从经过核验且允许公开的材料逐步扩展。
 
 ## Public-content rules
 
@@ -19,13 +19,15 @@ The first complete project page covers the published IEEE RA-L work on tendon-st
 - State maturity boundaries: simulator calibration is not policy Sim-to-Real deployment; estimator deployment is not ownership of the pre-existing controller.
 - Keep claims traceable to a paper, released artifact, or private evidence ledger before publication.
 
-## Local development
+## 版式与依赖
 
-The site uses the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme.
+网站采用本地化的轻量 Jekyll 学术主页版式，视觉上参考 [al-folio](https://github.com/alshedivat/al-folio) 与 [minimal-light](https://github.com/yaoyao-liu/minimal-light)。核心布局、字体和图片显示不依赖外部 CDN，避免第三方资源异常导致页面错位或认证弹窗。
+
+## 本地开发
 
 ```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-Pushes to `main` trigger the GitHub Actions deployment workflow. The repository's Pages source should be configured to use the generated `gh-pages` branch.
+推送到 `main` 会触发 GitHub Actions 构建并发布到 `gh-pages`；GitHub Pages 来源应保持为 `gh-pages / root`。

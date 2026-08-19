@@ -18,6 +18,13 @@ This repository is the public portfolio for Jiaxun He. Keep it concise, technica
 - `_projects/` contains one page per public project.
 - `_bibliography/papers.bib` is the publication source of truth for the Research page.
 - `assets/img/` contains only assets cleared for public use.
+- `assets/css/site.css` is the self-contained public layout. Do not reintroduce external CSS/JS as a critical layout dependency.
+
+## Language and design
+
+- Chinese is the primary public language for the current release. Add English later as a parallel route backed by the same facts, not a second drifting copy.
+- Keep the visual system quiet and research-led: one accent color, one content column, restrained cards, fixed image dimensions, and no decorative dashboard components.
+- The site must remain readable if all third-party CDNs are unavailable. Do not add `polyfill.io`, remote Bootstrap, Google Fonts, or remote icon libraries as required resources.
 
 ## Quality checks
 
