@@ -634,6 +634,107 @@ img {
   background: #fff;
 }
 
+.pcb-viewer {
+  margin: 24px 0 36px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pcb-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.pcb-viewer-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.pcb-viewer-group button {
+  min-height: 34px;
+  padding: 0 11px;
+  color: #3c4655;
+  background: #fff;
+  border: 1px solid #cfd5dc;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.pcb-viewer-group button:hover,
+.pcb-viewer-group button.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.pcb-viewer-canvas {
+  position: relative;
+  height: min(64vw, 610px);
+  min-height: 360px;
+  overflow: hidden;
+  background: #101827;
+  cursor: zoom-in;
+  touch-action: none;
+}
+
+.pcb-viewer-canvas.dragging {
+  cursor: grabbing;
+}
+
+.pcb-viewer-canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+  transition: transform 100ms ease-out;
+  user-select: none;
+}
+
+.pcb-viewer-canvas.dragging img {
+  transition: none;
+}
+
+.pcb-viewer-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 10px 14px 12px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.pcb-viewer-caption strong {
+  color: #364152;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 18px 0 34px;
+}
+
+.video-grid .project-video {
+  margin: 0;
+}
+
+.video-grid .project-video video {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
 }
@@ -676,6 +777,21 @@ td {
 
   .media-pair {
     grid-template-columns: 1fr;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pcb-viewer-toolbar,
+  .pcb-viewer-caption {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pcb-viewer-canvas {
+    height: 72vw;
+    min-height: 300px;
   }
 
   .header-inner {
