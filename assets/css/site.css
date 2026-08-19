@@ -1046,6 +1046,40 @@ img {
   border-radius: 9px;
 }
 
+.interactive-embed-shell {
+  margin-top: 22px;
+}
+
+.interactive-load-button {
+  display: grid;
+  width: 100%;
+  min-height: 190px;
+  padding: 28px;
+  place-content: center;
+  gap: 8px;
+  color: #2259b3;
+  background: #eef5ff;
+  border: 1px dashed #9dbce9;
+  border-radius: 9px;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.interactive-load-button:hover {
+  background: #e4efff;
+  border-color: #6e9de0;
+}
+
+.interactive-load-button strong {
+  font-size: 1.08rem;
+}
+
+.interactive-load-button span {
+  color: #65748a;
+  font-size: 0.9rem;
+}
+
 .project-video--hero {
   margin-top: 0;
 }

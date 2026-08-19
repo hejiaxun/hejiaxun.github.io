@@ -32,8 +32,27 @@ permalink: /projects/cdhrr-planning/
     </div>
     <a class="button button-primary" href="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}" target="_blank" rel="noopener">全屏打开 ↗</a>
   </div>
-  <iframe class="cast-interactive-frame" loading="lazy" title="CAST 交互式技术展示" src="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}"></iframe>
+  <div class="interactive-embed-shell">
+    <button class="interactive-load-button" type="button" data-cast-src="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}">
+      <strong>在本页加载交互展示</strong>
+      <span>完整方法、场景与结果将在下方展开</span>
+    </button>
+    <iframe class="cast-interactive-frame" hidden loading="lazy" title="CAST 交互式技术展示"></iframe>
+  </div>
 </section>
+
+<script>
+  (() => {
+    const button = document.querySelector('.interactive-load-button');
+    const frame = document.querySelector('.cast-interactive-frame');
+    if (!button || !frame) return;
+    button.addEventListener('click', () => {
+      frame.src = button.dataset.castSrc;
+      frame.hidden = false;
+      button.hidden = true;
+    }, { once: true });
+  })();
+</script>
 
 ## 为什么普通路径规划不够
 
