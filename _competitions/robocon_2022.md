@@ -2,11 +2,11 @@
 layout: page
 title: ROBOCON 2022 机器人电控与整机联调
 description: 从 PCB、传感采集和电机驱动接口，到四台参赛机器人的布线、调试与赛场保障。
-kicker: Robot Electronics · ROBOCON 2022
+kicker: Robotics Competition · ROBOCON 2022
 img: assets/img/robocon/electronics-architecture.svg
 importance: 1
-category: robot-systems
-permalink: /projects/robocon-electronics/
+category: competition
+permalink: /competitions/robocon-2022/
 ---
 
 **电控硬件负责人（硬件组唯一成员）** · 武汉大学代表队 · 2021.06–2022.07

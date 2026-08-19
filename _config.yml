@@ -168,6 +168,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  competitions:
+    output: true
+    permalink: /competitions/:path/
 
 news:
   enabled: false

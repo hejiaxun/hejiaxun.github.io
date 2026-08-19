@@ -56,9 +56,9 @@ description: 贺加勋的机器人研究与工程个人主页。
     <h3>绳驱超冗余机械臂规划</h3>
     <p>高自由度全臂规划、绳驱约束、控制器在环与仿真—实测标定。</p>
   </a>
-  <a class="home-project" href="{{ '/projects/robocon-electronics/' | relative_url }}">
-    <h3>ROBOCON 机器人电控</h3>
-    <p>PCB、传感采集、电机与通信接口，以及多机器人整机联调。</p>
+  <a class="home-project" href="{{ '/competitions/robocon-2022/' | relative_url }}">
+    <h3>ROBOCON 2022 机器人竞赛</h3>
+    <p>全国一等奖 ×2、二等奖 ×1；负责 PCB、传感采集、电机与通信接口，以及多机器人整机联调。</p>
   </a>
   <a class="home-project" href="{{ '/research/' | relative_url }}">
     <h3>研究与论文</h3>
