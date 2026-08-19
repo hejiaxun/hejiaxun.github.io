@@ -2,20 +2,18 @@
 layout: default
 ---
 <div class="site-shell home-shell">
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow">机器人研究 · 具身智能 · 规划控制 · 软硬件系统</p>
-      <h1>贺加勋 <span>Jiaxun He</span></h1>
-      <p class="hero-lead">上海交通大学硕士研究生。关注机器人状态估计、规划与控制、具身智能，以及真实机器人软硬件系统。</p>
-      <p class="hero-note">希望把物理建模、学习算法、仿真验证与工程部署连接成可验证的机器人系统。</p>
-      <div class="hero-actions">
-        <a class="button primary" href="{{ '/research/' | relative_url }}">查看学术研究</a>
-        <a class="button" href="{{ '/projects/' | relative_url }}">浏览项目</a>
-        <a class="text-link" href="https://github.com/hejiaxun">GitHub ↗</a>
-      </div>
+  <section class="profile-intro">
+    <div class="profile-photo-wrap">
+      <img class="profile-photo" src="{{ '/assets/img/prof_pic.png' | relative_url }}" alt="贺加勋证件照">
     </div>
-    <div class="hero-photo-wrap">
-      <img class="hero-photo" src="{{ '/assets/img/prof_pic.png' | relative_url }}" alt="贺加勋证件照">
+    <div class="profile-copy">
+      <p class="eyebrow">机器人研究与工程</p>
+      <h1>贺加勋 <span>Jiaxun He</span></h1>
+      <p class="profile-role">上海交通大学 · 机械与动力工程学院 · 硕士研究生</p>
+      <p class="profile-summary">关注机器人状态估计、规划与控制、具身智能，以及真实机器人软硬件系统。希望把物理建模、学习算法、仿真验证与工程部署连接成可验证的机器人系统。</p>
+      <div class="profile-links" aria-label="公开链接">
+        <a href="https://github.com/{{ site.github_username }}">GitHub · {{ site.github_username }}</a>
+      </div>
     </div>
   </section>
 
