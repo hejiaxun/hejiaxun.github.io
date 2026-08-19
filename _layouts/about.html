@@ -3,11 +3,6 @@ layout: default
 ---
 <aside class="home-sidebar" aria-label="个人信息">
   <div class="sidebar-inner">
-    <a class="sidebar-mark" href="{{ '/' | relative_url }}">
-      <strong>Robotics</strong>
-      <span>@ SJTU</span>
-    </a>
-
     <img class="sidebar-photo" src="{{ '/assets/img/prof_pic.png' | relative_url }}" alt="贺加勋证件照">
     <h1 class="sidebar-name">贺加勋</h1>
     <p class="sidebar-name-en">Jiaxun He</p>
@@ -19,6 +14,9 @@ layout: default
 
     <div class="sidebar-link-title"><span>链接</span></div>
     <div class="sidebar-links">
+      <span class="sidebar-link-disabled" title="邮箱地址暂未公开" aria-label="邮箱地址暂未公开">
+        <span class="mail-mark" aria-hidden="true">✉</span><span>邮箱</span>
+      </span>
       <a href="https://github.com/{{ site.github_username }}" aria-label="GitHub">
         <span class="github-mark" aria-hidden="true">GH</span><span>GitHub</span>
       </a>

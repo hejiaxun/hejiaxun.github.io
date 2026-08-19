@@ -45,7 +45,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   <article class="work-item">
     <a class="work-media work-media-text" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><span>DexUMI<br>XHand<br>Co-design</span></a>
     <div class="work-body">
-      <div class="work-meta"><span>具身智能实习</span><span>穹彻智能</span><span>2026–至今</span></div>
+      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
       <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 人机接口 Co-design</a></h3>
       <p>围绕固定目标执行器，研究灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 CAD，形成从设计、物理验证到方案比较的 Co-design 流程。</p>
       <p class="work-links"><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">项目主页</a></p>
