@@ -25,23 +25,18 @@
 <link rel="stylesheet" href="/assets/css/site.css">
 
   </head>
-  <body>
-    <header class="site-header">
-  <div class="site-shell header-inner">
-    <a class="site-brand" href="/" aria-label="返回首页">
-      <strong>贺加勋</strong><span>Jiaxun He</span>
+  <body class="detail-page">
+    
+      <header class="detail-header">
+  <div class="site-shell detail-header-inner">
+    <a class="back-home-link" href="/" aria-label="返回主页">
+      <span aria-hidden="true">←</span>
+      <span>返回主页</span>
     </a>
-    <nav class="site-nav" aria-label="主导航">
-      <a href="/">主页</a>
-      <a class="active" href="/research/">学术研究</a>
-      <a href="/projects/">项目</a>
-      <a href="/competitions/">竞赛</a>
-      <a href="/experience/">经历</a>
-      <a href="/cv/">简历</a>
-    </nav>
   </div>
 </header>
 
+    
     <main class="site-main">
       <div class="site-shell page-shell">
   <header class="page-header">
@@ -71,7 +66,17 @@
 </div>
 </div>
 
-<p class="project-actions"><a class="button button-primary" href="/assets/interactive/cast/CAST-interactive-exhibit.html">查看交互证据</a><a class="button" href="#%E9%A1%B9%E7%9B%AE%E8%A7%86%E9%A2%91">观看完整讲解</a></p>
+<section class="interactive-feature" aria-labelledby="cast-interactive-title">
+  <div class="interactive-feature-head">
+    <div>
+      <p class="eyebrow">Interactive Technical Exhibit</p>
+      <h2 id="cast-interactive-title">交互式技术展示</h2>
+      <p>浏览机器人系统、九类 Benchmark、方法链、对比结果与仿真—实测标定。交互页默认英文，可在页面内切换中文。</p>
+    </div>
+    <a class="button button-primary" href="/assets/interactive/cast/CAST-interactive-exhibit.html" target="_blank" rel="noopener">全屏打开 ↗</a>
+  </div>
+  <iframe class="cast-interactive-frame" loading="lazy" title="CAST 交互式技术展示" src="/assets/interactive/cast/CAST-interactive-exhibit.html"></iframe>
+</section>
 
 <h2 id="为什么普通路径规划不够">为什么普通路径规划不够</h2>
 
@@ -157,17 +162,6 @@
   <div class="project-video">
 <video controls="" muted="" playsinline="" preload="metadata"><source src="/assets/video/cast/cases/pipeline_crossing_hard_boundary.mp4" type="video/mp4"></source></video><p>管线穿越场景 · HARD · 边界案例</p>
 </div>
-</div>
-
-<h2 id="当前公开边界">当前公开边界</h2>
-
-<div class="claim-boundary">
-  <ul>
-    <li>锁定规划 Benchmark 是固定基座、12 节、24 自由度、36 绳的 MuJoCo 仿真。</li>
-    <li>在线选择器基于运动学与离散命令节点的胶囊间隙，不是在线动力学 rollout 或连续扫掠体证明。</li>
-    <li>张力可行子步比例描述固定标称工作区一致性，不代表完整硬件张力安全认证。</li>
-    <li>静态力实验验证留出姿态上的力尺度对应，不等同于动态实机障碍规划或策略 Sim-to-Real。</li>
-  </ul>
 </div>
 
   </article>
