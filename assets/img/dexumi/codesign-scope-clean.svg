@@ -22,8 +22,8 @@
   <line x1="294" y1="114" x2="338" y2="114" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
   <rect x="352" y="62" width="238" height="104" rx="14" fill="#f7f9fc" stroke="#c9d7ea" stroke-width="1.5"/>
-  <text class="font node-title" x="376" y="103">MANO 穿戴仿真与控制</text>
-  <text class="font node-copy" x="376" y="136">UMI 优化 · DexUMI 强化学习</text>
+  <text class="font node-title" x="376" y="103">穿戴仿真与控制</text>
+  <text class="font node-copy" x="376" y="136">MANO · UMI 优化 · DexUMI 强化学习</text>
 
   <line x1="590" y1="114" x2="634" y2="114" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
 
