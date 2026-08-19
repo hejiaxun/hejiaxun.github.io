@@ -1,0 +1,7 @@
+<nav class="dexumi-module-nav" aria-label="DexUMI Co-design 模块导航">
+  <a{% if page.url == '/projects/dexumi-codesign/' %} class="active"{% endif %} href="{{ '/projects/dexumi-codesign/' | relative_url }}">总览</a>
+  <a{% if page.url contains '/baseline/' %} class="active"{% endif %} href="{{ '/projects/dexumi-codesign/baseline/' | relative_url }}">01 数采 baseline</a>
+  <a{% if page.url contains '/wearing-control/' %} class="active"{% endif %} href="{{ '/projects/dexumi-codesign/wearing-control/' | relative_url }}">02 穿戴与控制</a>
+  <a{% if page.url contains '/ergonomics/' %} class="active"{% endif %} href="{{ '/projects/dexumi-codesign/ergonomics/' | relative_url }}">03 人体工效</a>
+  <a{% if page.url contains '/parametric-cad/' %} class="active"{% endif %} href="{{ '/projects/dexumi-codesign/parametric-cad/' | relative_url }}">04 参数化 CAD</a>
+</nav>

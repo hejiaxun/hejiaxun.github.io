@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 590" role="img" aria-labelledby="title desc">
+  <title id="title">UMI / DexUMI 人机接口 Co-design 研究框架</title>
+  <desc id="desc">目标执行器固定，以真实数采系统为基线，参数化设计、穿戴仿真与物理控制、人体工效和任务评价共同构成设计评价回环。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3375cf"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#98a4b6"/>
+    </marker>
+    <style>
+      .t{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#202a39}
+      .small{font-size:18px;fill:#68758a}.label{font-size:16px;font-weight:700;fill:#2c68bb;letter-spacing:.04em}
+      .head{font-size:27px;font-weight:750}.body{font-size:18px;fill:#536178}.node{fill:#fff;stroke:#cfd8e5;stroke-width:2}
+      .blue{fill:#edf5ff;stroke:#78a5e5;stroke-width:2}.muted{fill:#f7f8fa;stroke:#d9dfe7;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1200" height="590" rx="18" fill="#fbfdff"/>
+
+  <text class="t label" x="58" y="56">CURRENT SCOPE · 目标执行器固定</text>
+  <text class="t head" x="58" y="94">人机接口设计评价回环</text>
+  <text class="t small" x="58" y="126">真实数采系统提供基线，Q2–Q4 连接设计、物理与人体/任务评价。</text>
+
+  <rect class="muted" x="58" y="178" width="222" height="110" rx="14"/>
+  <text class="t label" x="82" y="210">Q1 · SYSTEM BASELINE</text>
+  <text class="t head" x="82" y="244">DexUMI–XHand</text>
+  <text class="t body" x="82" y="272">数采 · 标定 · 仿真遥操作</text>
+
+  <line x1="280" y1="233" x2="356" y2="233" stroke="#98a4b6" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow-gray)"/>
+  <text class="t small" x="294" y="211">问题与数据基线</text>
+
+  <rect class="blue" x="365" y="165" width="250" height="136" rx="15"/>
+  <text class="t label" x="390" y="199">Q4 · DESIGN SPACE</text>
+  <text class="t head" x="390" y="238">参数化 CAD 设计</text>
+  <text class="t body" x="390" y="268">接口特征 · 装配参数 · 资产生成</text>
+
+  <rect class="blue" x="722" y="165" width="300" height="136" rx="15"/>
+  <text class="t label" x="747" y="199">Q2 · WEARING &amp; CONTROL</text>
+  <text class="t head" x="747" y="238">MANO 驱动的穿戴控制</text>
+  <text class="t body" x="747" y="268">UMI 优化求解 · DexUMI 强化学习</text>
+
+  <rect class="blue" x="722" y="382" width="300" height="136" rx="15"/>
+  <text class="t label" x="747" y="416">Q3 · HUMAN METRICS</text>
+  <text class="t head" x="747" y="455">人体工效与生物力学</text>
+  <text class="t body" x="747" y="485">接触 · 关节负荷 · 肌肉 · 疲劳</text>
+
+  <rect class="node" x="365" y="382" width="250" height="136" rx="15"/>
+  <text class="t label" x="390" y="416">EVALUATION</text>
+  <text class="t head" x="390" y="455">方案比较</text>
+  <text class="t body" x="390" y="485">人体指标 + 任务可行性</text>
+
+  <line x1="615" y1="233" x2="708" y2="233" stroke="#3375cf" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <line x1="872" y1="301" x2="872" y2="367" stroke="#3375cf" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <line x1="722" y1="450" x2="630" y2="450" stroke="#3375cf" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <path d="M365 450 C315 450 315 233 350 233" fill="none" stroke="#3375cf" stroke-width="4" marker-end="url(#arrow-blue)"/>
+
+  <text class="t small" x="640" y="214">生成候选</text>
+  <text class="t small" x="887" y="341">输出接触与运动</text>
+  <text class="t small" x="638" y="432">评价指标</text>
+  <text class="t small" x="284" y="350">选择下一组设计</text>
+
+  <rect x="58" y="540" width="964" height="1" fill="#dce3ec"/>
+  <text class="t small" x="58" y="571">研究边界：优化 UMI / DexUMI 人机接口；目标执行器及其任务能力作为固定条件。</text>
+</svg>
