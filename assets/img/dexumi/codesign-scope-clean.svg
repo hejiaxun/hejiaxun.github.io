@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">UMI / DexUMI 人机接口 Co-design 研究框架</title>
+  <desc id="desc">目标执行器固定。真实数采系统提供基线，参数化设计、穿戴控制、人体与任务评价、方案比较构成设计评价循环。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5079b8"/>
+    </marker>
+    <style>
+      .font{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+      .eyebrow{font-size:15px;font-weight:700;letter-spacing:.12em;fill:#5079b8}
+      .title{font-size:30px;font-weight:720;fill:#1f2937}
+      .subtitle{font-size:17px;fill:#6b7280}
+      .step{font-size:14px;font-weight:700;letter-spacing:.08em;fill:#5079b8}
+      .node-title{font-size:22px;font-weight:700;fill:#1f2937}
+      .node-copy{font-size:15px;fill:#697386}
+      .edge{font-size:14px;fill:#778195}
+      .boundary{font-size:14px;fill:#7a8495}
+    </style>
+  </defs>
+
+  <rect width="1200" height="430" rx="20" fill="#ffffff"/>
+  <text class="font eyebrow" x="62" y="57">DEXUMI CO-DESIGN</text>
+  <text class="font title" x="62" y="95">固定目标执行器的人机接口设计评价循环</text>
+  <text class="font subtitle" x="62" y="126">从真实系统基线出发，用可执行运动与人体/任务指标比较不同接口设计。</text>
+
+  <rect x="62" y="166" width="208" height="112" rx="14" fill="#f7f8fa" stroke="#d7dde7" stroke-width="1.5"/>
+  <text class="font step" x="84" y="197">Q1 · 系统基线</text>
+  <text class="font node-title" x="84" y="230">DexUMI–XHand</text>
+  <text class="font node-copy" x="84" y="257">数采 · 标定 · 仿真遥操作</text>
+  <line x1="270" y1="222" x2="322" y2="222" stroke="#aab3c1" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+  <text class="font edge" x="278" y="205">约束与数据</text>
+
+  <rect x="336" y="166" width="178" height="112" rx="14" fill="#f5f8fc" stroke="#a9bfdc" stroke-width="1.5"/>
+  <text class="font step" x="358" y="197">Q4 · 设计空间</text>
+  <text class="font node-title" x="358" y="230">参数化 CAD</text>
+  <text class="font node-copy" x="358" y="257">接口特征与装配参数</text>
+  <line x1="514" y1="222" x2="556" y2="222" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="570" y="166" width="214" height="112" rx="14" fill="#f5f8fc" stroke="#a9bfdc" stroke-width="1.5"/>
+  <text class="font step" x="592" y="197">Q2 · 穿戴与控制</text>
+  <text class="font node-title" x="592" y="230">MANO 驱动控制</text>
+  <text class="font node-copy" x="592" y="257">UMI 优化 · DexUMI 强化学习</text>
+  <line x1="784" y1="222" x2="826" y2="222" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="840" y="166" width="208" height="112" rx="14" fill="#f5f8fc" stroke="#a9bfdc" stroke-width="1.5"/>
+  <text class="font step" x="862" y="197">Q3 · 评价指标</text>
+  <text class="font node-title" x="862" y="230">人体与任务评价</text>
+  <text class="font node-copy" x="862" y="257">接触 · 负荷 · 疲劳 · 可行性</text>
+  <line x1="944" y1="278" x2="944" y2="314" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="840" y="326" width="208" height="62" rx="13" fill="#ffffff" stroke="#a9bfdc" stroke-width="1.5"/>
+  <text class="font node-title" x="862" y="365">方案比较</text>
+  <path d="M840 357 H425 C393 357 377 342 377 310 V292" fill="none" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text class="font edge" x="569" y="345">评价结果反馈到下一组接口设计</text>
+
+  <line x1="62" y1="402" x2="1048" y2="402" stroke="#e1e5eb" stroke-width="1"/>
+  <text class="font boundary" x="62" y="423">研究边界：优化 UMI / DexUMI 人机接口；目标执行器及其任务能力保持固定。</text>
+</svg>
