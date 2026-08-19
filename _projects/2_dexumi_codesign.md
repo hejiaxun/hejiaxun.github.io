@@ -16,11 +16,10 @@ permalink: /projects/dexumi-codesign/
   <span>2026.05 – 至今</span>
 </div>
 
-<p class="project-lead">本项研究面向<strong>目标执行器固定、优化 UMI / DexUMI 人机接口</strong>的问题：通过参数化设计生成候选方案，在仿真中建立 MANO 人手与穿戴装置的运动及接触关系，再从人体工效与任务可行性两个维度评价方案。当前工作的重点是右侧的人机接口设计评价回环，而不是优化目标执行器本体。</p>
+<p class="project-lead">本项研究在<strong>目标执行器固定</strong>的条件下，围绕 UMI / DexUMI 人机接口开展 Co-design。DexUMI–XHand 实物系统提供装配、标定与数采基线；参数化接口设计、MANO 驱动的穿戴仿真与控制、人体工效与任务评价共同构成设计评价回环。</p>
 
 <figure class="dexumi-overview-figure">
-  <img src="{{ '/assets/img/dexumi/codesign-scope-clean.svg' | relative_url }}" alt="UMI / DexUMI 人机接口 Co-design 研究范围与四个工作模块">
-  <figcaption>研究范围：真实数采系统提供问题基线；穿戴控制、人体工效与参数化设计构成当前 Co-design 设计评价回环。</figcaption>
+  <img src="{{ '/assets/img/dexumi/codesign-scope-clean.svg' | relative_url }}" alt="UMI / DexUMI 人机接口 Co-design 设计评价回环">
 </figure>
 
 ## 四个工作模块
@@ -29,7 +28,7 @@ permalink: /projects/dexumi-codesign/
   <a class="dexumi-module-card" href="{{ '/projects/dexumi-codesign/baseline/' | relative_url }}">
     <span class="module-index">01 · SYSTEM BASELINE</span>
     <h3>DexUMI 全链路 baseline 与数采工程</h3>
-    <p>复现 DexUMI–XHand 的硬件、标定、采集、视觉处理与仿真遥操作链路，并从真实系统中识别人机接口设计问题。</p>
+    <p>复现公开 DexUMI–XHand 的硬件、标定、采集、视觉处理与仿真遥操作链路，并从真实系统中识别人机接口设计问题。</p>
     <strong>查看模块 →</strong>
   </a>
   <a class="dexumi-module-card" href="{{ '/projects/dexumi-codesign/wearing-control/' | relative_url }}">
@@ -52,19 +51,4 @@ permalink: /projects/dexumi-codesign/
   </a>
 </div>
 
-## 后续内容计划
-
-<div class="content-slot-grid">
-  <div class="content-slot"><strong>总览动画</strong><span>Co-design 回环与四个模块之间的数据流</span></div>
-  <div class="content-slot"><strong>系统实物</strong><span>DexUMI–XHand 装配、数采与遥操作演示</span></div>
-  <div class="content-slot"><strong>评价案例</strong><span>不同手型、装置参数与任务下的方案对比</span></div>
-</div>
-
-<div class="claim-boundary">
-  <strong>公开边界</strong>
-  <ul>
-    <li>公开 DexUMI 的原始框架与个人扩展将分开说明，不把开源工作表述为原创。</li>
-    <li>当前公开内容只描述研究结构；公司内部素材、实现细节与指标将在确认可披露后逐项补充。</li>
-    <li>现阶段称为 Co-design 设计评价基础设施，不宣称已经形成成熟的全自动外层优化器。</li>
-  </ul>
-</div>
+<p class="project-attribution"><strong>开源基础与个人工作：</strong>DexUMI 由 Stanford REAL Lab 公开发布，详见<a href="https://github.com/real-stanford/DexUMI" target="_blank" rel="noopener">原始 GitHub 仓库</a>与<a href="https://dex-umi.github.io/" target="_blank" rel="noopener">项目主页</a>。本项目以其 XHand 系统为 baseline，页面重点展示我完成的系统复现、工程扩展，以及围绕穿戴控制、人体工效和参数化设计建立的 Co-design 研究工作。</p>

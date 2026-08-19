@@ -9,7 +9,7 @@ permalink: /projects/dexumi-codesign/baseline/
 
 {% include dexumi-module-nav.html %}
 
-<p class="project-lead">这一模块回答“真实系统如何工作、设计问题从哪里来”。工作范围限定为 <strong>DexUMI 数采系统与仿真遥操作 baseline</strong>，不把尚未完成的策略训练与真实机器人部署写入复现范围。</p>
+<p class="project-lead">这一模块回答“真实系统如何工作、设计问题从哪里来”。我基于 Stanford REAL Lab 公开的 <a href="https://github.com/real-stanford/DexUMI" target="_blank" rel="noopener">DexUMI 原始仓库</a>，在 XHand 平台上完成数采系统与仿真遥操作 baseline 的复现，并继续扩展触觉采集和软硬件接口。</p>
 
 ## 问题与目标
 
@@ -24,16 +24,6 @@ permalink: /projects/dexumi-codesign/baseline/
   <div class="module-route-card"><span>04</span><strong>仿真遥操作</strong><p>验证 XHand 在仿真中的动作映射与任务遥操作链路。</p></div>
 </div>
 
-## 后续将补充
-
-<div class="content-slot-grid">
-  <div class="content-slot"><strong>系统总览图</strong><span>硬件、软件与数据流的对应关系</span></div>
-  <div class="content-slot"><strong>演示视频</strong><span>数据采集与仿真 XHand 遥操作任务</span></div>
-  <div class="content-slot"><strong>工程扩展</strong><span>触觉传感器、PCB 接口与 MCU 固件</span></div>
-</div>
-
 ## 与 Co-design 回环的关系
 
 该模块提供真实装置、数据与问题基线，帮助确定人机接口的设计变量和评价需求；它是整个研究的实验入口，但不直接等同于外层设计优化器。
-
-<div class="claim-boundary">本页将始终明确区分“公开 DexUMI 系统复现”与“个人完成的工程扩展”。</div>

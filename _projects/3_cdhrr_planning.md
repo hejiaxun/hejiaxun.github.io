@@ -123,7 +123,7 @@ Benchmark 使用 EASY / MEDIUM / HARD 三档目标、五个随机种子和统一
   <video controls playsinline preload="metadata" poster="{{ '/assets/img/cast/cover_overview_16x9.png' | relative_url }}">
     <source src="{{ '/assets/video/cast/project_talk_90s.mp4' | relative_url }}" type="video/mp4">
   </video>
-  <p>90 秒项目讲解：系统、方法、评测和公开边界。</p>
+  <p>90 秒项目讲解：系统、方法与评测。</p>
 </div>
 
 <div class="video-grid video-grid--cases">

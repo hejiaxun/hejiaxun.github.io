@@ -28,14 +28,6 @@ permalink: /projects/dexumi-codesign/parametric-cad/
   <div class="module-route-card"><span>04</span><strong>仿真资产生成</strong><p>生成 STEP、URDF/MJCF 等下游资产，连接批量穿戴与评价。</p></div>
 </div>
 
-## 后续将补充
-
-<div class="content-slot-grid">
-  <div class="content-slot"><strong>参数化示例</strong><span>同一 CAD 特征在设计空间中的变化</span></div>
-  <div class="content-slot"><strong>验证可视化</strong><span>SolidWorks–Linux 几何与装配对照</span></div>
-  <div class="content-slot"><strong>方案搜索</strong><span>候选生成、仿真评价与比较结果</span></div>
-</div>
-
 ## 与 Co-design 回环的关系
 
-该模块负责生成下一组候选人机接口设计，并将设计参数及仿真资产交给穿戴控制与人体评价模块。当前定位是设计空间与批量评价基础设施，不宣称已经完成成熟的自动化最优设计器。
+该模块负责表达设计空间、生成候选人机接口及对应仿真资产，并将其交给穿戴控制与人体评价模块批量比较，为后续外层设计优化提供可复现的基础设施。
