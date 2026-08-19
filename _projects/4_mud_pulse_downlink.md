@@ -2,9 +2,9 @@
 layout: page
 title: 测井仪器泥浆脉冲下传解码
 description: 从模拟信号调理、阀门时序提取、MCU 实时解码到 Qt 回放验证的软硬件项目。
-kicker: Embedded Systems & Signal Processing
+kicker: Industrial Instrumentation
 importance: 1
-category: embedded-systems
+category: industrial-project
 permalink: /projects/mud-pulse-downlink/
 img: /assets/img/mud-pulse/test-rig.png
 ---

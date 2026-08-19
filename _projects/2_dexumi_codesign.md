@@ -2,9 +2,9 @@
 layout: page
 title: DexUMI / XHand 具身研究
 description: 灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 基础设施。
-kicker: Embodied Intelligence
+kicker: Embodied Intelligence Internship
 importance: 1
-category: embodied-ai
+category: internship
 permalink: /projects/dexumi-codesign/
 ---
 

@@ -2,19 +2,19 @@
 layout: page
 title: 项目
 permalink: /projects/
-description: 机器人研究、具身智能与真实机器人系统项目。
+description: 学术研究、具身智能实习与工业项目。
 kicker: Selected Projects
-display_categories: [research, embodied-ai, robot-systems, embedded-systems]
+display_categories: [research, internship, industrial-project]
 ---
 
 <div class="projects">
 {% for category in page.display_categories %}
   {% if category == "research" %}
-    {% assign category_title = "机器人研究" %}
-  {% elsif category == "embodied-ai" %}
-    {% assign category_title = "具身智能" %}
-  {% elsif category == "embedded-systems" %}
-    {% assign category_title = "嵌入式与工业系统" %}
+    {% assign category_title = "学术研究" %}
+  {% elsif category == "internship" %}
+    {% assign category_title = "实习" %}
+  {% elsif category == "industrial-project" %}
+    {% assign category_title = "工业项目" %}
   {% else %}
     {% assign category_title = "机器人系统" %}
   {% endif %}
