@@ -3,7 +3,7 @@ layout: page
 title: ROBOCON 2022 机器人电控与整机联调
 description: 从 PCB、传感采集和电机驱动接口，到四台参赛机器人的布线、调试与赛场保障。
 kicker: Robotics Competition · ROBOCON 2022
-img: assets/img/robocon/electronics-architecture.svg
+img: assets/img/robocon/video/equestrian-2022.jpg
 importance: 1
 category: competition
 permalink: /competitions/robocon-2022/
