@@ -1,14 +1,15 @@
 ---
 layout: page
-title: ROBOCON Robot Electronics
-description: PCB, sensing, motor interfaces, communication, and multi-robot system integration.
+title: ROBOCON 机器人电控与整机联调
+description: PCB、传感采集、电机与通信接口，以及多机器人系统集成。
+kicker: Robot Electronics
 importance: 1
 category: robot-systems
 permalink: /projects/robocon-electronics/
 ---
 
-## Competition robot electronics
+## 机器人竞赛电控系统
 
-As the hardware-group lead and sole hardware-group member, I worked on controller and sensing boards, motor-driver integration, CAN/UART/Ethernet communication, robot wiring, board bring-up, and multi-robot debugging for ROBOCON competition systems.
+作为硬件组负责人（硬件组唯一成员），我参与了竞赛机器人的控制与传感板卡、电机驱动接口、CAN / UART / 以太网通信、整机布线、板级调试和多机器人联调。
 
-The work received two national first prizes and one national second prize. Schematics, PCB renders, and robot videos will be added here after the original assets are selected and annotated.
+相关竞赛经历获得全国一等奖 2 项、全国二等奖 1 项。后续将从原始工程材料中选择并标注适合公开的原理图、PCB 渲染图和机器人视频。

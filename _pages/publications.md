@@ -1,18 +1,15 @@
 ---
 layout: page
 permalink: /research/
-title: research
-description: Peer-reviewed publications and selected research outcomes.
+title: 学术研究
+description: 正式发表论文与经过核验的研究成果。
+kicker: Research & Publications
 years: [2026]
-nav: true
-nav_order: 1
 ---
 
 <div class="publications">
-
-{%- for y in page.years %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
+{% for y in page.years %}
+  <h2 class="year">{{ y }}</h2>
+  {% bibliography -f papers -q @*[year={{ y }}]* %}
 {% endfor %}
-
 </div>

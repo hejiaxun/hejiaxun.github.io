@@ -1,14 +1,15 @@
 ---
 layout: page
-title: Constrained-Space Planning for a Cable-Driven Hyper-Redundant Robot
-description: High-DoF whole-arm planning with tendon constraints and controller-in-the-loop simulation.
+title: 绳驱超冗余机械臂受限空间规划与绳驱约束控制
+description: 面向高自由度全臂规划的控制器在环仿真、绳驱约束与仿真—实测标定。
+kicker: Motion Planning & Simulation
 importance: 2
 category: research
 permalink: /projects/cdhrr-planning/
 ---
 
-## Ongoing research
+## 在研项目
 
-This project studies constrained-space planning for a 12-module, 24-DoF, 36-tendon hyper-redundant robot. The current system combines a MuJoCo controller-in-the-loop platform, semantic obstacle benchmarks, learning-based trajectory generation, whole-arm geometric filtering, and tendon-execution constraints.
+该项目研究 12 节、24 自由度、36 绳机械臂在受限空间中的全臂规划。当前系统包括 MuJoCo 控制器在环平台、语义障碍基准、学习型轨迹生成、全臂几何筛选，以及绳长 Jacobian、预张力和绳长速率等执行约束。
 
-The simulator has been calibrated against continuous real-robot measurements. This is **simulator–measurement calibration**, not a claim of policy Sim-to-Real deployment. A detailed public page will be added after figures and experiment descriptions are reviewed.
+仿真模型已使用连续真机测量完成预张力与等效刚度标定。这里的结论是**仿真—实测标定**，并不代表规划策略已经完成 Sim-to-Real 真机部署。详细页面将在图表和实验描述完成公开审查后补充。

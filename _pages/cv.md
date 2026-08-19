@@ -1,12 +1,11 @@
 ---
 layout: page
 permalink: /cv/
-title: cv
-description: A public, privacy-reviewed CV will be added here.
-nav: true
-nav_order: 4
+title: 简历
+description: 公开简历将在个人信息和披露边界复核后提供。
+kicker: Curriculum Vitae
 ---
 
-The downloadable CV is intentionally withheld from the first public release while personal contact details and disclosure boundaries are reviewed.
+公开下载版简历暂不在首轮主页中提供，以避免未经处理的联系方式和内部项目边界直接公开。
 
-For now, please use the [Research](/research/), [Projects](/projects/), and [Experience](/experience/) pages as the public portfolio index.
+目前可通过[学术研究](/research/)、[项目](/projects/)和[经历](/experience/)了解我的公开工作。后续将同步维护中文版和英文版简历入口。

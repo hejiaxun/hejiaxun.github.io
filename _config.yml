@@ -2,23 +2,22 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Jiaxun He
+title: 贺加勋
 first_name: Jiaxun
 middle_name:
 last_name: He
 email:
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Jiaxun He's research portfolio in robotics, embodied AI, planning and control, and robot systems.
-footer_text: >
-  Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and hosted on GitHub Pages.
-keywords: robotics, embodied AI, robot learning, planning, control, state estimation
+description: >
+  贺加勋的机器人研究与工程个人主页，关注状态估计、规划控制、具身智能与真实机器人系统。
+footer_text:
+keywords: 机器人, 具身智能, 机器人学习, 规划, 控制, 状态估计
 
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
+lang: zh-CN
 icon: 🤖  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://hejiaxun.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
-last_updated: true # set to true if you want to display last updated in the footer
+last_updated: false
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
 # -----------------------------------------------------------------------------
@@ -286,9 +285,9 @@ scholar:
 
   query: "@*"
 
-badges: # Display different badges for your publications
-  altmetric_badge: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
-  dimensions_badge: true # Dimensions badge (https://badge.dimensions.ai/)
+badges:
+  altmetric_badge: false
+  dimensions_badge: false
 
 # Filter out certain bibtex entry keywords used internally from the bib output
 filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric]
@@ -315,7 +314,7 @@ external_links:
 # -----------------------------------------------------------------------------
 
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false
   widths:
     - 480
     - 800
@@ -347,17 +346,17 @@ enable_google_analytics:    false  # enables google analytics
 enable_panelbear_analytics: false  # enables panelbear analytics
 enable_google_verification: false  # enables google site verification
 enable_bing_verification:   false  # enables bing site verification
-enable_masonry:             true   # enables automatic project cards arrangement
-enable_math:                true   # enables math typesetting (uses MathJax)
+enable_masonry:             false
+enable_math:                false
 enable_tooltips:            false  # enables automatic tooltip links generated
                                    # for each section titles on pages and posts
-enable_darkmode:            true   # enables switching between light/dark modes
+enable_darkmode:            false
 enable_navbar_social:       false  # enables displaying social links in the
                                    # navbar on the about page
 enable_project_categories:  true   # enables categorization of projects into
                                    # multiple categories
-enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
-enable_progressbar:         true   # enables a horizontal progress bar linked to the vertical scroll position
+enable_medium_zoom:         false
+enable_progressbar:         false
 
 # -----------------------------------------------------------------------------
 # Library versions

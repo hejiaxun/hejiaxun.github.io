@@ -1,27 +1,26 @@
 ---
 layout: page
 permalink: /experience/
-title: experience
-description: Education, research experience, and selected engineering experience.
-nav: true
-nav_order: 3
+title: 经历
+description: 教育、研究与工程经历概览。
+kicker: Experience
 ---
 
-## Education
+## 教育背景
 
-**Shanghai Jiao Tong University**
+### 上海交通大学
 
-Master's student · Robotics-related research
+硕士研究生，开展机器人状态估计、规划控制与具身智能相关研究。
 
-**Wuhan University**
+### 武汉大学
 
-Undergraduate education · Engineering and robotics experience
+本科阶段参与机器人竞赛与软硬件系统开发。
 
-## Current research and engineering themes
+## 当前研究与工程方向
 
-- Robot state estimation and closed-loop control for cable-driven hyper-redundant robots.
-- High-DoF planning, controller-in-the-loop simulation, and simulator–measurement calibration.
-- Wearable interfaces and dexterous-hand data systems, with public details added only after review.
-- PCB, embedded sensing, communication, motor interfaces, and multi-robot integration.
+- 绳驱超冗余机械臂的状态估计、真机闭环控制验证与受限空间规划。
+- 高自由度机器人控制器在环仿真、物理约束建模与仿真—实测标定。
+- 可穿戴人机接口与灵巧手数据系统；公开内容仅在确认边界后逐步补充。
+- PCB、嵌入式传感、通信、电机接口和多机器人系统联调。
 
-This page is a framework. Verified dates, positions, and cleared public descriptions will be added incrementally from the private evidence ledger.
+该页面将随着项目材料整理逐步补充明确的时间、角色和经过公开审查的工作内容。

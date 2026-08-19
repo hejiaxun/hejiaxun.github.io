@@ -1,53 +1,50 @@
 ---
 layout: page
-title: Physics-Guided Tendon State Estimation
-description: First-author IEEE RA-L paper on terminal-supervised tendon-state estimation and real-robot closed-loop validation.
+title: Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots
+description: 第一作者 IEEE RA-L 论文：终端监督下的绳张力状态估计与真机闭环验证。
+kicker: IEEE Robotics and Automation Letters · 2026
 img: assets/img/ral/problem.png
 importance: 1
 category: research
 permalink: /projects/ral-tendon-estimation/
 ---
 
-## Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots
+**贺加勋**，陆俊国，张庆昊，朱振普，彭展轩，顾国迎
 
-**Jiaxun He**, Jun-Guo Lu, Qing-Hao Zhang, Zhenpu Zhu, Zhanxuan Peng, and Guoying Gu
+*IEEE Robotics and Automation Letters*, vol. 11, no. 8, pp. 9962–9969, 2026<br>
+[DOI: 10.1109/LRA.2026.3709642](https://doi.org/10.1109/LRA.2026.3709642)
 
-*IEEE Robotics and Automation Letters*, 2026 · [DOI: 10.1109/LRA.2026.3709642](https://doi.org/10.1109/LRA.2026.3709642)
+## 问题
 
-### Problem
+绳驱超冗余机械臂的关节侧绳张力是控制中的重要状态，但沿机械臂链路通常无法直接测量。系统能够测得所有绳索的驱动侧张力，却只能在末节获得关节侧真实张力。解析传动模型会累积摩擦误差，而缺少中间监督的纯数据驱动模型又难以可靠辨识整条传动链。
 
-Joint-side tendon tensions are important state variables for controlling cable-driven hyper-redundant robots, but they are typically unavailable along the chain. Actuator-side tensions are measurable for all tendons, while joint-side measurements are available only at the terminal joint. Analytical transmission models accumulate friction errors, whereas unconstrained data-driven models are poorly identified under this limited supervision.
+{% include figure.html path="assets/img/ral/problem.png" alt="绳驱超冗余机械臂的传感约束与张力估计问题" caption="12 节、24 自由度绳驱超冗余机械臂：驱动侧张力可测，训练阶段仅有末节关节侧张力监督。" %}
 
-{% include figure.html path="assets/img/ral/problem.png" title="Problem setting" class="img-fluid rounded z-depth-1" %}
-<div class="caption">A 12-module, 24-DoF cable-driven hyper-redundant robot with actuator-side sensing and terminal-only joint-side supervision.</div>
+## 方法
 
-### Method
+我提出了 **Physics-Guided Cable-Hole Transmission Cascade（PG-CHTC）**：在各导向孔间复用正值逐元素张力比预测器，引入 Euler–Eytelwein / Capstan 物理先验，并以严格因果时序残差补偿反向运动、迟滞和历史相关误差。训练阶段仅使用末节关节侧张力监督，部署阶段则只依赖驱动侧传感。
 
-I proposed the **Physics-Guided Cable-Hole Transmission Cascade (PG-CHTC)**. A positive element-wise tension-ratio predictor is shared across cable guides, regularized by an Euler–Eytelwein/Capstan prior, and corrected by a strictly causal temporal residual. Training uses terminal joint-side tension supervision; deployment relies only on actuator-side sensing.
+{% include figure.html path="assets/img/ral/method.png" alt="PG-CHTC 物理引导级联模型" caption="共享级联单元将静态传动模型、物理先验与因果时序修正结合起来。" %}
 
-{% include figure.html path="assets/img/ral/method.png" title="PG-CHTC architecture" class="img-fluid rounded z-depth-1" %}
-<div class="caption">Shared cascade units combine a static transmission model, a physical prior, and a causal temporal correction.</div>
+## 真机部署
 
-### Real-robot deployment
+估计器以独立 CPU 推理服务部署，并通过 UDP 接入既有 Qt 控制器。在不改动控制器主逻辑的前提下，模型估计结果进入 10 Hz 张力—构型混合控制闭环，用于验证状态估计对真实机器人动态响应的作用。
 
-The estimator was deployed as an independent CPU inference service and connected to the existing Qt controller through UDP. Its estimates were used by a 10 Hz tension–configuration hybrid-control loop without changing the controller's main logic.
+{% include figure.html path="assets/img/ral/deployment.png" alt="张力估计器接入真机闭环" caption="PG-CHTC 在线推理服务与既有控制系统的闭环集成。" %}
 
-{% include figure.html path="assets/img/ral/deployment.png" title="Closed-loop deployment" class="img-fluid rounded z-depth-1" %}
+## 实验结果
 
-### Results
-
-<div class="row text-center mt-3 mb-3">
-  <div class="col-sm-3"><strong>70.2%</strong><br><small>tension RMSE reduction</small></div>
-  <div class="col-sm-3"><strong>11.2 N</strong><br><small>final overall RMSE</small></div>
-  <div class="col-sm-3"><strong>23.5 ms</strong><br><small>CPU inference</small></div>
-  <div class="col-sm-3"><strong>44.4–50.8%</strong><br><small>settling-time reduction</small></div>
+<div class="row text-center">
+  <div><strong>70.2%</strong><br><small>张力 RMSE 降幅</small></div>
+  <div><strong>11.2 N</strong><br><small>最终总体 RMSE</small></div>
+  <div><strong>23.5 ms</strong><br><small>CPU 推理时间</small></div>
+  <div><strong>44.4–50.8%</strong><br><small>稳定时间缩短</small></div>
 </div>
 
-- Evaluated on four experimental protocols and approximately 68,000 real-robot frames.
-- Reduced overall tension RMSE from 37.6 N to 11.2 N relative to the tuned physical baseline.
-- Achieved an overall \(R^2\) of 0.868 and CPU inference latency of 23.5 ms.
-- Reduced joint-angle tracking settling time by 44.4%–50.8% after closed-loop deployment.
+- 在 4 类实验协议、约 6.8 万帧真机数据上，将总体张力 RMSE 从 37.6 N 降至 11.2 N。
+- 总体 R² 达到 0.868，CPU 单次推理时间为 23.5 ms。
+- 接入闭环后，关节角跟踪稳定时间缩短 44.4%–50.8%。
 
-### My contribution
+## 个人贡献与边界
 
-I was the first author. I formulated the terminal-supervision problem, developed the PG-CHTC architecture and physics-guided objectives, built the data and evaluation pipeline, completed CPU inference integration, and conducted the closed-loop validation. The pre-existing hybrid controller itself is not claimed as my independent contribution.
+我为论文第一作者，负责问题定义、PG-CHTC 架构与物理引导目标设计、数据与评估管线、CPU 推理集成及闭环验证。既有张力—构型混合控制器本身不作为我的独立贡献。
