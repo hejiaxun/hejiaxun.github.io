@@ -25,14 +25,14 @@
 <link rel="stylesheet" href="/assets/css/site.css">
 
   </head>
-  <body>
+  <body class="home-page">
     <header class="site-header">
   <div class="site-shell header-inner">
     <a class="site-brand" href="/" aria-label="返回首页">
       <strong>贺加勋</strong><span>Jiaxun He</span>
     </a>
     <nav class="site-nav" aria-label="主导航">
-      <a class="active" href="/">首页</a>
+      <a class="active" href="/">主页</a>
       <a href="/research/">学术研究</a>
       <a href="/projects/">项目</a>
       <a href="/competitions/">竞赛</a>
@@ -43,29 +43,49 @@
 </header>
 
     <main class="site-main">
-      <div class="site-shell home-shell">
-  <section class="profile-intro">
-    <div class="profile-photo-wrap">
-      <img class="profile-photo" src="/assets/img/prof_pic.png" alt="贺加勋证件照">
+      <aside class="home-sidebar" aria-label="个人信息">
+  <div class="sidebar-inner">
+    <a class="sidebar-mark" href="/">
+      <strong>Robotics</strong>
+      <span>@ SJTU</span>
+    </a>
+
+    <img class="sidebar-photo" src="/assets/img/prof_pic.png" alt="贺加勋证件照">
+    <h1 class="sidebar-name">贺加勋</h1>
+    <p class="sidebar-name-en">Jiaxun He</p>
+    <div class="sidebar-tags" aria-label="身份">
+      <span>硕士研究生</span>
+      <span>机器人研究与工程</span>
+      <span>上海交通大学</span>
     </div>
-    <div class="profile-copy">
-      <p class="eyebrow">机器人研究与工程</p>
+
+    <div class="sidebar-link-title"><span>链接</span></div>
+    <div class="sidebar-links">
+      <a href="https://github.com/hejiaxun" aria-label="GitHub" rel="external nofollow noopener" target="_blank">
+        <span class="github-mark" aria-hidden="true">GH</span><span>GitHub</span>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<div class="home-main-column">
+  <div class="home-shell">
+    <section class="home-identity">
+      <p class="eyebrow">ROBOTICS · EMBODIED INTELLIGENCE · ROBOT SYSTEMS</p>
       <h1>贺加勋 <span>Jiaxun He</span>
 </h1>
-      <p class="profile-role">上海交通大学 · 机械与动力工程学院 · 硕士研究生</p>
-      <p class="profile-summary">关注机器人状态估计、规划与控制、具身智能，以及真实机器人软硬件系统。希望把物理建模、学习算法、仿真验证与工程部署连接成可验证的机器人系统。</p>
-      <div class="profile-links" aria-label="公开链接">
-        <a href="https://github.com/hejiaxun" rel="external nofollow noopener" target="_blank">GitHub · hejiaxun</a>
-      </div>
-    </div>
-  </section>
+      <p class="home-role">上海交通大学机械与动力工程学院 · 硕士研究生</p>
+      <p class="home-address">机器人状态估计、规划与控制、具身智能与真实机器人系统</p>
+      <p class="home-summary">我关注如何将物理建模、学习方法、仿真验证、传感与嵌入式系统连接起来，并在真实机器人上形成可验证的闭环。</p>
+      <p class="home-contact"><a href="https://github.com/hejiaxun" rel="external nofollow noopener" target="_blank">github.com/hejiaxun</a></p>
+    </section>
 
-  <article class="home-content prose">
-    <h2 id="研究兴趣">研究兴趣</h2>
+    <article class="home-content prose">
+      <h2 id="-研究方向">🔬 研究方向</h2>
 
 <p>我的研究兴趣包括<strong>机器人状态估计与控制、高自由度机械臂规划、物理引导学习、机器人仿真与具身智能系统</strong>。我尤其关注如何把物理模型、学习方法、传感与嵌入式系统连接起来，并在真实机器人上完成可验证的部署。</p>
 
-<h2 id="最新动态">最新动态</h2>
+<h2 id="-最新动态">📌 最新动态</h2>
 
 <div class="news-list">
   <div class="news-item">
@@ -79,7 +99,7 @@
 </div>
 </div>
 
-<h2 id="代表工作">代表工作</h2>
+<h2 id="-代表工作">🧩 代表工作</h2>
 
 <div class="work-list">
   <article class="work-item">
@@ -145,7 +165,8 @@
   </article>
 </div>
 
-  </article>
+    </article>
+  </div>
 </div>
 
     </main>
