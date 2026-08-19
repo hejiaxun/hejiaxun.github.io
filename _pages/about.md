@@ -63,7 +63,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item">
-    <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/codesign-scope.svg' | relative_url }}" alt="UMI / DexUMI 人机接口 Co-design 框架"></a>
+    <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/codesign-scope-clean.svg' | relative_url }}" alt="UMI / DexUMI 人机接口 Co-design 框架"></a>
     <div class="work-body">
       <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
       <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 人机接口 Co-design</a></h3>
