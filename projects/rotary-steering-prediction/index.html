@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<title>旋转导向钻井轨迹趋势预测 · 贺加勋</title>
+<meta name="author" content="Jiaxun He">
+<meta name="description" content="面向跨井缺失、测深不一致与随钻更新的物理—数据融合趋势预测项目。">
+<meta name="keywords" content="机器人, 具身智能, 机器人学习, 规划, 控制, 状态估计">
+<meta property="og:site_name" content="贺加勋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="旋转导向钻井轨迹趋势预测 · 贺加勋">
+<meta property="og:description" content="面向跨井缺失、测深不一致与随钻更新的物理—数据融合趋势预测项目。">
+<meta property="og:url" content="https://hejiaxun.github.io/projects/rotary-steering-prediction/">
+<meta property="og:locale" content="zh_CN">
+<link rel="canonical" href="https://hejiaxun.github.io/projects/rotary-steering-prediction/">
+<link rel="icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+  </head>
+  <body>
+    <header class="site-header">
+  <div class="site-shell header-inner">
+    <a class="site-brand" href="/" aria-label="返回首页">
+      <strong>贺加勋</strong><span>Jiaxun He</span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/research/">学术研究</a>
+      <a class="active" href="/projects/">项目</a>
+      <a href="/competitions/">竞赛</a>
+      <a href="/experience/">经历</a>
+      <a href="/cv/">简历</a>
+    </nav>
+  </div>
+</header>
+
+    <main class="site-main">
+      <div class="site-shell page-shell">
+  <header class="page-header">
+    <p class="eyebrow">Industrial AI &amp; Time-Series Modeling</p>
+    <h1>旋转导向钻井轨迹趋势预测</h1>
+    <p class="page-description">面向跨井缺失、测深不一致与随钻更新的物理—数据融合趋势预测项目。</p>
+  </header>
+  <article class="prose">
+    <h2 id="项目概览">项目概览</h2>
+
+<p><strong>时间：</strong> 2025.12–至今<br>
+<strong>职责：</strong> 核心成员 / 算法开发<br>
+<strong>项目属性：</strong> 国家重大专项子项目｜中石化合作</p>
+
+<p>面向旋转导向钻井中跨井采样测深不一致、字段缺失与工况变化问题，构建多源实钻数据的固定测深对齐、缺失感知时序建模与简化物理校正流程，预测下一个 10 m 井段的井斜、方位与轨迹趋势。项目当前为阶段验证，不代表已完成井场在线部署或闭环控制。</p>
+
+<div class="metric-row project-metrics">
+  <div class="metric">
+<strong>10 口井</strong><span>多源实钻数据</span>
+</div>
+  <div class="metric">
+<strong>3289 条</strong><span>固定测深样本</span>
+</div>
+  <div class="metric">
+<strong>约 0.15°</strong><span>稳斜段井斜平均偏差</span>
+</div>
+  <div class="metric">
+<strong>约 0.50°</strong><span>强造斜段井斜平均偏差</span>
+</div>
+</div>
+
+<h2 id="方法模块">方法模块</h2>
+
+<div class="focus-grid project-module-grid">
+  <div class="focus-card">
+    <h3>多源测深对齐</h3>
+    <p>统一清洗、插值与对齐多井传感和控制数据，生成 10 m 固定测深样本，并保留来源、质量与缺失标记。</p>
+  </div>
+  <div class="focus-card">
+    <h3>缺失感知时序建模</h3>
+    <p>使用时序主干表达钻进历史，将缺失掩码与目标工况作为增强输入，降低不同井、不同传感配置带来的分布偏移。</p>
+  </div>
+  <div class="focus-card">
+    <h3>物理—数据融合</h3>
+    <p>将简化钻进机理先验与数据驱动预测经门控融合，输出井斜、方位和轨迹趋势，平衡复杂工况下的表达能力与物理可解释性。</p>
+  </div>
+  <div class="focus-card">
+    <h3>统一评测与随钻更新</h3>
+    <p>对 34 类模型和 4 类评估协议进行统一比较，组织“历史井预训练 → 随钻更新”流程，并为困难工况保留加权与回退策略。</p>
+  </div>
+</div>
+
+<h2 id="模型架构">模型架构</h2>
+
+<figure class="project-figure">
+  <img src="/assets/img/rotary-steering/model-architecture.png" alt="旋转导向钻井趋势预测模型架构">
+  <figcaption>时序主干、缺失掩码、目标工况和简化物理先验经门控融合，预测下一 10 m 井段的井斜、方位与轨迹趋势。</figcaption>
+</figure>
+
+<h2 id="单井示例结果">单井示例结果</h2>
+
+<figure class="project-figure">
+  <img src="/assets/img/rotary-steering/example-result.png" alt="旋转导向钻井井斜与方位趋势预测示例">
+  <figcaption>单井示例用于展示趋势跟踪和强造斜工况下的预测表现；项目总体阶段指标以上述 10 口井统一评测结果为准。</figcaption>
+</figure>
+
+<p>该项目主要证明了我在工业时序问题中将数据治理、缺失建模、物理先验和统一评测组织为可复现研究流程的能力。</p>
+
+  </article>
+</div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="site-shell footer-inner">
+    <span>© 2026 贺加勋</span>
+    <span>使用 Jekyll 构建并托管于 GitHub Pages</span>
+  </div>
+</footer>
+
+  </body>
+</html>
