@@ -75,8 +75,27 @@
     </div>
     <a class="button button-primary" href="/assets/interactive/cast/CAST-interactive-exhibit.html" target="_blank" rel="noopener">全屏打开 ↗</a>
   </div>
-  <iframe class="cast-interactive-frame" loading="lazy" title="CAST 交互式技术展示" src="/assets/interactive/cast/CAST-interactive-exhibit.html"></iframe>
+  <div class="interactive-embed-shell">
+    <button class="interactive-load-button" type="button" data-cast-src="/assets/interactive/cast/CAST-interactive-exhibit.html">
+      <strong>在本页加载交互展示</strong>
+      <span>完整方法、场景与结果将在下方展开</span>
+    </button>
+    <iframe class="cast-interactive-frame" hidden="" loading="lazy" title="CAST 交互式技术展示"></iframe>
+  </div>
 </section>
+
+<script>
+  (() => {
+    const button = document.querySelector('.interactive-load-button');
+    const frame = document.querySelector('.cast-interactive-frame');
+    if (!button || !frame) return;
+    button.addEventListener('click', () => {
+      frame.src = button.dataset.castSrc;
+      frame.hidden = false;
+      button.hidden = true;
+    }, { once: true });
+  })();
+</script>
 
 <h2 id="为什么普通路径规划不够">为什么普通路径规划不够</h2>
 
