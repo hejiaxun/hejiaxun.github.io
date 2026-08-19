@@ -64,6 +64,23 @@
   <p>论文问题、PG-CHTC 方法及真机闭环验证概览。视频仅在点击后播放。</p>
 </div>
 
+<h2 id="sjtu-iii-实验平台">SJTU-III 实验平台</h2>
+
+<p><strong>SJTU-III 是上海交通大学机械与动力工程学院谷国迎团队自主研发的绳驱超冗余机器人平台。</strong>系统由驱动箱、绳索导向机构、12 节机器人本体、直线进给平台与移动平台组成，面向管道、罐体等受限空间中的检测与作业任务。本研究基于该平台开展张力状态估计、在线部署和闭环实验。</p>
+
+<div class="media-pair">
+  <figure class="media-figure">
+  <img src="/assets/img/ral/sjtu-iii-platform.png" alt="SJTU-III 绳驱超冗余机器人平台组成" loading="lazy">
+  <figcaption>SJTU-III 系统组成：驱动箱、绳索导向机构、机器人本体、直线进给平台与移动平台。</figcaption>
+</figure>
+
+  <figure class="media-figure">
+  <img src="/assets/img/ral/sjtu-iii-pipe-tank-inspection.gif" alt="SJTU-III 机器人执行管罐系统巡检任务" loading="lazy">
+  <figcaption>SJTU-III 在管罐系统中的受限空间巡检演示。</figcaption>
+</figure>
+
+</div>
+
 <h2 id="问题">问题</h2>
 
 <p>绳驱超冗余机械臂的关节侧绳张力是控制中的重要状态，但沿机械臂链路通常无法直接测量。系统能够测得所有绳索的驱动侧张力，却只能在末节获得关节侧真实张力。解析传动模型会累积摩擦误差，而缺少中间监督的纯数据驱动模型又难以可靠辨识整条传动链。</p>
