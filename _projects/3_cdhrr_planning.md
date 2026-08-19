@@ -23,7 +23,17 @@ permalink: /projects/cdhrr-planning/
   <div class="metric"><strong>7.7 ms</strong><span>单步规划时延</span></div>
 </div>
 
-<p class="project-actions"><a class="button button-primary" href="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}">查看交互证据</a><a class="button" href="#项目视频">观看完整讲解</a></p>
+<section class="interactive-feature" aria-labelledby="cast-interactive-title">
+  <div class="interactive-feature-head">
+    <div>
+      <p class="eyebrow">Interactive Technical Exhibit</p>
+      <h2 id="cast-interactive-title">交互式技术展示</h2>
+      <p>浏览机器人系统、九类 Benchmark、方法链、对比结果与仿真—实测标定。交互页默认英文，可在页面内切换中文。</p>
+    </div>
+    <a class="button button-primary" href="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}" target="_blank" rel="noopener">全屏打开 ↗</a>
+  </div>
+  <iframe class="cast-interactive-frame" loading="lazy" title="CAST 交互式技术展示" src="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}"></iframe>
+</section>
 
 ## 为什么普通路径规划不够
 
@@ -102,15 +112,4 @@ Benchmark 使用 EASY / MEDIUM / HARD 三档目标、五个随机种子和统一
   <div class="project-video"><video controls muted playsinline preload="metadata"><source src="{{ '/assets/video/cast/cases/zigzag_corridor_hard_success.mp4' | relative_url }}" type="video/mp4"></video><p>折线通道场景 · HARD · 成功</p></div>
   <div class="project-video"><video controls muted playsinline preload="metadata"><source src="{{ '/assets/video/cast/cases/random_dense_hard_success.mp4' | relative_url }}" type="video/mp4"></video><p>密集随机场景 · HARD · 成功</p></div>
   <div class="project-video"><video controls muted playsinline preload="metadata"><source src="{{ '/assets/video/cast/cases/pipeline_crossing_hard_boundary.mp4' | relative_url }}" type="video/mp4"></video><p>管线穿越场景 · HARD · 边界案例</p></div>
-</div>
-
-## 当前公开边界
-
-<div class="claim-boundary">
-  <ul>
-    <li>锁定规划 Benchmark 是固定基座、12 节、24 自由度、36 绳的 MuJoCo 仿真。</li>
-    <li>在线选择器基于运动学与离散命令节点的胶囊间隙，不是在线动力学 rollout 或连续扫掠体证明。</li>
-    <li>张力可行子步比例描述固定标称工作区一致性，不代表完整硬件张力安全认证。</li>
-    <li>静态力实验验证留出姿态上的力尺度对应，不等同于动态实机障碍规划或策略 Sim-to-Real。</li>
-  </ul>
 </div>

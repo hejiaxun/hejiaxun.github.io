@@ -3,8 +3,12 @@
   <head>
     {% include head.html %}
   </head>
-  <body{% if page.permalink == '/' %} class="home-page"{% endif %}>
-    {% include header.html %}
+  <body{% if page.permalink == '/' %} class="home-page"{% elsif page.collection == 'projects' or page.collection == 'competitions' %} class="detail-page"{% endif %}>
+    {% if page.collection == 'projects' or page.collection == 'competitions' %}
+      {% include back-home.html %}
+    {% else %}
+      {% include header.html %}
+    {% endif %}
     <main class="site-main">
       {{ content }}
     </main>
