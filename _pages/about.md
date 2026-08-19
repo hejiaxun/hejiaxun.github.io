@@ -34,12 +34,14 @@ description: 贺加勋的机器人研究与工程个人主页。
     <span class="tag">IEEE RA-L · 第一作者 · 2026</span>
     <h3><a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">绳驱超冗余机械臂张力状态估计与真机闭环验证</a></h3>
     <p class="paper-title">Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</p>
+    <p class="paper-authors"><strong>Jiaxun He</strong>, Jun-Guo Lu, Qing-Hao Zhang, Zhenpu Zhu, Zhanxuan Peng, Guoying Gu</p>
     <div class="metric-row">
       <div class="metric"><strong>70.2%</strong><span>张力 RMSE 降幅</span></div>
       <div class="metric"><strong>11.2 N</strong><span>总体 RMSE</span></div>
       <div class="metric"><strong>23.5 ms</strong><span>CPU 推理时间</span></div>
       <div class="metric"><strong>44–51%</strong><span>稳定时间缩短</span></div>
     </div>
+    <p class="featured-links"><a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}#video-overview">观看视频 →</a></p>
   </div>
 </div>
 

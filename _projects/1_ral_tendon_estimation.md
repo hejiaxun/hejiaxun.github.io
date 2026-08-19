@@ -9,10 +9,20 @@ category: research
 permalink: /projects/ral-tendon-estimation/
 ---
 
-**贺加勋**，陆俊国，张庆昊，朱振普，彭展轩，顾国迎
+**Jiaxun He**, Jun-Guo Lu, Qing-Hao Zhang, Zhenpu Zhu, Zhanxuan Peng, Guoying Gu
 
 *IEEE Robotics and Automation Letters*, vol. 11, no. 8, pp. 9962–9969, 2026<br>
 [DOI: 10.1109/LRA.2026.3709642](https://doi.org/10.1109/LRA.2026.3709642)
+
+## 视频概览 {#video-overview}
+
+<div class="project-video">
+  <video controls playsinline preload="metadata" poster="{{ '/assets/img/ral/problem.png' | relative_url }}">
+    <source src="{{ '/assets/video/ral/pg-chtc-overview.mp4' | relative_url }}" type="video/mp4">
+    当前浏览器不支持内嵌视频，可<a href="{{ '/assets/video/ral/pg-chtc-overview.mp4' | relative_url }}">直接打开视频</a>。
+  </video>
+  <p>论文问题、PG-CHTC 方法及真机闭环验证概览。视频仅在点击后播放。</p>
+</div>
 
 ## 问题
 

@@ -23,6 +23,7 @@
     <p class="publication-venue"><em>{{ entry.journal }}</em>{% if entry.volume %}, vol. {{ entry.volume }}{% endif %}{% if entry.number %}, no. {{ entry.number }}{% endif %}{% if entry.pages %}, pp. {{ entry.pages }}{% endif %}.</p>
     <div class="publication-links">
       {% if entry.html %}<a href="{{ entry.html }}">DOI / 论文页面 ↗</a>{% endif %}
+      {% if entry.video %}<a href="{{ entry.video | relative_url }}">视频 ↗</a>{% endif %}
       <a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">项目解读 →</a>
     </div>
   </div>
