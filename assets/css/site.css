@@ -709,11 +709,7 @@ td {
   }
 }
 
-@media (max-width: 480px) {
-  .site-brand span {
-    display: none;
-  }
-
+@media (max-width: 600px) {
   .hero {
     grid-template-columns: 1fr;
   }
@@ -727,6 +723,12 @@ td {
 
   .hero-copy {
     grid-row: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-brand span {
+    display: none;
   }
 
   .eyebrow {
