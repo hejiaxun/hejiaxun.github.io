@@ -21,6 +21,7 @@
 }
 
 .home-page .site-header {
+  display: none;
   border-top: 1px solid #f1dfe3;
   border-bottom: 0;
   box-shadow: 0 1px 0 rgba(23, 25, 31, 0.04);
@@ -702,6 +703,14 @@ img {
 
 .work-media video {
   background: #111;
+}
+
+.work-media--video-cover {
+  aspect-ratio: 16 / 9;
+}
+
+.work-media--video-cover video {
+  object-fit: cover;
 }
 
 .work-media-text {
