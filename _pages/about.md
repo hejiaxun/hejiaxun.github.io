@@ -5,11 +5,11 @@ permalink: /
 description: 贺加勋的机器人研究与工程个人主页。
 ---
 
-## 研究兴趣
+## 🔬 研究方向
 
 我的研究兴趣包括**机器人状态估计与控制、高自由度机械臂规划、物理引导学习、机器人仿真与具身智能系统**。我尤其关注如何把物理模型、学习方法、传感与嵌入式系统连接起来，并在真实机器人上完成可验证的部署。
 
-## 最新动态
+## 📌 最新动态
 
 <div class="news-list">
   <div class="news-item"><time>2026.07</time><p>第一作者论文 <em>Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</em> 正式发表于 IEEE Robotics and Automation Letters。</p></div>
@@ -17,7 +17,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   <div class="news-item"><time>2025.08</time><p>开始绳驱超冗余机械臂受限空间规划与绳驱约束控制研究。</p></div>
 </div>
 
-## 代表工作
+## 🧩 代表工作
 
 <div class="work-list">
   <article class="work-item">
