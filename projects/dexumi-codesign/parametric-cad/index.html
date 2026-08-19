@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+<title>参数化 CAD 与 Co-design 基础设施 · 贺加勋</title>
+<meta name="author" content="Jiaxun He">
+<meta name="description" content="以 CAD 特征构建兼顾可解释性、制造语义和搜索规模的中尺度设计空间。">
+<meta name="keywords" content="机器人, 具身智能, 机器人学习, 规划, 控制, 状态估计">
+<meta property="og:site_name" content="贺加勋">
+<meta property="og:type" content="website">
+<meta property="og:title" content="参数化 CAD 与 Co-design 基础设施 · 贺加勋">
+<meta property="og:description" content="以 CAD 特征构建兼顾可解释性、制造语义和搜索规模的中尺度设计空间。">
+<meta property="og:url" content="https://hejiaxun.github.io/projects/dexumi-codesign/parametric-cad/">
+<meta property="og:locale" content="zh_CN">
+<link rel="canonical" href="https://hejiaxun.github.io/projects/dexumi-codesign/parametric-cad/">
+<link rel="icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%96&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="/assets/css/site.css">
+
+  </head>
+  <body class="detail-page">
+    
+      <header class="detail-header">
+  <div class="site-shell detail-header-inner">
+    <a class="back-home-link" href="/" aria-label="返回主页">
+      <span aria-hidden="true">←</span>
+      <span>返回主页</span>
+    </a>
+  </div>
+</header>
+
+    
+    <main class="site-main">
+      <div class="site-shell page-shell">
+  <header class="page-header">
+    <p class="eyebrow">DexUMI Co-design · Module 04</p>
+    <h1>参数化 CAD 与 Co-design 基础设施</h1>
+    <p class="page-description">以 CAD 特征构建兼顾可解释性、制造语义和搜索规模的中尺度设计空间。</p>
+  </header>
+  <article class="prose">
+    <nav class="dexumi-module-nav" aria-label="DexUMI Co-design 模块导航">
+  <a href="/projects/dexumi-codesign/">总览</a>
+  <a href="/projects/dexumi-codesign/baseline/">01 数采 baseline</a>
+  <a href="/projects/dexumi-codesign/wearing-control/">02 穿戴与控制</a>
+  <a href="/projects/dexumi-codesign/ergonomics/">03 人体工效</a>
+  <a class="active" href="/projects/dexumi-codesign/parametric-cad/">04 参数化 CAD</a>
+</nav>
+
+<p class="project-lead">这一模块回答“设计空间应该如何表示”。少量几何尺寸易解释但表达能力有限，直接优化 Mesh 顶点又维度过高且缺少制造语义；因此选择以<strong>装配关系与 CAD 特征</strong>为中间层，形成可重建、可验证、可导出到仿真的设计参数化方法。</p>
+
+<h2 id="设计表示的选择">设计表示的选择</h2>
+
+<div class="design-spectrum">
+  <div>
+<span>低维</span><strong>少量几何尺寸</strong><small>易解释，但难以覆盖复杂形态</small>
+</div>
+  <div class="design-spectrum-focus">
+<span>当前选择</span><strong>CAD 特征与装配参数</strong><small>保留设计语义，适合约束搜索和资产生成</small>
+</div>
+  <div>
+<span>高维</span><strong>Mesh 顶点</strong><small>表达自由，但搜索空间大且难以制造</small>
+</div>
+</div>
+
+<h2 id="基础设施骨架">基础设施骨架</h2>
+
+<div class="module-route-grid">
+  <div class="module-route-card">
+<span>01</span><strong>几何/拓扑观测</strong><p>从 STEP B-rep 与装配资产中提取候选设计信息。</p>
+</div>
+  <div class="module-route-card">
+<span>02</span><strong>受约束 CAD 重建</strong><p>以特征和装配约束恢复可编辑、可验证的设计资产。</p>
+</div>
+  <div class="module-route-card">
+<span>03</span><strong>跨平台验证</strong><p>通过 SolidWorks 与 Linux 几何/位姿对照检查资产一致性。</p>
+</div>
+  <div class="module-route-card">
+<span>04</span><strong>仿真资产生成</strong><p>生成 STEP、URDF/MJCF 等下游资产，连接批量穿戴与评价。</p>
+</div>
+</div>
+
+<h2 id="后续将补充">后续将补充</h2>
+
+<div class="content-slot-grid">
+  <div class="content-slot">
+<strong>参数化示例</strong><span>同一 CAD 特征在设计空间中的变化</span>
+</div>
+  <div class="content-slot">
+<strong>验证可视化</strong><span>SolidWorks–Linux 几何与装配对照</span>
+</div>
+  <div class="content-slot">
+<strong>方案搜索</strong><span>候选生成、仿真评价与比较结果</span>
+</div>
+</div>
+
+<h2 id="与-co-design-回环的关系">与 Co-design 回环的关系</h2>
+
+<p>该模块负责生成下一组候选人机接口设计，并将设计参数及仿真资产交给穿戴控制与人体评价模块。当前定位是设计空间与批量评价基础设施，不宣称已经完成成熟的自动化最优设计器。</p>
+
+  </article>
+</div>
+
+    </main>
+    <footer class="site-footer">
+  <div class="site-shell footer-inner">
+    <span>© 2026 贺加勋</span>
+    <span>使用 Jekyll 构建并托管于 GitHub Pages</span>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -10,14 +10,14 @@
 
 
 
-<title>DexUMI / XHand 具身研究 · 贺加勋</title>
+<title>UMI / DexUMI 人机接口 Co-design · 贺加勋</title>
 <meta name="author" content="Jiaxun He">
-<meta name="description" content="灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 基础设施。">
+<meta name="description" content="在目标执行器固定条件下，围绕人机接口设计建立“设计—穿戴控制—人体与任务评价—方案比较”的研究框架。">
 <meta name="keywords" content="机器人, 具身智能, 机器人学习, 规划, 控制, 状态估计">
 <meta property="og:site_name" content="贺加勋">
 <meta property="og:type" content="website">
-<meta property="og:title" content="DexUMI / XHand 具身研究 · 贺加勋">
-<meta property="og:description" content="灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 基础设施。">
+<meta property="og:title" content="UMI / DexUMI 人机接口 Co-design · 贺加勋">
+<meta property="og:description" content="在目标执行器固定条件下，围绕人机接口设计建立“设计—穿戴控制—人体与任务评价—方案比较”的研究框架。">
 <meta property="og:url" content="https://hejiaxun.github.io/projects/dexumi-codesign/">
 <meta property="og:locale" content="zh_CN">
 <link rel="canonical" href="https://hejiaxun.github.io/projects/dexumi-codesign/">
@@ -40,27 +40,83 @@
     <main class="site-main">
       <div class="site-shell page-shell">
   <header class="page-header">
-    <p class="eyebrow">Embodied Intelligence Internship</p>
-    <h1>DexUMI / XHand 具身研究</h1>
-    <p class="page-description">灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 基础设施。</p>
+    <p class="eyebrow">穹彻智能 · 具身智能实习</p>
+    <h1>UMI / DexUMI 人机接口 Co-design</h1>
+    <p class="page-description">在目标执行器固定条件下，围绕人机接口设计建立“设计—穿戴控制—人体与任务评价—方案比较”的研究框架。</p>
   </header>
   <article class="prose">
-    <h2 id="公开页面整理中">公开页面整理中</h2>
+    <nav class="dexumi-module-nav" aria-label="DexUMI Co-design 模块导航">
+  <a class="active" href="/projects/dexumi-codesign/">总览</a>
+  <a href="/projects/dexumi-codesign/baseline/">01 数采 baseline</a>
+  <a href="/projects/dexumi-codesign/wearing-control/">02 穿戴与控制</a>
+  <a href="/projects/dexumi-codesign/ergonomics/">03 人体工效</a>
+  <a href="/projects/dexumi-codesign/parametric-cad/">04 参数化 CAD</a>
+</nav>
 
-<p>后续将在确认公开边界后，按四个模块组织该项目：</p>
+<div class="internship-role-strip">
+  <strong>穹彻智能（非夕科技）</strong>
+  <span>具身智能实习生</span>
+  <span>2026.05 – 至今</span>
+</div>
 
-<ol>
-  <li>
-<strong>灵巧手数采系统</strong>：DexUMI / XHand 数采、视觉处理与仿真遥操作。</li>
-  <li>
-<strong>MANO 驱动控制</strong>：面向 UMI / DexUMI 的物理建模、优化搜索与强化学习控制。</li>
-  <li>
-<strong>人体工效诊断</strong>：穿戴状态、关节负荷、肌肉募集与疲劳等工程指标。</li>
-  <li>
-<strong>参数化 CAD</strong>：通用 CAD 重建、资产生成与 Co-design 设计评价基础设施。</li>
-</ol>
+<p class="project-lead">本项研究面向<strong>目标执行器固定、优化 UMI / DexUMI 人机接口</strong>的问题：通过参数化设计生成候选方案，在仿真中建立 MANO 人手与穿戴装置的运动及接触关系，再从人体工效与任务可行性两个维度评价方案。当前工作的重点是右侧的人机接口设计评价回环，而不是优化目标执行器本体。</p>
 
-<p>正式页面会明确区分开源 DexUMI 复现与个人扩展，不公开公司内部图片、实现细节或未经批准披露的指标。</p>
+<figure class="dexumi-overview-figure">
+  <img src="/assets/img/dexumi/codesign-scope.svg" alt="UMI / DexUMI 人机接口 Co-design 研究范围与四个工作模块">
+  <figcaption>研究范围：真实数采系统提供问题基线；穿戴控制、人体工效与参数化设计构成当前 Co-design 设计评价回环。</figcaption>
+</figure>
+
+<h2 id="四个工作模块">四个工作模块</h2>
+
+<div class="dexumi-module-grid">
+  <a class="dexumi-module-card" href="/projects/dexumi-codesign/baseline/">
+    <span class="module-index">01 · SYSTEM BASELINE</span>
+    <h3>DexUMI 全链路 baseline 与数采工程</h3>
+    <p>复现 DexUMI–XHand 的硬件、标定、采集、视觉处理与仿真遥操作链路，并从真实系统中识别人机接口设计问题。</p>
+    <strong>查看模块 →</strong>
+  </a>
+  <a class="dexumi-module-card" href="/projects/dexumi-codesign/wearing-control/">
+    <span class="module-index">02 · WEARING &amp; CONTROL</span>
+    <h3>MANO 驱动的穿戴仿真与物理控制</h3>
+    <p>为夹爪式 UMI 与 DexUMI 分别研究穿戴状态生成、优化规划/控制、运动学映射与强化学习物理控制。</p>
+    <strong>查看模块 →</strong>
+  </a>
+  <a class="dexumi-module-card" href="/projects/dexumi-codesign/ergonomics/">
+    <span class="module-index">03 · HUMAN METRICS</span>
+    <h3>人体工效与生物力学诊断</h3>
+    <p>从几何穿透与接触出发，逐层建立关节负荷、肌肉力学与疲劳/恢复等可解释工程评价指标。</p>
+    <strong>查看模块 →</strong>
+  </a>
+  <a class="dexumi-module-card" href="/projects/dexumi-codesign/parametric-cad/">
+    <span class="module-index">04 · DESIGN SPACE</span>
+    <h3>参数化 CAD 与 Co-design 基础设施</h3>
+    <p>在少量几何尺寸与高维 Mesh 顶点之间，以 CAD 特征构造可解释、可制造、可批量评价的中尺度设计空间。</p>
+    <strong>查看模块 →</strong>
+  </a>
+</div>
+
+<h2 id="后续内容计划">后续内容计划</h2>
+
+<div class="content-slot-grid">
+  <div class="content-slot">
+<strong>总览动画</strong><span>Co-design 回环与四个模块之间的数据流</span>
+</div>
+  <div class="content-slot">
+<strong>系统实物</strong><span>DexUMI–XHand 装配、数采与遥操作演示</span>
+</div>
+  <div class="content-slot">
+<strong>评价案例</strong><span>不同手型、装置参数与任务下的方案对比</span>
+</div>
+</div>
+
+<div class="claim-boundary">
+  <strong>公开边界</strong>
+  <ul>
+    <li>公开 DexUMI 的原始框架与个人扩展将分开说明，不把开源工作表述为原创。</li>
+    <li>当前公开内容只描述研究结构；公司内部素材、实现细节与指标将在确认可披露后逐项补充。</li>
+    <li>现阶段称为 Co-design 设计评价基础设施，不宣称已经形成成熟的全自动外层优化器。</li>
+  </ul>
+</div>
 
   </article>
 </div>
