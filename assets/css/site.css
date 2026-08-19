@@ -720,7 +720,13 @@ td {
 
   .hero-photo-wrap {
     grid-row: 1;
-    width: 96px;
+    justify-self: center;
+    width: 112px;
+    margin-bottom: 4px;
+  }
+
+  .hero-copy {
+    grid-row: 2;
   }
 
   .eyebrow {
