@@ -43,7 +43,32 @@ permalink: /projects/robocon-electronics/
   </div>
 </div>
 
-## 代表性电路工程
+## PCB 交互预览
+
+下面的只读查看器从原始 Altium `PcbDoc` 中解析板框、铜箔走线、过孔、丝印与元件坐标生成。可以切换板卡和顶层/底层/叠层视图，并通过滚轮缩放、拖动平移；它用于快速浏览设计，不替代 Altium Designer 中的完整 DRC、网络与三维检查。
+
+<div class="pcb-viewer" data-pcb-viewer data-asset-root="{{ '/assets/img/robocon/pcb/' | relative_url }}">
+  <div class="pcb-viewer-toolbar" aria-label="PCB 查看器控制">
+    <div class="pcb-viewer-group" aria-label="选择板卡">
+      <button type="button" class="active" data-pcb-board="controller-top" data-pcb-title="STM32F405 主控顶板">主控顶板</button>
+      <button type="button" data-pcb-board="controller-bottom" data-pcb-title="机器人主控底板">主控底板</button>
+      <button type="button" data-pcb-board="adc-sampling" data-pcb-title="传感器采样板">采样板</button>
+      <button type="button" data-pcb-board="solenoid-driver" data-pcb-title="电磁阀控制板">电磁阀板</button>
+    </div>
+    <div class="pcb-viewer-group compact" aria-label="选择视图">
+      <button type="button" class="active" data-pcb-view="all">叠层</button>
+      <button type="button" data-pcb-view="top">顶层</button>
+      <button type="button" data-pcb-view="bottom">底层</button>
+      <button type="button" data-pcb-reset>复位</button>
+    </div>
+  </div>
+  <div class="pcb-viewer-canvas" tabindex="0" aria-label="可缩放、可拖动的 PCB 预览">
+    <img src="{{ '/assets/img/robocon/pcb/controller-top-all.svg' | relative_url }}" alt="STM32F405 主控顶板叠层预览" draggable="false">
+  </div>
+  <p class="pcb-viewer-caption"><strong data-pcb-caption>STM32F405 主控顶板 · 叠层</strong><span>滚轮缩放 · 拖动平移 · 双击复位</span></p>
+</div>
+
+## 代表性原理图
 
 <div class="media-pair">
   {% include figure.html path="assets/img/robocon/main-controller-top-schematic.png" alt="STM32F405 主控顶板原理图" caption="主控顶板：STM32F405、通信接口及机器人 I/O。" %}
@@ -55,7 +80,7 @@ permalink: /projects/robocon-electronics/
   {% include figure.html path="assets/img/robocon/solenoid-driver-schematic.png" alt="电磁阀控制板原理图" caption="执行器控制板：多路电磁阀驱动与控制接口。" %}
 </div>
 
-这些预览由原始 Altium 工程直接恢复。后续开源仓库将提供经过整理的 `PrjPcb`、`SchDoc` 与 `PcbDoc` 源文件，并以独立目录区分个人电路工程和第三方开源驱动参考。
+这些预览由原始 Altium 工程直接恢复。后续独立开源仓库将提供经过整理的 `PrjPcb`、`SchDoc` 与 `PcbDoc` 源文件，并以独立目录区分个人电路工程和第三方开源驱动参考。
 
 ## 电机与整机系统
 
@@ -68,6 +93,27 @@ permalink: /projects/robocon-electronics/
 - “同创辉煌”：全国一等奖。
 - “机器马术”：两支参赛队分别获得全国一等奖、全国二等奖。
 - 合计：全国一等奖 2 项、全国二等奖 1 项。
+
+## 比赛回放
+
+<div class="video-grid">
+  <div class="project-video">
+    <video controls preload="metadata" playsinline poster="{{ '/assets/img/robocon/video/tongchuang-2022.jpg' | relative_url }}">
+      <source src="{{ '/assets/video/robocon/tongchuang-2022-second-match.mp4' | relative_url }}" type="video/mp4">
+      你的浏览器暂不支持 HTML5 视频。
+    </video>
+    <p><strong>“同创辉煌”比赛回放</strong><br>武汉大学代表队第二场，CV2 视角。</p>
+  </div>
+  <div class="project-video">
+    <video controls preload="metadata" playsinline poster="{{ '/assets/img/robocon/video/equestrian-2022.jpg' | relative_url }}">
+      <source src="{{ '/assets/video/robocon/equestrian-wuhan-team-2-round-1.mp4' | relative_url }}" type="video/mp4">
+      你的浏览器暂不支持 HTML5 视频。
+    </video>
+    <p><strong>“机器马术”比赛回放</strong><br>武汉大学 2 队第一轮直播回放。</p>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/pcb-viewer.js' | relative_url }}" defer></script>
 
 ## 工程复盘
 
