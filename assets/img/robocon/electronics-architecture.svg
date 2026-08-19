@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">ROBOCON 机器人电控系统架构</title>
+  <desc id="desc">传感采集经 STM32F405 主控处理，通过 CAN、UART 和以太网连接执行器与机器人系统。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8e2637"/>
+    </marker>
+    <style>
+      .title{font:700 30px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#172033}
+      .head{font:700 22px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#172033}
+      .body{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#5e6879}
+      .box{fill:#fff;stroke:#cfd6df;stroke-width:2}
+      .accent{fill:#f8eff1;stroke:#8e2637;stroke-width:2}
+      .line{stroke:#8e2637;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="620" rx="18" fill="#f5f7f9"/>
+  <text x="60" y="64" class="title">从传感、主控到执行器的完整电控链路</text>
+
+  <rect x="60" y="125" width="260" height="350" rx="14" class="box"/>
+  <text x="90" y="174" class="head">传感与输入</text>
+  <text x="90" y="225" class="body">激光测距</text>
+  <text x="90" y="263" class="body">10 kHz / 16 位采集</text>
+  <text x="90" y="321" class="body">光纤陀螺</text>
+  <text x="90" y="359" class="body">24 位采集</text>
+  <text x="90" y="417" class="body">编码器 / 开关量</text>
+
+  <rect x="450" y="125" width="300" height="350" rx="14" class="accent"/>
+  <text x="485" y="174" class="head">主控与接口</text>
+  <text x="485" y="232" class="body">STM32F405</text>
+  <text x="485" y="280" class="body">ADC · 电源 · 滤波</text>
+  <text x="485" y="328" class="body">CAN · UART · 以太网</text>
+  <text x="485" y="376" class="body">状态采集与控制指令</text>
+  <text x="485" y="424" class="body">板级测试与故障定位</text>
+
+  <rect x="880" y="125" width="260" height="350" rx="14" class="box"/>
+  <text x="910" y="174" class="head">执行与整机</text>
+  <text x="910" y="232" class="body">电机 / 编码器</text>
+  <text x="910" y="280" class="body">ODrive 开源 FOC 方案</text>
+  <text x="910" y="328" class="body">电磁阀与执行机构</text>
+  <text x="910" y="376" class="body">供电与通信线束</text>
+  <text x="910" y="424" class="body">多机器人系统联调</text>
+
+  <path d="M320 300 H445" class="line"/>
+  <path d="M750 300 H875" class="line"/>
+
+  <rect x="250" y="525" width="700" height="56" rx="10" fill="#172033"/>
+  <text x="600" y="561" text-anchor="middle" style="font:600 18px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;fill:#fff">Altium Designer · PCB 制作 · 板级调试 · 整机布线 · 赛场保障</text>
+</svg>
