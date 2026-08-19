@@ -6,7 +6,7 @@ kicker: Industrial AI · Embedded Systems
 importance: 0
 category: industrial-project
 permalink: /projects/rotary-steering-system/
-img: /assets/img/rotary-steering/cover.svg
+img: /assets/img/rotary-steering/system-chain.png
 ---
 
 ## 系统视角
@@ -14,7 +14,7 @@ img: /assets/img/rotary-steering/cover.svg
 围绕旋转导向钻井的“地面决策—指令下传—井下执行—状态测量”链路，我先后参与了两项工业研究：已结题的泥浆脉冲下传解码解决井下指令的传输与恢复；在研的轨迹趋势预测则面向地面侧多井数据建模与决策辅助。下文按系统关系合并展示，**不表示两项工作已集成为井场在线闭环产品**。
 
 <figure class="project-figure project-figure--system-cover">
-  <img src="{{ '/assets/img/rotary-steering/cover.svg' | relative_url }}" alt="旋转导向钻井地面决策、泥浆脉冲下传、井下执行与测量信息链路">
+  <img src="{{ '/assets/img/rotary-steering/system-chain.png' | relative_url }}" alt="旋转导向钻井地面决策、泥浆脉冲下传、井下执行与测量信息链路示意图">
   <figcaption>两项工作在系统链路中的位置：轨迹预测服务于地面侧趋势判断与决策辅助，下传解码负责恢复经泥浆脉冲传输的井下控制指令。</figcaption>
 </figure>
 

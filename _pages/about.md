@@ -33,10 +33,11 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item">
-    <a class="work-media" href="{{ '/projects/cdhrr-planning/' | relative_url }}"><video muted autoplay loop playsinline preload="metadata" poster="{{ '/assets/img/cast/cover_overview_16x9.png' | relative_url }}"><source src="{{ '/assets/video/cast/project_overview_30s.mp4' | relative_url }}" type="video/mp4"></video></a>
+    <a class="work-media work-media--video-cover" href="{{ '/projects/cdhrr-planning/' | relative_url }}"><video muted autoplay loop playsinline preload="auto" poster="{{ '/assets/img/cast/zigzag-corridor-poster.png' | relative_url }}"><source src="{{ '/assets/video/cast/zigzag-corridor-comparison.mp4' | relative_url }}" type="video/mp4"></video></a>
     <div class="work-body">
       <div class="work-meta"><span>学术研究</span><span>在研</span><span>2025–至今</span></div>
-      <h3><a href="{{ '/projects/cdhrr-planning/' | relative_url }}">CAST：绳驱超冗余机械臂封闭空间闭环规划与评价</a></h3>
+      <h3><a href="{{ '/projects/cdhrr-planning/' | relative_url }}">面向绳驱超冗余机器人的封闭空间闭环规划与评价（CAST）</a></h3>
+      <p class="work-title-en">Closed-loop Planning and Evaluation for Cable-Driven Hyper-Redundant Robots</p>
       <p>构建参数化机器人与绳驱控制、九类语义场景、闭环成功数据、扩散策略、全臂几何选择和绳驱遥测评价的一体化研究链。</p>
       <p class="work-links"><a href="{{ '/projects/cdhrr-planning/' | relative_url }}">项目主页</a></p>
     </div>
@@ -63,7 +64,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item">
-    <a class="work-media" href="{{ '/projects/rotary-steering-system/' | relative_url }}"><img src="{{ '/assets/img/rotary-steering/cover.svg' | relative_url }}" alt="旋转导向钻井地面—井下信息链路"></a>
+    <a class="work-media" href="{{ '/projects/rotary-steering-system/' | relative_url }}"><img src="{{ '/assets/img/rotary-steering/system-chain.png' | relative_url }}" alt="旋转导向钻井地面—井下信息链路示意图"></a>
     <div class="work-body">
       <div class="work-meta"><span>工业项目</span><span>算法与嵌入式</span><span>2024–至今</span></div>
       <h3><a href="{{ '/projects/rotary-steering-system/' | relative_url }}">旋转导向钻井轨迹预测与下传解码</a></h3>

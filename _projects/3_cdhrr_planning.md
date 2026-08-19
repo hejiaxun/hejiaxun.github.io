@@ -1,18 +1,18 @@
 ---
 layout: page
-title: CAST：绳驱超冗余机械臂封闭空间闭环规划与评价
+title: 面向绳驱超冗余机器人的封闭空间闭环规划与评价（CAST）
 description: 从参数化机器人、36 绳控制器和语义 Benchmark，到闭环成功数据、扩散策略、几何选择与绳驱遥测评价。
-kicker: Closed-loop Planning · Cable-driven Robotics
+kicker: Closed-loop Planning and Evaluation for Cable-Driven Hyper-Redundant Robots
 importance: 2
 category: research
 permalink: /projects/cdhrr-planning/
 ---
 
 <div class="project-video project-video--hero">
-  <video muted autoplay loop playsinline preload="metadata" poster="{{ '/assets/img/cast/cover_overview_16x9.png' | relative_url }}">
-    <source src="{{ '/assets/video/cast/project_overview_30s.mp4' | relative_url }}" type="video/mp4">
+  <video muted autoplay loop playsinline preload="auto" poster="{{ '/assets/img/cast/zigzag-corridor-poster.png' | relative_url }}">
+    <source src="{{ '/assets/video/cast/zigzag-corridor-comparison.mp4' | relative_url }}" type="video/mp4">
   </video>
-  <p>30 秒项目概览：参数化 CDHRR、九类封闭场景、闭环规划结果与静态力对应验证。</p>
+  <p>折线通道 HARD 场景：对比方法发生碰撞，CAST 完成全臂无碰撞闭环规划。</p>
 </div>
 
 <p class="project-lead"><strong>CAST 将慢速闭环成功搜索蒸馏为毫秒级局部策略，并在部署时进行全臂几何选择。</strong>在锁定的五种子主协议中，方法达到 82.2% 成功率、69.8% HARD 场景成功率与 7.7 ms/step 规划时延。</p>
