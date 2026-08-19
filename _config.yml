@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: Jiaxun He
 first_name: Jiaxun
 middle_name:
 last_name: He
@@ -10,7 +10,7 @@ email:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Jiaxun He's research portfolio in robotics, embodied AI, planning and control, and robot systems.
 footer_text: >
-  © 2026 Jiaxun He. Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and hosted on GitHub Pages.
+  Built with <a href="https://github.com/alshedivat/al-folio">al-folio</a> and hosted on GitHub Pages.
 keywords: robotics, embodied AI, robot learning, planning, control, state estimation
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
