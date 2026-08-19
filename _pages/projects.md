@@ -4,7 +4,7 @@ title: 项目
 permalink: /projects/
 description: 机器人研究、具身智能与真实机器人系统项目。
 kicker: Selected Projects
-display_categories: [research, embodied-ai, robot-systems]
+display_categories: [research, embodied-ai, robot-systems, embedded-systems]
 ---
 
 <div class="projects">
@@ -13,6 +13,8 @@ display_categories: [research, embodied-ai, robot-systems]
     {% assign category_title = "机器人研究" %}
   {% elsif category == "embodied-ai" %}
     {% assign category_title = "具身智能" %}
+  {% elsif category == "embedded-systems" %}
+    {% assign category_title = "嵌入式与工业系统" %}
   {% else %}
     {% assign category_title = "机器人系统" %}
   {% endif %}
