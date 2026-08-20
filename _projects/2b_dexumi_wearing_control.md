@@ -40,6 +40,49 @@ permalink: /projects/dexumi-codesign/wearing-control/
   </section>
 </div>
 
+## 方法演示
+
+### 运动学 Retarget：设备跟随人手完成抓取
+
+固定掌根穿戴关系后，MANO 动作经分指投影映射为 DexUMI 可达关节轨迹。下方演示展示的是**运动学 retarget**，用于检查设备是否能够表达目标人手动作；它不依赖 PPO 控制。
+
+<div class="project-video">
+  <video controls muted loop playsinline preload="metadata">
+    <source src="{{ '/assets/video/dexumi/05_kinematic_retarget_grasp.mp4' | relative_url }}" type="video/mp4">
+  </video>
+  <p>运动学 retarget 抓取演示：由 MANO 动作生成 DexUMI 可达关节轨迹。</p>
+</div>
+
+### PPO 物理控制：已知可达轨迹跟踪
+
+运动学层先给出已确认可达的参考轨迹，PPO 再在 Newton 接触环境中根据目标、设备状态与跟踪误差输出控制动作，形成闭环物理跟踪。
+
+<div class="project-video">
+  <video controls muted loop playsinline preload="metadata">
+    <source src="{{ '/assets/video/dexumi/06_ppo_physics_tracking.mp4' | relative_url }}" type="video/mp4">
+  </video>
+  <p>PPO 物理控制演示：在接触约束下跟踪已知可达的近端与远端关节轨迹。</p>
+</div>
+
+### 夹爪式 UMI：优化运动控制
+
+夹爪式 UMI 由 MANO 接触驱动被动机构，通过优化方法求解闭合与连续运动；FCL/IPC 用于独立检查轨迹的几何可行性。
+
+<div class="video-grid">
+  <div class="project-video">
+    <video controls muted loop playsinline preload="metadata">
+      <source src="{{ '/assets/video/dexumi/07_gripper_umi_optimized_control.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p>夹爪式 UMI 优化运动控制：接触驱动下的被动机构运动。</p>
+  </div>
+  <div class="project-video">
+    <video controls muted loop playsinline preload="metadata">
+      <source src="{{ '/assets/video/dexumi/08_gripper_umi_optimized_control_comparison.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p>多组穿戴状态下的夹爪式 UMI 优化运动对比。</p>
+  </div>
+</div>
+
 <div class="metric-row project-metrics project-metrics--two">
   <div class="metric"><strong>0.052 rad</strong><span>DexUMI 近端平均跟踪误差</span></div>
   <div class="metric"><strong>0.026 rad</strong><span>DexUMI 远端平均跟踪误差</span></div>
