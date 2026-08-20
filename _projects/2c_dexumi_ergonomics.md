@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 人体工效与生物力学诊断
-description: 从穿戴几何与接触出发，建立关节负荷、肌肉力学和疲劳/恢复的分层工程评价链。
+title: MANO 人体工效与生物力学诊断基础设施
+description: 将 MANO 状态、接触载荷、关节与肌肉力学、疲劳模型组织为可复用的人体侧工程诊断链。
 kicker: DexUMI Co-design · Module 03
 category: internship-module
 permalink: /projects/dexumi-codesign/ergonomics/
@@ -9,20 +9,49 @@ permalink: /projects/dexumi-codesign/ergonomics/
 
 {% include dexumi-module-nav.html %}
 
-<p class="project-lead">这一模块回答“装置能够穿戴和运动之后，如何比较不同方案对人的影响”。通过分层、可解释的工程诊断指标，对候选设计进行相对比较；绝对舒适度仍需结合人体实验进一步验证。</p>
+<p class="project-lead">这不是一个单独的“舒适度分数”，而是一套独立于具体装置和任务的 MANO 人体侧工程资产：输入人手状态、运动轨迹与外载，分层输出接触、关节负荷、肌肉募集以及疲劳/恢复结果，并为不同 UMI / DexUMI 设计提供可追溯的相对比较。</p>
+
+<p><a class="button primary" href="{{ '/projects/dexumi-codesign/ergonomics/replay/' | relative_url }}">打开交互式案例回放</a></p>
+
+## 三类评价案例
+
+<div class="video-grid video-grid--three">
+  <div class="project-video">
+    <video controls playsinline preload="metadata">
+      <source src="{{ '/assets/video/dexumi/09_dexumi_wearable_diagnostics.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p><strong>DexUMI 穿戴诊断：</strong>查看装置运动、接触关系与人体侧指标的同步变化。</p>
+  </div>
+  <div class="project-video">
+    <video controls playsinline preload="metadata">
+      <source src="{{ '/assets/video/dexumi/10_dexycb_load_fatigue_evaluation.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p><strong>DexYCB 操作序列：</strong>在公开人手—物体序列上回放关节、肌肉与疲劳评价。</p>
+  </div>
+  <div class="project-video">
+    <video controls playsinline preload="metadata">
+      <source src="{{ '/assets/video/dexumi/11_gripper_umi_ergonomics_evaluation.mp4' | relative_url }}" type="video/mp4">
+    </video>
+    <p><strong>夹爪式 UMI：</strong>对另一类穿戴接口复用相同的人体工效诊断链。</p>
+  </div>
+</div>
 
 ## 分层评价框架
 
 <div class="ergonomics-chain" aria-label="人体工效诊断链">
-  <div><span>01</span><strong>几何穿戴</strong><small>穿透 · 干涉 · 相对运动</small></div>
+  <div><span>01</span><strong>MANO 状态</strong><small>手型 · 姿态 · 轨迹 · 外载</small></div>
   <i>→</i>
-  <div><span>02</span><strong>接触与载荷</strong><small>压力/剪切代理 · 关节负荷</small></div>
+  <div><span>02</span><strong>接触与载荷</strong><small>刚/软体 · 压力/剪切代理</small></div>
   <i>→</i>
-  <div><span>03</span><strong>肌肉力学</strong><small>肌肉募集 · 力/力矩闭合</small></div>
+  <div><span>03</span><strong>关节与肌肉</strong><small>JᵀF · 肌肉募集 · 力矩闭合</small></div>
   <i>→</i>
-  <div><span>04</span><strong>疲劳与恢复</strong><small>任务过程中的时间累积指标</small></div>
+  <div><span>04</span><strong>疲劳与证据</strong><small>3CC-r · 数据导出 · 可视化回放</small></div>
 </div>
+
+## 方法与开源基础
+
+人体表示与公开序列分别参考 <a href="https://mano.is.tue.mpg.de/" target="_blank" rel="noopener">MANO</a> 和 <a href="https://dex-ycb.github.io/" target="_blank" rel="noopener">DexYCB</a>；刚体、接触与可视化链路使用或适配 <a href="https://mujoco.org/" target="_blank" rel="noopener">MuJoCo</a>、<a href="https://github.com/newton-physics/newton" target="_blank" rel="noopener">Newton</a>、<a href="https://gmsh.info/" target="_blank" rel="noopener">Gmsh</a> 与 <a href="https://rerun.io/" target="_blank" rel="noopener">Rerun</a>，软组织与肌骨接口面向 <a href="https://www.artisynth.org/" target="_blank" rel="noopener">ArtiSynth</a>、<a href="https://febio.org/" target="_blank" rel="noopener">FEBio</a>、<a href="https://www.myosuite.org/" target="_blank" rel="noopener">MyoSuite</a> 和 <a href="https://opensim.stanford.edu/" target="_blank" rel="noopener">OpenSim</a> 组织。该模块输出的是工程诊断指标与方案间相对比较，不替代人体舒适度、安全性或临床结论。
 
 ## 与 Co-design 回环的关系
 
-该模块把穿戴与物理控制结果映射为 human metrics，并按几何、接触、关节负荷、肌肉和疲劳逐层保留证据等级；这些工程指标与任务指标共同用于候选接口方案的相对比较。
+该模块把穿戴与物理控制结果映射为 human metrics，并与任务可行性共同支持候选接口方案比较；同一套数据契约可以复用于 DexUMI、夹爪式 UMI 及公开人手操作序列。
