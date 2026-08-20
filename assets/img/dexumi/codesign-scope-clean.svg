@@ -1,42 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
-  <title id="title">UMI / DexUMI 人机接口 Co-design 研究框架</title>
-  <desc id="desc">参数化接口设计、MANO 穿戴仿真与控制、人体和任务评价、方案比较构成简洁的设计评价循环。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 228" role="img" aria-labelledby="title desc">
+  <title id="title">UMI / DexUMI 人机接口 Co-design 设计评价回环</title>
+  <desc id="desc">参数化接口设计、穿戴仿真与控制、人体与任务评价、方案比较构成设计评价回环。</desc>
   <defs>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L8,4 L0,8 Z" fill="#5079b8"/>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#5079b8"/>
     </marker>
     <style>
       .font{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
-      .node-title{font-size:21px;font-weight:700;fill:#1f2937}
-      .node-copy{font-size:14px;fill:#697386}
+      .node-title{font-size:20px;font-weight:700;fill:#1f2937}
+      .node-copy{font-size:13.5px;fill:#697386}
       .edge{font-size:13px;fill:#68778d}
     </style>
   </defs>
 
-  <rect width="1200" height="260" rx="18" fill="#ffffff"/>
+  <g fill="#f7f9fc" stroke="#c9d7ea" stroke-width="1.5">
+    <rect x="38" y="32" width="250" height="104" rx="14"/>
+    <rect x="334" y="32" width="250" height="104" rx="14"/>
+    <rect x="630" y="32" width="250" height="104" rx="14"/>
+    <rect x="926" y="32" width="236" height="104" rx="14"/>
+  </g>
 
-  <rect x="56" y="62" width="238" height="104" rx="14" fill="#f7f9fc" stroke="#c9d7ea" stroke-width="1.5"/>
-  <text class="font node-title" x="80" y="103">参数化接口设计</text>
-  <text class="font node-copy" x="80" y="136">CAD 特征 · 装配参数</text>
+  <g class="font">
+    <text class="node-title" x="62" y="73">参数化接口设计</text>
+    <text class="node-copy" x="62" y="106">CAD 特征 · 装配参数</text>
 
-  <line x1="294" y1="114" x2="338" y2="114" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text class="node-title" x="358" y="73">穿戴仿真与控制</text>
+    <text class="node-copy" x="358" y="106">MANO · UMI 优化 · DexUMI PPO</text>
 
-  <rect x="352" y="62" width="238" height="104" rx="14" fill="#f7f9fc" stroke="#c9d7ea" stroke-width="1.5"/>
-  <text class="font node-title" x="376" y="103">穿戴仿真与控制</text>
-  <text class="font node-copy" x="376" y="136">MANO · UMI 优化 · DexUMI 强化学习</text>
+    <text class="node-title" x="654" y="73">人体与任务评价</text>
+    <text class="node-copy" x="654" y="106">接触 · 负荷 · 疲劳 · 可行性</text>
 
-  <line x1="590" y1="114" x2="634" y2="114" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text class="node-title" x="950" y="73">方案比较</text>
+    <text class="node-copy" x="950" y="106">选择下一组设计</text>
+  </g>
 
-  <rect x="648" y="62" width="238" height="104" rx="14" fill="#f7f9fc" stroke="#c9d7ea" stroke-width="1.5"/>
-  <text class="font node-title" x="672" y="103">人体与任务评价</text>
-  <text class="font node-copy" x="672" y="136">接触 · 负荷 · 疲劳 · 可行性</text>
+  <g fill="none" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)">
+    <line x1="288" y1="84" x2="322" y2="84"/>
+    <line x1="584" y1="84" x2="618" y2="84"/>
+    <line x1="880" y1="84" x2="914" y2="84"/>
+  </g>
 
-  <line x1="886" y1="114" x2="930" y2="114" stroke="#5079b8" stroke-width="2.5" marker-end="url(#arrow)"/>
-
-  <rect x="944" y="62" width="200" height="104" rx="14" fill="#f7f9fc" stroke="#c9d7ea" stroke-width="1.5"/>
-  <text class="font node-title" x="968" y="103">方案比较</text>
-  <text class="font node-copy" x="968" y="136">选择下一组设计</text>
-
-  <path d="M1044 166 V208 H175 V180" fill="none" stroke="#7894bd" stroke-width="2" marker-end="url(#arrow)"/>
-  <text class="font edge" x="488" y="230">评价结果更新接口设计</text>
+  <path d="M1044 136 V177 H163 V148" fill="none" stroke="#7894bd" stroke-width="2" marker-end="url(#arrow)"/>
+  <text class="font edge" x="505" y="205">评价结果更新接口设计</text>
 </svg>

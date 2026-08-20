@@ -779,11 +779,13 @@ img {
 }
 
 .work-media--dexumi {
-  background: #f8fbff;
+  background: #050913;
 }
 
 .work-media--dexumi img {
-  padding: 14px;
+  padding: 0;
+  object-fit: cover;
+  object-position: center 48%;
 }
 
 .work-media-text {

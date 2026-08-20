@@ -2,7 +2,7 @@
 layout: page
 title: UMI / DexUMI 人机接口 Co-design
 description: 在目标执行器固定条件下，围绕人机接口设计建立“设计—穿戴控制—人体与任务评价—方案比较”的研究框架。
-kicker: 穹彻智能 · 具身智能实习
+kicker: 穹彻智能 · 具身智能实习生
 importance: 1
 category: internship
 permalink: /projects/dexumi-codesign/
@@ -11,7 +11,7 @@ permalink: /projects/dexumi-codesign/
 {% include dexumi-module-nav.html %}
 
 <div class="internship-role-strip">
-  <strong>穹彻智能（非夕科技）</strong>
+  <strong>穹彻智能</strong>
   <span>具身智能实习生</span>
   <span>2026.05 – 至今</span>
 </div>
