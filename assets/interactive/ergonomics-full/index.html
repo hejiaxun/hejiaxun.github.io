@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MANO 人体工效工程回放</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">MANO 人体工效工程基础设施</p>
+      <h1>交互式证据回放</h1>
+    </div>
+    <p id="catalog-boundary" class="boundary"></p>
+  </header>
+
+  <div class="layout">
+    <aside class="browser" aria-label="场景浏览器">
+      <label for="search">搜索</label>
+      <input id="search" type="search" placeholder="场景、轨迹或 UMI" autocomplete="off">
+
+      <label for="family">UMI 类型</label>
+      <select id="family"><option value="">全部</option></select>
+
+      <label for="scenario">工况</label>
+      <select id="scenario"><option value="">全部</option></select>
+
+      <p id="result-count" class="muted" aria-live="polite"></p>
+      <nav id="scene-list" aria-label="可用场景"></nav>
+    </aside>
+
+    <main>
+      <div class="scene-heading">
+        <div>
+          <p id="scene-meta" class="eyebrow"></p>
+          <h2 id="scene-title">选择一个场景</h2>
+        </div>
+        <div class="navigation">
+          <button id="previous" type="button" aria-label="上一条">上一条</button>
+          <button id="next" type="button" aria-label="下一条">下一条</button>
+        </div>
+      </div>
+
+      <section id="viewer" class="viewer" aria-label="三维或视频回放">
+        <iframe id="viewer-frame" title="Rerun Web Viewer" loading="eager" sandbox="allow-scripts allow-same-origin allow-downloads" hidden></iframe>
+        <video id="video" controls playsinline preload="metadata" hidden></video>
+        <div id="empty-viewer" class="empty-state">
+          <strong>暂无可回放证据</strong>
+          <span>此场景没有绑定 viewer_url 或 video_url。</span>
+        </div>
+      </section>
+      <div id="view-switch" class="view-switch" hidden>
+        <button type="button" data-view="viewer">3D 回放</button>
+        <button type="button" data-view="video">视频</button>
+      </div>
+    </main>
+
+    <aside class="evidence" aria-label="证据说明">
+      <section>
+        <h3>通道</h3>
+        <div id="channels"></div>
+      </section>
+      <section>
+        <h3>证据状态</h3>
+        <ul id="blockers"></ul>
+      </section>
+      <section>
+        <h3>适用范围</h3>
+        <p id="claim-boundary" class="prose"></p>
+      </section>
+    </aside>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

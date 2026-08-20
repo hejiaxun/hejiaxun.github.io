@@ -1,0 +1,189 @@
+{
+  "arrays": {
+    "bytes": 5370919,
+    "keys": [
+      "contact_active",
+      "contact_force_n",
+      "contact_points_m",
+      "contact_vectors_n",
+      "device_moving_rotation",
+      "device_moving_translation_m",
+      "hand_faces",
+      "hand_joints_m",
+      "hand_vertices_m",
+      "root_lift_mm",
+      "root_slip_mm",
+      "root_twist_deg",
+      "soft_contact_active",
+      "soft_contact_class",
+      "soft_contact_finger",
+      "soft_contact_force_vectors_n",
+      "soft_contact_frame_blocked",
+      "soft_contact_frame_valid",
+      "soft_contact_normal_load_n",
+      "soft_contact_normal_vectors",
+      "soft_contact_patch_area_m2",
+      "soft_contact_peak_pressure_pa",
+      "soft_contact_points_m",
+      "soft_contact_pressure_pa",
+      "soft_contact_roi_label",
+      "soft_contact_segment",
+      "soft_contact_support_area_m2",
+      "soft_contact_vertex_id",
+      "static_device_faces",
+      "static_device_moving_faces",
+      "static_device_moving_vertices_local_m",
+      "static_device_vertices_m",
+      "time_s",
+      "trigger_angle_rad"
+    ],
+    "path": "device_replay_arrays_v1.npz",
+    "sha256": "8394430dc6cd326c944878fc49ba76a52b800b37e6485ce6b6a66523f08413db"
+  },
+  "blockers": [
+    "MSK and fatigue are not coupled to this press trace",
+    "contact and root channels remain simulation diagnostics",
+    "same-solver pressure is sparse independent keyframes; interpolation is forbidden",
+    "blocked pressure fraction 1.0: soft_pressure_patch_unresolved_not_zero_pressure"
+  ],
+  "can_enter_final_comfort_verdict": false,
+  "claim_boundary": "Interactive same-state MANO/device/contact replay for motion and contact diagnostics; no comfort, safety, or controller ranking verdict.",
+  "duration_s": 17.997916666638147,
+  "frame_count": 435,
+  "metrics": [
+    {
+      "array": "trigger_angle_rad",
+      "label": "Trigger angle",
+      "name": "trigger_angle_rad",
+      "unit": "rad"
+    },
+    {
+      "array": "contact_force_n",
+      "label": "Allowed contact force",
+      "name": "contact_force_n",
+      "unit": "N"
+    },
+    {
+      "array": "root_slip_mm",
+      "label": "Root slip",
+      "name": "root_slip_mm",
+      "unit": "mm"
+    },
+    {
+      "array": "root_lift_mm",
+      "label": "Root lift",
+      "name": "root_lift_mm",
+      "unit": "mm"
+    },
+    {
+      "array": "root_twist_deg",
+      "label": "Root twist",
+      "name": "root_twist_deg",
+      "unit": "deg"
+    },
+    {
+      "array": "soft_contact_peak_pressure_pa",
+      "label": "Soft pressure peak",
+      "name": "soft_contact_peak_pressure_pa",
+      "unit": "Pa",
+      "valid_mask": "soft_contact_frame_valid"
+    },
+    {
+      "array": "soft_contact_normal_load_n",
+      "label": "Soft normal load",
+      "name": "soft_contact_normal_load_n",
+      "unit": "N",
+      "valid_mask": "soft_contact_frame_valid"
+    },
+    {
+      "array": "soft_contact_patch_area_m2",
+      "label": "Soft patch area",
+      "name": "soft_contact_patch_area_m2",
+      "unit": "m^2",
+      "valid_mask": "soft_contact_frame_valid"
+    }
+  ],
+  "scene_id": "subject01_trigger_width_plus4mm_press",
+  "schema_version": "mano_foundation.device_replay_pack.v1",
+  "soft_contact_overlay": {
+    "availability": "SPARSE_KEYFRAMES",
+    "blocked_values_substituted_with_zero": false,
+    "can_enter_final_comfort_verdict": false,
+    "frame_mapping": [
+      {
+        "alignment_branch": "first_loading_branch_to_first_global_q_peak",
+        "blocked": false,
+        "blocker": null,
+        "classification": null,
+        "fraction": 0.2,
+        "q_alignment_bracket_rad": [
+          0.2628801465034485,
+          0.27689728140830994
+        ],
+        "q_alignment_error_rad": 0.003917479095215226,
+        "replay_frame": 32,
+        "replay_q_rad": 0.27689728140830994,
+        "target_q_rad": 0.2729798023130947
+      },
+      {
+        "alignment_branch": "first_loading_branch_to_first_global_q_peak",
+        "blocked": false,
+        "blocker": null,
+        "classification": null,
+        "fraction": 0.5,
+        "q_alignment_bracket_rad": [
+          0.6686328053474426,
+          0.6919181942939758
+        ],
+        "q_alignment_error_rad": 0.007295677004466872,
+        "replay_frame": 63,
+        "replay_q_rad": 0.6919181942939758,
+        "target_q_rad": 0.684622517289509
+      },
+      {
+        "alignment_branch": "first_loading_branch_to_first_global_q_peak",
+        "blocked": true,
+        "blocker": "soft_pressure_patch_unresolved_not_zero_pressure",
+        "classification": "EXACT_TRIANGLE_INTERSECTION_WITHOUT_RESOLVED_SOFT_PRESSURE_PATCH",
+        "fraction": 1.0,
+        "q_alignment_bracket_rad": [
+          1.3579833507537842,
+          1.368881344795227
+        ],
+        "q_alignment_error_rad": 0.0027048293605913543,
+        "replay_frame": 94,
+        "replay_q_rad": 1.368881344795227,
+        "target_q_rad": 1.3661765154346357
+      }
+    ],
+    "missing_semantics": "BLOCKED_NOT_ZERO",
+    "pressure_color_range_pa": [
+      0.0,
+      50000.0
+    ],
+    "pressure_interpolation_used": false,
+    "schema_version": "mano_foundation.device_replay_soft_contact_overlay.v1",
+    "sources": {
+      "aggregate_evidence": {
+        "path": "D:\\UMIpro\\UMI3.0-parameterized-press-integration\\evidence\\subject01_parameterized_width4_pressure_keyframes_v1.json",
+        "sha256": "cd9b9c9ff8deda6b270e26c5a6d8fdee99e5df9369f534797dffc58035045fa5"
+      },
+      "device_replay": {
+        "path": "D:\\UMIpro\\MANO-Engineering-Foundation\\.artifacts\\web_device_replays\\umi3_width4_pressure_source\\device_replay_manifest_v1.json",
+        "sha256": "bc4db35ef5c36f9615ff1e4a27e16e7c5f1bbe6e3d82c172a92ebf0e9ce821c7"
+      },
+      "vertex_field": {
+        "path": "D:\\UMIpro\\UMI3.0-parameterized-press-integration\\evidence\\visuals\\subject01_soft_contact_vertex_field_v1\\subject01_soft_contact_vertex_field_v1.json",
+        "sha256": "d420e65a2b2e7a59cb83175714a6113e4a333441563676c9b8d11a59485eb51d"
+      }
+    },
+    "truth_level": "LITERATURE_PRIOR"
+  },
+  "source": {
+    "scene": "D:\\UMIpro\\UMI3.0-parameterized-press-integration\\.artifacts\\codesign_target_residual1_v1\\rollouts\\trigger_width_plus4mm\\functional_flexion_press_scene_v1.xml",
+    "trajectory": "D:\\UMIpro\\UMI3.0-parameterized-press-integration\\.artifacts\\codesign_target_residual1_v1\\rollouts\\trigger_width_plus4mm\\functional_flexion_press_trace_v1.jsonl"
+  },
+  "trajectory_id": "subject01-width4-strap-press",
+  "truth_level": "DIAGNOSTIC_PROXY",
+  "umi_family": "UMI3"
+}

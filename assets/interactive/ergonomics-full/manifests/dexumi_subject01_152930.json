@@ -1,0 +1,21 @@
+{
+  "blockers": [
+    "contact force is inverse-dynamics diagnostic rather than measured",
+    "pressure and contact area are missing",
+    "XHand is rendered from collision-surface samples rather than CAD triangles"
+  ],
+  "can_enter_final_comfort_verdict": false,
+  "recording": {
+    "bytes": 24569004,
+    "path": "dexumi_subject01_152930.rrd",
+    "sha256": "312819fb9db2e57c998054b278fb602ba6025368ee7777567e488f9fc21d2caa"
+  },
+  "rerun_version": "0.35.0",
+  "schema_version": "mano_foundation.device_replay_rerun.v1",
+  "source": {
+    "arrays_sha256": "00ced1d0c0d1e0321715e7d352d50ceabb6782f1de44fc524f8ffa70c5c80353",
+    "manifest_path": "D:\\UMIpro\\MANO-Engineering-Foundation\\.artifacts\\web_device_replays\\dexumi_152930\\device_replay_manifest_v1.json",
+    "manifest_sha256": "a9827eec957d99aba4f394331b72279bb52b5afa942b1b08203a6c1783d17135"
+  },
+  "truth_level": "DIAGNOSTIC_PROXY"
+}

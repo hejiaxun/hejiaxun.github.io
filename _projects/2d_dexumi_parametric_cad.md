@@ -11,23 +11,28 @@ permalink: /projects/dexumi-codesign/parametric-cad/
 
 <p class="project-lead">这一模块把 CAD 从“只能查看的几何文件”转化为<strong>可解释的设计参数、可在 Linux 重建的几何和可验证的机器人资产</strong>。核心不是任意 STEP 自动恢复原始特征树，而是在证据充分的范围内重建受约束设计，并用原生 CAD 对照和几何回归守住结果边界。</p>
 
-<div class="interactive-model-shell">
-  <div class="interactive-model-stage interactive-model-stage--dark">
-    <model-viewer src="{{ '/assets/interactive/cad/openbionics-mainbar/overlay.glb' | relative_url }}" alt="OpenBionics MainBar 参数化重建与参考几何叠加模型" camera-controls auto-rotate shadow-intensity="0.75" environment-image="neutral" interaction-prompt="auto"></model-viewer>
-  </div>
-  <div class="interactive-model-copy">
-    <p class="eyebrow">PUBLIC CAD VALIDATION CASE</p>
-    <h2>OpenBionics MainBar 几何对照</h2>
-    <p>交互模型叠加显示参数化重建结果与参考几何，用于观察二者的空间一致性。该公开案例只证明单零件、限定算子下的几何重建，不代表整套装配或制造等价。</p>
-    <p><a class="button primary" href="{{ '/projects/dexumi-codesign/parametric-cad/observatory/' | relative_url }}">打开交互式几何对照</a></p>
-  </div>
+## 重建流程演示
+
+<div class="project-video project-video--hero">
+  <video controls muted playsinline preload="metadata"><source src="{{ '/assets/video/dexumi/12_parametric_cad_reconstruction.mp4' | relative_url }}" type="video/mp4"></video>
+  <p>参数化 CAD 重建、跨平台生成与证据审计流程演示</p>
 </div>
 
-<div class="evidence-metrics" aria-label="OpenBionics MainBar 验证指标">
-  <div><strong>6</strong><span>个特征完成转换</span></div>
-  <div><strong>3</strong><span>个显式深度参数</span></div>
-  <div><strong>0.000612 mm</strong><span>最大表面距离</span></div>
-  <div><strong>PASS</strong><span>静态几何对照</span></div>
+## 交互式 CAD 证据台
+
+<p>下面直接嵌入完整 CAD Co-design Flight Deck。可在 DexUMI XHand、Pollen PincOpen、DFKI Double Pendulum 与 UMI3.0 Wearable 间切换，查看名义/参数化变体、装配级 3D、B-rep 面级诊断、候选设计轴和各阶段验证结果。</p>
+
+<div class="interactive-embed-shell interactive-embed-shell--cad">
+  <iframe src="{{ '/assets/interactive/cad/co-design-flight-deck/index.html' | relative_url }}" title="CAD Co-design Assembly Flight Deck" loading="lazy"></iframe>
+</div>
+
+<p><a class="button primary" href="{{ '/projects/dexumi-codesign/parametric-cad/observatory/' | relative_url }}">全屏打开 CAD 证据台</a></p>
+
+<div class="evidence-metrics" aria-label="参数化 CAD 交互范围">
+  <div><strong>4</strong><span>类完整装配体</span></div>
+  <div><strong>8</strong><span>名义/参数化状态</span></div>
+  <div><strong>B-rep</strong><span>面级候选特征诊断</span></div>
+  <div><strong>WebGL</strong><span>离线完整交互</span></div>
 </div>
 
 ## 技术路线
@@ -42,6 +47,4 @@ permalink: /projects/dexumi-codesign/parametric-cad/
 
 少量几何尺寸虽然容易解释，却难以表达复杂结构；直接搜索 Mesh 顶点维度过高，也缺少装配和制造语义。当前采用 CAD 特征、装配参数和受保护接口作为中尺度设计变量，使候选设计既能批量生成，又能回到几何和装配证据中逐项核验。
 
-<p class="source-note"><strong>公开案例声明：</strong>交互示例来自 <a href="https://github.com/OpenBionics/Prosthetic-Hands" target="_blank" rel="noopener">OpenBionics/Prosthetic-Hands</a> 的 <code>mainBar.SLDPRT</code>，固定到 commit <code>639aca3</code>，按 CC BY-SA 4.0 署名使用。站内只展示该公开零件的重建与几何对照；DexUMI、UMI3.0 等内部 CAD、装配和设计空间不在本站发布。</p>
-
-<script type="module" src="{{ '/assets/interactive/vendor/model-viewer.min.js' | relative_url }}"></script>
+<p class="source-note"><strong>来源：</strong>DexUMI/XHand 基线参考 <a href="https://github.com/real-stanford/DexUMI" target="_blank" rel="noopener">real-stanford/DexUMI</a>；其余公开装配体在 Flight Deck 内按项目名称标注。本站发布的是经确认可公开的装配几何、参数化变体与浏览器端诊断结果，不包含公司内部产品 CAD 或未授权设计资产。</p>
