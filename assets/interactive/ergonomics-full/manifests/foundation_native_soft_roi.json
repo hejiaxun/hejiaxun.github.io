@@ -1,0 +1,41 @@
+{
+  "blockers": [
+    "regions_are_dominant_lbs_influence_not_anatomical_or_perceptual_segmentation",
+    "roi_bound_to_licensed_mano_model_hash",
+    "contact_fields_are_simulated_not_measured",
+    "material_and_friction_are_literature_priors",
+    "roi_values_cannot_enter_absolute_comfort_or_safety_verdict"
+  ],
+  "can_enter_absolute_comfort_or_safety_verdict": false,
+  "producer": "mano-foundation rerun-roi",
+  "recording": {
+    "bytes": 4277568,
+    "path": "artisynth_native_roi_fields_v1.rrd",
+    "sha256": "20f3c2b55388806968fb0e144bcbd6ac01a2327c5daffcc1b7a85e7df721bc4c"
+  },
+  "rerun_version": "0.35.0",
+  "schema": "mano_foundation.rerun_native_roi_contact.v1",
+  "source": {
+    "arrays_path": "D:\\UMIpro\\MANO-Engineering-Foundation\\.artifacts\\remote_native_roi_20260803\\artisynth_mano_roi_contact_arrays_v1.npz",
+    "arrays_sha256": "6712c3b467db9b373cdf43d615465d81d3ede567f2bf66d76c3d11843bb87d7d",
+    "mano_topology": {
+      "model_sha256": "45d60aa3b27ef9107a7afd4e00808f307fd91111e1cfa35afd5c4a62de264767",
+      "path": "D:\\UMIpro\\CozyDex\\assets\\mano_v1_2\\models\\MANO_RIGHT.pkl",
+      "status": "LICENSED_MANO_TOPOLOGY_BOUND",
+      "topology_sha256": "88407e45785b12311b7d6837f0a87bb6b47667ee1cdd3bd69245dcf25068631b",
+      "triangle_count": 1538,
+      "vertex_count": 778
+    },
+    "report_path": "D:\\UMIpro\\MANO-Engineering-Foundation\\.artifacts\\remote_native_roi_20260803\\artisynth_mano_roi_contact_report_v1.json",
+    "report_sha256": "198c2e1ba73668eebce6247f0dbc5470117a7acd0e0b928347f791fdb7780c45"
+  },
+  "status": "NATIVE_MANO_ROI_CONTACT_PASS",
+  "truth_level": "DIAGNOSTIC_PROXY",
+  "visual_semantics": {
+    "centroids": "active-area-weighted field centroids",
+    "force_vectors": "not emitted because the source stores magnitudes, not directions",
+    "normal_colour": "raw per-vertex normal pressure in Pa",
+    "shear_colour": "raw per-vertex shear traction magnitude in Pa",
+    "surface": "same-solver MANO surface positions connected by hash-bound licensed topology"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "blockers": [
+    "controller_prior_not_human_neural_recruitment",
+    "full_rom_39_mtu_path_certificate_not_promoted",
+    "inverse_dynamics_contact_forces_are_not_measured",
+    "kinematic_channels_are_context_not_load_or_comfort",
+    "no_calibrated_scalar_comfort_or_safety_mapping",
+    "population_capacity_and_fatigue_prior",
+    "pressure_and_contact_area_not_available_from_inverse_dynamics",
+    "reduced_rank_mano_myohand_covector_projection",
+    "same_solver_contact_pressure_missing"
+  ],
+  "can_enter_final_comfort_verdict": false,
+  "evaluation_status": "MEASUREMENT_BLOCKED",
+  "producer": "mano-foundation rerun-demo",
+  "recording": {
+    "bytes": 10558257,
+    "path": "trajectory_contact_msk_subject01_v3.rrd",
+    "sha256": "2289a9b1924b853e98c982dc8bd7aa4bf0dad099b6f395cf6bb25a66b31a7506"
+  },
+  "rerun_version": "0.35.0",
+  "schema": "mano_foundation.rerun_trajectory_comfort.v1",
+  "source": {
+    "arrays_sha256": "5ba3b6047272b1ae210fd465f668a85c8750562925ea8ac8302d14338365e553",
+    "bundle_manifest_sha256": "8ec3cb8518e7051f75d449aa77c6b9e92331d0c7d59a7828c43269699a91f9a4",
+    "bundle_root": "D:\\UMIpro\\MANO-Engineering-Foundation\\.artifacts\\trajectory_contact_msk_subject01_v1",
+    "report_sha256": "e9ea132cb59048a0920502675b68aa963f34e33f82788ded0a2cdb03228ac857"
+  },
+  "truth_level": "DIAGNOSTIC_PROXY",
+  "visual_semantics": {
+    "force_arrows": "inverse-dynamics force vectors; displayed length is normalized and labels retain N",
+    "mtu_bar_selection": "top eight MTUs by sequence peak; all MTUs remain in time-series data",
+    "mtu_lines": "detached semantic load bars, not anatomical tendon paths",
+    "regional_pressure_points": "diagnostic display neighborhoods, not anatomical ROIs"
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "can_enter_final_comfort_verdict": false,
+  "families": [
+    "DexUMI/XHand",
+    "Foundation Core",
+    "UMI3"
+  ],
+  "scenes": [
+    {
+      "blockers": [
+        "capacity and fatigue use population priors",
+        "full-ROM 39-MTU path certificate is not promoted",
+        "inverse dynamics contact force is not measured",
+        "same-solver pressure and area are missing"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "CONTINUOUS",
+          "backend": "inverse dynamics",
+          "name": "contact_force_magnitude_n",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MANO J^T F",
+          "name": "joint_torque_nm",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N m"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MyoHand/MuJoCo",
+          "name": "mtu_force_n",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MyoSuite 3CC-r",
+          "name": "fatigued_fraction",
+          "truth_level": "LITERATURE_PRIOR",
+          "unit": "fraction"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_pressure_pa",
+          "truth_level": "KILLED",
+          "unit": "Pa"
+        }
+      ],
+      "claim_boundary": "完整软件链诊断，不代表受试者绝对肌力、个体疲劳时间、舒适或安全结论。",
+      "description": "同一时间轴查看MANO、物体、诊断接触力、关节力矩、39 MTU、激活、reserve与3CC-r疲劳。",
+      "handedness": "right",
+      "id": "foundation_subject01_contact_msk",
+      "source_manifest": {
+        "bytes": 1750,
+        "path": "manifests/foundation_subject01_contact_msk.json",
+        "sha256": "a89714e1f81c93bdf0b1e9d5786ba0b11b91d9cb44179274dcbf38aeb18378a9"
+      },
+      "status": "MEASUREMENT_BLOCKED",
+      "subject": "subject01",
+      "timeline": {
+        "duration_s": 2.1,
+        "fps": 30,
+        "frame_count": 63
+      },
+      "title": "完整接触、39 MTU与疲劳链",
+      "trajectory_id": "subject01-contact-msk-63f",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "Foundation Core",
+      "viewer": {
+        "artifact": {
+          "bytes": 10558257,
+          "path": "assets/foundation_subject01_contact_msk.rrd",
+          "sha256": "2289a9b1924b853e98c982dc8bd7aa4bf0dad099b6f395cf6bb25a66b31a7506"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0"
+      }
+    },
+    {
+      "blockers": [
+        "ROI labels are not perceptual regions",
+        "material and friction are literature priors",
+        "simulated rather than measured contact fields"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "CONTINUOUS",
+          "backend": "ArtiSynth 3.9",
+          "name": "normal_pressure_pa",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "Pa"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "ArtiSynth 3.9",
+          "name": "shear_traction_pa",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "Pa"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "ArtiSynth 3.9",
+          "name": "active_area_m2",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "m^2"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "ArtiSynth 3.9",
+          "name": "deformation_m",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "m"
+        }
+      ],
+      "claim_boundary": "用于软接触场定位和反例检查，不映射疼痛、损伤阈值或最终舒适度。",
+      "description": "逐顶点显示同求解器压力、剪切、接触面积和形变。",
+      "handedness": "right",
+      "id": "foundation_native_soft_roi",
+      "source_manifest": {
+        "bytes": 2043,
+        "path": "manifests/foundation_native_soft_roi.json",
+        "sha256": "07e694ddd148badc8c1ec0df161a69ea790ddc839235e658b724e92baaa0c130"
+      },
+      "status": "NATIVE_MANO_ROI_CONTACT_PASS",
+      "subject": "subject01",
+      "timeline": {
+        "frame_count": 200
+      },
+      "title": "逐顶点软压力与剪切场",
+      "trajectory_id": "artisynth-native-roi-200f",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "Foundation Core",
+      "viewer": {
+        "artifact": {
+          "bytes": 4277568,
+          "path": "assets/foundation_native_soft_roi.rrd",
+          "sha256": "20f3c2b55388806968fb0e144bcbd6ac01a2327c5daffcc1b7a85e7df721bc4c"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0"
+      }
+    },
+    {
+      "blockers": [
+        "contact force is diagnostic and not measured",
+        "pressure and contact area are missing",
+        "video manifest object label conflicts with canonical source and is not used for object identity"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "CONTINUOUS",
+          "backend": "CozyDex geometry",
+          "name": "pad_interface_overlap",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "mm"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "Foundation inverse dynamics",
+          "name": "contact_force_magnitude_n",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "MyoHand/MuJoCo",
+          "name": "mtu_force_n",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "MyoSuite 3CC-r",
+          "name": "fatigued_fraction",
+          "truth_level": "LITERATURE_PRIOR",
+          "unit": "fraction"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_pressure_pa",
+          "truth_level": "KILLED",
+          "unit": "Pa"
+        }
+      ],
+      "claim_boundary": "展示DexUMI/XHand在真实数据集轨迹上的区域干涉和MSK诊断，不支持绝对舒适、安全或跨设计结论。",
+      "description": "63帧MANO/XHand运动，38帧接触、关节负荷、39 MTU和疲劳诊断窗口。",
+      "handedness": "right",
+      "id": "dexumi_subject01_141754",
+      "source_manifest": {
+        "bytes": 905,
+        "path": "manifests/dexumi_subject01_141754.json",
+        "sha256": "1dd335ce8606317f2716f9ad2035944983d22be508369b6c81d7ac1f800805fb"
+      },
+      "status": "MEASUREMENT_BLOCKED",
+      "subject": "subject01",
+      "timeline": {
+        "duration_s": 4.2,
+        "fps": 30,
+        "frame_count": 63
+      },
+      "title": "DexUMI操作序列 141754",
+      "trajectory_id": "dexycb-20200709_141754",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "DexUMI/XHand",
+      "viewer": {
+        "artifact": {
+          "bytes": 22611654,
+          "path": "assets/dexumi_subject01_141754.rrd",
+          "sha256": "2bc94fa0f5fdc939f5dab54bb7fcf947a5add6ed00cee9c78308d8141efcc2c2"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0",
+        "video_artifact": {
+          "bytes": 682876,
+          "path": "assets/dexumi_subject01_141754_fallback.mp4",
+          "sha256": "2f660b697185d59d56f579110c8cd06f854a66148ba19d7cb7a8183d72ea6644"
+        }
+      }
+    },
+    {
+      "blockers": [
+        "capacity and fatigue use literature priors",
+        "only five frames are contact/MSK admitted",
+        "pressure and contact area are missing"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "CONTINUOUS",
+          "backend": "CozyDex geometry",
+          "name": "pad_interface_overlap",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "mm"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "Foundation inverse dynamics",
+          "name": "contact_force_magnitude_n",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "MyoHand/MuJoCo",
+          "name": "mtu_force_n",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "N"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "MyoSuite 3CC-r",
+          "name": "fatigued_fraction",
+          "truth_level": "LITERATURE_PRIOR",
+          "unit": "fraction"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_pressure_pa",
+          "truth_level": "KILLED",
+          "unit": "Pa"
+        }
+      ],
+      "claim_boundary": "该序列主要验证跨轨迹消费和失败定位，不支持用短MSK窗口排名设计。",
+      "description": "71帧操作序列，含5帧严格对齐的接触、39 MTU与疲劳窗口。",
+      "handedness": "right",
+      "id": "dexumi_subject01_152930",
+      "source_manifest": {
+        "bytes": 905,
+        "path": "manifests/dexumi_subject01_152930.json",
+        "sha256": "b8cb333f36548de3436daa9286f674472c3daa7d06817bbb836a6e612c02bc4c"
+      },
+      "status": "MEASUREMENT_BLOCKED",
+      "subject": "subject01",
+      "timeline": {
+        "duration_s": 4.7333333333,
+        "fps": 30,
+        "frame_count": 71
+      },
+      "title": "DexUMI操作序列 152930",
+      "trajectory_id": "dexycb-20200709_152930",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "DexUMI/XHand",
+      "viewer": {
+        "artifact": {
+          "bytes": 24569004,
+          "path": "assets/dexumi_subject01_152930.rrd",
+          "sha256": "312819fb9db2e57c998054b278fb602ba6025368ee7777567e488f9fc21d2caa"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0",
+        "video_artifact": {
+          "bytes": 672859,
+          "path": "assets/dexumi_subject01_152930_fallback.mp4",
+          "sha256": "20664d17ed69d225f80e42ff9f740f4c76d4fb095c9e7ea6f3b5e48385e56a04"
+        }
+      }
+    },
+    {
+      "blockers": [
+        "MSK and fatigue are not coupled",
+        "continuous same-solver pressure is missing",
+        "promotion_allowed=false in source audit"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MuJoCo/Newton",
+          "name": "mano_umi_rigid_press_state",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "state"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MuJoCo",
+          "name": "root_slip_lift_twist",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "m,deg"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_pressure_pa",
+          "truth_level": "KILLED",
+          "unit": "Pa"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "NOT_AVAILABLE",
+          "name": "mtu_force_n",
+          "truth_level": "KILLED",
+          "unit": "N"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "NOT_AVAILABLE",
+          "name": "fatigued_fraction",
+          "truth_level": "KILLED",
+          "unit": "fraction"
+        }
+      ],
+      "claim_boundary": "用于检查按压运动、装置随动和穿戴稳定性代理，不支持舒适或安全判定。",
+      "description": "基线控制器下的MANO、分体CAD、按压、free-root和穿戴界面回放。",
+      "handedness": "right",
+      "id": "umi3_subject01_baseline",
+      "source_manifest": {
+        "bytes": 881,
+        "path": "manifests/umi3_subject01_baseline.json",
+        "sha256": "b02769834e3c7b3937e6bb8ff8a396c5f4f8764bcb27bba17c547c4783323d73"
+      },
+      "status": "VISUAL_AUDIT_COMPLETE_PROMOTION_BLOCKED",
+      "subject": "subject01",
+      "timeline": {
+        "duration_s": 6.0,
+        "fps": 24,
+        "frame_count": 144
+      },
+      "title": "UMI3基线按压控制",
+      "trajectory_id": "subject01-common-controller",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "UMI3",
+      "viewer": {
+        "artifact": {
+          "bytes": 5519080,
+          "path": "assets/umi3_subject01_baseline.rrd",
+          "sha256": "247313e9a5892c6caaaf0024d4f25dab3d5644d694da26977749a987f0b0b33f"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0",
+        "video_artifact": {
+          "bytes": 277365,
+          "path": "assets/umi3_subject01_baseline_fallback.mp4",
+          "sha256": "f35bd3e596681cb6684ecc0764a33785412243332d313dfcdd143ce970e09830"
+        }
+      }
+    },
+    {
+      "blockers": [
+        "MSK and fatigue are not coupled",
+        "continuous same-solver pressure is missing",
+        "full free-root/contact promotion remains blocked"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MuJoCo/Newton",
+          "name": "mano_umi_rigid_press_state",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "state"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MuJoCo",
+          "name": "root_slip_lift_twist",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "m,deg"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_pressure_pa",
+          "truth_level": "KILLED",
+          "unit": "Pa"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "NOT_AVAILABLE",
+          "name": "mtu_force_n",
+          "truth_level": "KILLED",
+          "unit": "N"
+        }
+      ],
+      "claim_boundary": "可以与基线做同输入诊断对照；缺少完整物理准入时不能形成控制舒适性优劣。",
+      "description": "与基线同任务的末端/中指支撑控制器轨迹，用于查看控制策略造成的运动与接触状态差异。",
+      "handedness": "right",
+      "id": "umi3_subject01_terminal_support",
+      "source_manifest": {
+        "bytes": 897,
+        "path": "manifests/umi3_subject01_terminal_support.json",
+        "sha256": "b1d342ad2dd5260eeca98e598afac216a255bbff60e87e3fc223874050dbc4d3"
+      },
+      "status": "VISUAL_AUDIT_COMPLETE_PROMOTION_BLOCKED",
+      "subject": "subject01",
+      "timeline": {
+        "duration_s": 6.0,
+        "fps": 24,
+        "frame_count": 144
+      },
+      "title": "UMI3末端支撑按压控制",
+      "trajectory_id": "subject01-terminal-support",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "UMI3",
+      "viewer": {
+        "artifact": {
+          "bytes": 5503229,
+          "path": "assets/umi3_subject01_terminal_support.rrd",
+          "sha256": "4b0f2c9552d205b2f49a322f308bd6d99d51c5b967ca5e6835ff848c053a9b66"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0",
+        "video_artifact": {
+          "bytes": 278549,
+          "path": "assets/umi3_subject01_terminal_support_fallback.mp4",
+          "sha256": "f8a37a507784edaf3029336abe77cb49f3f20dc92cdff78037432b32e811b6c2"
+        }
+      }
+    },
+    {
+      "blockers": [
+        "100% soft pressure patch unresolved and is not zero",
+        "contact wrench to MSK and fatigue missing",
+        "dynamic press and pressure keyframes are independent episodes",
+        "subject-specific material/contact calibration missing",
+        "synchronized strap geometry and strap-mechanics state are absent from the interactive source"
+      ],
+      "can_enter_final_comfort_verdict": false,
+      "channels": [
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "ArtiSynth 3.9",
+          "blocked_fractions": [
+            1.0
+          ],
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_pressure_pa",
+          "resolved_fractions": [
+            0.2,
+            0.5
+          ],
+          "truth_level": "LITERATURE_PRIOR",
+          "unit": "Pa"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "ArtiSynth 3.9",
+          "blocked_fractions": [
+            1.0
+          ],
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_force_magnitude_n",
+          "resolved_fractions": [
+            0.2,
+            0.5
+          ],
+          "truth_level": "LITERATURE_PRIOR",
+          "unit": "N"
+        },
+        {
+          "availability": "SPARSE_KEYFRAMES",
+          "backend": "ArtiSynth 3.9",
+          "blocked_fractions": [
+            1.0
+          ],
+          "missing_semantics": "BLOCKED_NOT_ZERO",
+          "name": "contact_patch_area_m2",
+          "resolved_fractions": [
+            0.2,
+            0.5
+          ],
+          "truth_level": "LITERATURE_PRIOR",
+          "unit": "m^2"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MuJoCo/Newton",
+          "name": "mano_umi_rigid_press_state",
+          "truth_level": "BACKEND_CERTIFIED_ENGINEERING",
+          "unit": "state"
+        },
+        {
+          "availability": "CONTINUOUS",
+          "backend": "MuJoCo",
+          "name": "device_root_displacement",
+          "truth_level": "DIAGNOSTIC_PROXY",
+          "unit": "m"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "NOT_AVAILABLE",
+          "name": "mtu_force_n",
+          "truth_level": "KILLED",
+          "unit": "N"
+        },
+        {
+          "availability": "MISSING",
+          "backend": "not_available",
+          "missing_semantics": "NOT_AVAILABLE",
+          "name": "fatigued_fraction",
+          "truth_level": "KILLED",
+          "unit": "fraction"
+        }
+      ],
+      "claim_boundary": "20%/50%是文献先验软压力诊断；100%为缺失。各episode不得解释为同一连续物理状态。",
+      "description": "435帧MANO/UMI按压回放；20%/50%显示逐顶点软压力、结点力与接触面积，100%明确阻塞。",
+      "handedness": "right",
+      "id": "umi3_subject01_width4_strap_pressure",
+      "source_manifest": {
+        "bytes": 6553,
+        "path": "manifests/umi3_subject01_width4_strap_pressure.json",
+        "sha256": "889d1a8d4ae7cc48a322835606aeff99879e5cfa56da4c0a1f1af75b902f586d"
+      },
+      "status": "DIAGNOSTIC_VISUALIZATION_READY",
+      "subject": "subject01",
+      "timeline": {
+        "duration_s": 17.99791666663815,
+        "episode_alignment": "SPARSE_Q_ALIGNED_INDEPENDENT_SOFT_KEYFRAMES_NO_INTERPOLATION",
+        "fps": 24,
+        "frame_count": 435
+      },
+      "title": "UMI3加宽指套与软压力关键帧",
+      "trajectory_id": "subject01-width4-strap-press",
+      "truth_level": "DIAGNOSTIC_PROXY",
+      "umi_family": "UMI3",
+      "viewer": {
+        "artifact": {
+          "bytes": 7501596,
+          "path": "assets/umi3_subject01_width4_strap_pressure.rrd",
+          "sha256": "692a0b8e0f18880b5ce95fcd66c7e5c844e8117aa33ceb5d0d2ae950b8a54e67"
+        },
+        "kind": "rerun",
+        "rerun_version": "0.35.0",
+        "video_artifact": {
+          "bytes": 1044292,
+          "path": "assets/umi3_subject01_width4_strap_pressure_fallback.mp4",
+          "sha256": "b5f8e56d477b1023e7e3eee079c1af84c274ebb1d72a4fdb7797987086e5a9cb"
+        }
+      }
+    }
+  ],
+  "schema_version": "mano_foundation.web_replay_catalog.v1",
+  "semantics": {
+    "blocked_values_substituted_with_zero": false,
+    "browser_recomputes_physics": false,
+    "comfort_or_safety_verdict_allowed": false,
+    "cross_scene_color_scales_require_declared_fixed_ranges": true
+  },
+  "status": "DIAGNOSTIC_WEB_GALLERY_READY"
+}

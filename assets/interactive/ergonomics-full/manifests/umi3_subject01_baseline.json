@@ -1,0 +1,21 @@
+{
+  "blockers": [
+    "continuous same-solver soft pressure is missing",
+    "MSK and fatigue are not coupled to this press trace",
+    "contact and root channels remain simulation diagnostics"
+  ],
+  "can_enter_final_comfort_verdict": false,
+  "recording": {
+    "bytes": 5519080,
+    "path": "umi3_subject01_baseline.rrd",
+    "sha256": "247313e9a5892c6caaaf0024d4f25dab3d5644d694da26977749a987f0b0b33f"
+  },
+  "rerun_version": "0.35.0",
+  "schema_version": "mano_foundation.device_replay_rerun.v1",
+  "source": {
+    "arrays_sha256": "b427376dfe17ce6a2c6159540772f61f64e70e3a1adf07399b099374e97e9c3e",
+    "manifest_path": "D:\\UMIpro\\MANO-Engineering-Foundation\\.artifacts\\web_device_replays\\umi3_baseline\\device_replay_manifest_v1.json",
+    "manifest_sha256": "171939bbae07b0d4b0a548cfae94b6ad605df4bc9ba69d763619351e0cbfa590"
+  },
+  "truth_level": "DIAGNOSTIC_PROXY"
+}
