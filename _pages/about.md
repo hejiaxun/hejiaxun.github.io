@@ -33,7 +33,6 @@ description: 贺加勋的机器人研究与工程个人主页。
 <div class="news-list">
   <div class="news-item"><time>2026.07</time><p>第一作者论文 <em>Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</em> 正式发表于 IEEE Robotics and Automation Letters。</p></div>
   <div class="news-item"><time>2026.05</time><p>加入穹彻智能担任具身智能实习生，开展 DexUMI / XHand 灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 研究。</p></div>
-  <div class="news-item"><time>2025.08</time><p>开始绳驱超冗余机械臂受限空间规划与绳驱约束控制研究。</p></div>
 </div>
 
 ## 🧩 代表工作
