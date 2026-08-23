@@ -95,14 +95,51 @@
   <figcaption>共享级联单元将静态传动模型、物理先验与因果时序修正结合起来。</figcaption>
 </figure>
 
-<h2 id="真机部署">真机部署</h2>
+<h2 id="状态估计如何进入机器人控制">状态估计如何进入机器人控制</h2>
 
-<p>估计器以独立 CPU 推理服务部署，并通过 UDP 接入既有 Qt 控制器。在不改动控制器主逻辑的前提下，模型估计结果进入 10 Hz 张力—构型混合控制闭环，用于验证状态估计对真实机器人动态响应的作用。</p>
+<p>闭环实验并不是另起一套控制器，而是将 PG-CHTC 作为虚拟传感器，接入课题组已有的<strong>张力—构型混合控制器</strong>。下面先用控制器论文原图说明完整控制关系，再单独标出本文新增模块。</p>
+
+<h3 id="既有张力构型混合控制器">既有张力—构型混合控制器</h3>
+
+<p>既有控制器以关节角跟踪为主支路，同时用绳张力反馈维持传动链稳定。多节系统还需要补偿绳孔间隔、绳索变形与摩擦传递，并依据收紧/放松状态及张力上下界约束驱动命令。</p>
 
 <figure class="media-figure">
-  <img src="/assets/img/ral/deployment.png" alt="张力估计器接入真机闭环" loading="lazy">
-  <figcaption>PG-CHTC 在线推理服务与既有控制系统的闭环集成。</figcaption>
+  <img src="/assets/img/ral/zhu-2025-hybrid-control-fig4.png" alt="Zhu 等提出的单节与多节张力—构型混合控制器" loading="lazy">
+  <figcaption>既有单节与多节张力—构型混合控制器。图源：Zhu et al., IEEE RA-L 2025, Fig. 4；© 2025 IEEE。此处仅作学术说明，原图及版权归原作者与 IEEE。</figcaption>
 </figure>
+
+<p><a href="/assets/img/ral/zhu-2025-hybrid-control-fig4.png">打开高清控制框图</a> · <a href="https://doi.org/10.1109/LRA.2025.3559829" rel="external nofollow noopener" target="_blank">查看既有控制器论文原文</a></p>
+
+<ul>
+  <li>
+<strong>构型反馈：</strong>根据参考关节角与实测关节角之间的误差生成构型校正量，并通过运动学/绳长映射作用于驱动绳。</li>
+  <li>
+<strong>张力反馈：</strong>根据目标张力与关节侧张力之间的误差生成分段张力校正量，避免绳索松弛或过张紧造成跟踪不稳。</li>
+  <li>
+<strong>多节协调与安全：</strong>将两类校正量与绳孔间隔、绳索变形及摩擦传递补偿合成；根据绳索收紧/放松状态和张力边界约束输出驱动命令。</li>
+</ul>
+
+<h3 id="pg-chtc-接入位置">PG-CHTC 接入位置</h3>
+
+<p>PG-CHTC 读取实机能够在线获得的关节角与驱动侧张力，逐节估计原本无法直接测量的关节侧张力，再将估计结果送入张力反馈支路。它替换的是<strong>内部张力状态的获取方式</strong>，而不是构型控制器、张力控制器、驱动与安全逻辑。</p>
+
+<figure class="media-figure">
+  <img src="/assets/img/ral/control-integration.svg" alt="PG-CHTC 作为虚拟张力传感器接入既有混合控制闭环" loading="lazy">
+  <figcaption>灰色链路为既有控制系统；蓝色链路为本文新增的 PG-CHTC 在线状态估计器。</figcaption>
+</figure>
+
+<h3 id="一个-10-hz-闭环周期">一个 10 Hz 闭环周期</h3>
+
+<ol>
+  <li>Qt 控制器读取当前关节角 <code class="language-plaintext highlighter-rouge">θ(t)</code> 和驱动侧张力 <code class="language-plaintext highlighter-rouge">T_act(t)</code>。</li>
+  <li>独立 CPU 推理服务按绳路级联顺序执行 PG-CHTC 因果前向推理，得到全臂关节侧张力估计 <code class="language-plaintext highlighter-rouge">T̂_joint(t)</code>。</li>
+  <li>构型支路计算 <code class="language-plaintext highlighter-rouge">θ_ref − θ(t)</code>，张力支路计算 <code class="language-plaintext highlighter-rouge">T_ref − T̂_joint(t)</code>，分别形成校正量。</li>
+  <li>控制器合成校正量并执行传动补偿与安全检查，随后驱动绳索；下一帧传感数据再次进入闭环。</li>
+</ol>
+
+<h3 id="工程接入与来源边界">工程接入与来源边界</h3>
+
+<p>PG-CHTC 以独立 CPU 服务运行，通过 UDP 接入既有 Qt 上位机，在不改动控制器主逻辑的前提下完成 10 Hz 在线调用。既有控制框架来源于 Zhenpu Zhu、Ziqing Li、Zhanxuan Peng、Chao Liu 与 Guoying Gu 的论文 <a href="https://doi.org/10.1109/LRA.2025.3559829" rel="external nofollow noopener" target="_blank"><em>Hybrid Tension and Configuration Control of Cable-Driven Hyper-Redundant Robots for High Accuracy and Stability</em></a>，发表于 <em>IEEE Robotics and Automation Letters</em>，2025。本文工作的贡献边界是 PG-CHTC 状态估计、CPU/UDP 部署及其闭环验证，不主张对既有控制器的设计所有权。</p>
 
 <h2 id="实验结果">实验结果</h2>
 
