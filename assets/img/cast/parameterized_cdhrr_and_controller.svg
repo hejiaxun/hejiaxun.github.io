@@ -1,24 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Parameterized CDHRR model and cable controller</title>
-  <desc id="desc">An academic three-stage diagram from morphology parameters through generated MuJoCo structure to an N-aware cable controller.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">参数化绳驱机器人建模与控制接口</title>
+  <desc id="desc">从参数化机器人描述生成 MuJoCo 模型，再输出供规划调用的绳长控制接口。</desc>
   <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#2f7d82"/>
+    </marker>
     <style>
-      .bg{fill:#f7f8f6}.panel{fill:#fff;stroke:#cbd4d1;stroke-width:2}.title{font-family:Arial,sans-serif;font-size:42px;font-weight:700;fill:#183a4a}.head{font-family:Arial,sans-serif;font-size:30px;font-weight:700;fill:#183a4a}.body{font-family:Arial,sans-serif;font-size:22px;font-weight:400;fill:#41555e}.small{font-family:Arial,sans-serif;font-size:18px;font-weight:400;fill:#66777e}.stage{font-family:Georgia,serif;font-size:30px;font-weight:700;fill:#287d83}.accent{fill:#dceff0;stroke:#287d83;stroke-width:2}.warm{fill:#f4ead8;stroke:#b78129;stroke-width:2}.line{fill:none;stroke:#287d83;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.cable{fill:none;stroke:#b78129;stroke-width:3;opacity:.9}.note{fill:#edf2f1;stroke:#cbd4d1;stroke-width:2}.tag{font-family:Arial,sans-serif;font-size:18px;font-weight:700;fill:#fff}.tagbg{fill:#287d83}
+      .bg{fill:#f8faf9}.card{fill:#fff;stroke:#d4dcda;stroke-width:2}.step{font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;letter-spacing:.08em;fill:#2f7d82}.head{font:700 28px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#18313e}.body{font:500 18px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#5e7078}.line{fill:none;stroke:#2f7d82;stroke-width:4;stroke-linecap:round;marker-end:url(#arrow)}.foot{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#405760}.pill{fill:#e6f1f1}.pilltext{font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#2f7d82}
     </style>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#287d83"/></marker>
   </defs>
-  <rect class="bg" width="1600" height="900"/>
-  <text x="80" y="85" class="title">Parameterized CDHRR modeling and cable control</text>
-  <text x="80" y="125" class="small">Robot morphology, tendon routing, and low-level control form a reusable system layer beneath planning.</text>
-  <rect x="80" y="180" rx="20" ry="20" width="390" height="520" class="panel"/><rect x="605" y="180" rx="20" ry="20" width="390" height="520" class="panel"/><rect x="1130" y="180" rx="20" ry="20" width="390" height="520" class="panel"/>
-  <line x1="490" y1="440" x2="580" y2="440" class="line" marker-end="url(#arrow)"/><line x1="1015" y1="440" x2="1105" y2="440" class="line" marker-end="url(#arrow)"/>
-  <text x="120" y="235" class="stage">1 · Morphology</text><text x="120" y="285" class="body">N segments</text><text x="120" y="325" class="body">segment length L</text><text x="120" y="365" class="body">body diameter</text><text x="120" y="405" class="body">cable-site phase and radius</text><text x="120" y="445" class="body">actuator stiffness schedule</text>
-  <rect x="120" y="500" width="310" height="120" rx="14" class="accent"/><text x="145" y="545" class="head" font-size="24">Procedural XML</text><text x="145" y="580" class="small">nested bodies · routing sites</text><text x="145" y="608" class="small">actuators · sensors</text>
-  <text x="645" y="235" class="stage">2 · MuJoCo model</text><line x1="670" y1="400" x2="910" y2="400" class="line"/>
-  <g fill="#dceff0" stroke="#287d83" stroke-width="2"><circle cx="675" cy="400" r="18"/><circle cx="735" cy="365" r="18"/><circle cx="795" cy="415" r="18"/><circle cx="855" cy="375" r="18"/><circle cx="915" cy="425" r="18"/></g>
-  <path d="M675 380 C735 300,795 500,915 405" class="cable"/><path d="M675 420 C755 520,835 295,915 445" class="cable"/>
-  <text x="650" y="500" class="head" font-size="25">2N pitch/yaw joints</text><text x="650" y="540" class="head" font-size="25">3N spatial tendons</text><text x="650" y="580" class="body">3N position actuators</text><text x="650" y="615" class="body">tendon-length sensors</text><text x="650" y="660" class="small">contact · friction · inertia · gravity</text>
-  <text x="1170" y="235" class="stage">3 · Cable control</text>
-  <rect x="1170" y="285" width="310" height="54" rx="10" class="accent"/><text x="1195" y="320" class="body">joint PD feedback</text><rect x="1170" y="355" width="310" height="54" rx="10" class="accent"/><text x="1195" y="390" class="body">cable-length Jacobian</text><rect x="1170" y="425" width="310" height="54" rx="10" class="accent"/><text x="1195" y="460" class="body">target-length feedforward</text><rect x="1170" y="495" width="310" height="54" rx="10" class="warm"/><text x="1195" y="530" class="body">pretension guidance</text><rect x="1170" y="565" width="310" height="54" rx="10" class="warm"/><text x="1195" y="600" class="body">command-rate limiting</text><text x="1170" y="660" class="head" font-size="24">output: 3N cable lengths</text>
-  <rect x="80" y="750" rx="16" ry="16" width="1440" height="92" class="note"/><rect x="105" y="775" rx="9" ry="9" width="220" height="42" class="tagbg"/><text x="126" y="803" class="tag">Primary evaluation</text><text x="355" y="804" class="head" font-size="24">N=12 · 24 joint DoFs · 36 tendons · fixed base</text><text x="1050" y="804" class="small">Infrastructure checks: N=4 / 8 / 12 / 16</text>
+  <rect class="bg" width="1200" height="390" rx="20"/>
+
+  <rect class="card" x="55" y="55" width="310" height="225" rx="18"/>
+  <text class="step" x="88" y="96">01 · ROBOT DESCRIPTION</text>
+  <text class="head" x="88" y="143">参数化机器人描述</text>
+  <text class="body" x="88" y="188">节数 · 单节尺寸 · 绳路布局</text>
+  <text class="body" x="88" y="225">统一生成结构与接口</text>
+
+  <path class="line" d="M383 168H445"/>
+
+  <rect class="card" x="463" y="55" width="310" height="225" rx="18"/>
+  <text class="step" x="496" y="96">02 · PHYSICS MODEL</text>
+  <text class="head" x="496" y="143">MuJoCo 机器人模型</text>
+  <text class="body" x="496" y="188">2N 自由度 · 3N 空间绳</text>
+  <text class="body" x="496" y="225">执行器、传感器与接触动力学</text>
+
+  <path class="line" d="M791 168H853"/>
+
+  <rect class="card" x="871" y="55" width="274" height="225" rx="18"/>
+  <text class="step" x="904" y="96">03 · CONTROL API</text>
+  <text class="head" x="904" y="143">绳长控制接口</text>
+  <text class="body" x="904" y="188">关节参考 → 3N 路绳长命令</text>
+  <text class="body" x="904" y="225">供上层规划统一调用</text>
+
+  <rect class="pill" x="55" y="315" width="126" height="38" rx="19"/>
+  <text class="pilltext" x="118" y="340" text-anchor="middle">主评测配置</text>
+  <text class="foot" x="205" y="341">12 节 · 24 自由度 · 36 绳 · 固定基座</text>
 </svg>

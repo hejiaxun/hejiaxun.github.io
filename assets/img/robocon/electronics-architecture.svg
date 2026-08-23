@@ -1,49 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
-  <title id="title">ROBOCON 机器人电控系统架构</title>
-  <desc id="desc">传感采集经 STM32F405 主控处理，通过 CAN、UART 和以太网连接执行器与机器人系统。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">ROBOCON 机器人电控链路</title>
+  <desc id="desc">传感采集经 STM32F405 主控与通信接口连接执行器，最终完成四台机器人整机联调。</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#8e2637"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#9b2e42"/>
     </marker>
     <style>
-      .title{font:700 30px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#172033}
-      .head{font:700 22px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#172033}
-      .body{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#5e6879}
-      .box{fill:#fff;stroke:#cfd6df;stroke-width:2}
-      .accent{fill:#f8eff1;stroke:#8e2637;stroke-width:2}
-      .line{stroke:#8e2637;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .bg{fill:#faf9f9}.card{fill:#fff;stroke:#ded7d9;stroke-width:2}.step{font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;letter-spacing:.08em;fill:#9b2e42}.head{font:700 28px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#202a39}.body{font:500 18px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#667080}.line{fill:none;stroke:#9b2e42;stroke-width:4;stroke-linecap:round;marker-end:url(#arrow)}.foot{font:600 18px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#4f5968}.pill{fill:#f5e9ec}.pilltext{font:700 16px -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif;fill:#9b2e42}
     </style>
   </defs>
-  <rect width="1200" height="620" rx="18" fill="#f5f7f9"/>
-  <text x="60" y="64" class="title">从传感、主控到执行器的完整电控链路</text>
+  <rect class="bg" width="1200" height="380" rx="20"/>
 
-  <rect x="60" y="125" width="260" height="350" rx="14" class="box"/>
-  <text x="90" y="174" class="head">传感与输入</text>
-  <text x="90" y="225" class="body">激光测距</text>
-  <text x="90" y="263" class="body">10 kHz / 16 位采集</text>
-  <text x="90" y="321" class="body">光纤陀螺</text>
-  <text x="90" y="359" class="body">24 位采集</text>
-  <text x="90" y="417" class="body">编码器 / 开关量</text>
+  <rect class="card" x="55" y="50" width="310" height="220" rx="18"/>
+  <text class="step" x="88" y="92">01 · SENSING</text>
+  <text class="head" x="88" y="139">传感采集</text>
+  <text class="body" x="88" y="184">激光测距 · 光纤陀螺</text>
+  <text class="body" x="88" y="221">编码器与模拟量采集</text>
 
-  <rect x="450" y="125" width="300" height="350" rx="14" class="accent"/>
-  <text x="485" y="174" class="head">主控与接口</text>
-  <text x="485" y="232" class="body">STM32F405</text>
-  <text x="485" y="280" class="body">ADC · 电源 · 滤波</text>
-  <text x="485" y="328" class="body">CAN · UART · 以太网</text>
-  <text x="485" y="376" class="body">状态采集与控制指令</text>
-  <text x="485" y="424" class="body">板级测试与故障定位</text>
+  <path class="line" d="M383 161H445"/>
 
-  <rect x="880" y="125" width="260" height="350" rx="14" class="box"/>
-  <text x="910" y="174" class="head">执行与整机</text>
-  <text x="910" y="232" class="body">电机 / 编码器</text>
-  <text x="910" y="280" class="body">ODrive 开源 FOC 方案</text>
-  <text x="910" y="328" class="body">电磁阀与执行机构</text>
-  <text x="910" y="376" class="body">供电与通信线束</text>
-  <text x="910" y="424" class="body">多机器人系统联调</text>
+  <rect class="card" x="463" y="50" width="310" height="220" rx="18"/>
+  <text class="step" x="496" y="92">02 · CONTROLLER</text>
+  <text class="head" x="496" y="139">STM32F405 主控</text>
+  <text class="body" x="496" y="184">ADC · CAN / UART / 以太网</text>
+  <text class="body" x="496" y="221">状态采集与控制指令</text>
 
-  <path d="M320 300 H445" class="line"/>
-  <path d="M750 300 H875" class="line"/>
+  <path class="line" d="M791 161H853"/>
 
-  <rect x="250" y="525" width="700" height="56" rx="10" fill="#172033"/>
-  <text x="600" y="561" text-anchor="middle" style="font:600 18px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;fill:#fff">Altium Designer · PCB 制作 · 板级调试 · 整机布线 · 赛场保障</text>
+  <rect class="card" x="871" y="50" width="274" height="220" rx="18"/>
+  <text class="step" x="904" y="92">03 · ROBOT SYSTEM</text>
+  <text class="head" x="904" y="139">执行器与整机</text>
+  <text class="body" x="904" y="184">电机与驱动 · 供电与线束</text>
+  <text class="body" x="904" y="221">四台机器人联调与赛场保障</text>
+
+  <rect class="pill" x="55" y="306" width="126" height="38" rx="19"/>
+  <text class="pilltext" x="118" y="331" text-anchor="middle">个人负责范围</text>
+  <text class="foot" x="205" y="332">板卡设计与制作 · 电控集成 · 整机调试与维护</text>
 </svg>

@@ -1134,36 +1134,6 @@ img {
   }
 }
 
-.interactive-load-button {
-  display: grid;
-  width: 100%;
-  min-height: 190px;
-  padding: 28px;
-  place-content: center;
-  gap: 8px;
-  color: #2259b3;
-  background: #eef5ff;
-  border: 1px dashed #9dbce9;
-  border-radius: 9px;
-  font: inherit;
-  text-align: center;
-  cursor: pointer;
-}
-
-.interactive-load-button:hover {
-  background: #e4efff;
-  border-color: #6e9de0;
-}
-
-.interactive-load-button strong {
-  font-size: 1.08rem;
-}
-
-.interactive-load-button span {
-  color: #65748a;
-  font-size: 0.9rem;
-}
-
 .project-video--hero {
   margin-top: 0;
 }
@@ -1848,6 +1818,25 @@ img {
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: #fff;
+}
+
+.media-pair .project-video--paired {
+  margin: 0;
+}
+
+.project-video--paired video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: none;
+  object-fit: contain;
+  background: #0b1020;
+}
+
+.project-video--paired figcaption {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.55;
 }
 
 .pcb-viewer {
@@ -2556,7 +2545,30 @@ td {
   border: 0;
 }
 
+.interactive-feature--cast {
+  background: #fff;
+}
+
+.interactive-embed-shell--cast {
+  height: min(820px, 82vh);
+  min-height: 680px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.interactive-embed-shell--cast .cast-interactive-frame {
+  height: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
 @media (max-width: 900px) {
+  .interactive-embed-shell--cast {
+    height: 760px;
+    min-height: 0;
+  }
+
   .interactive-model-shell {
     grid-template-columns: 1fr;
   }
@@ -2575,6 +2587,10 @@ td {
 }
 
 @media (max-width: 600px) {
+  .interactive-embed-shell--cast {
+    height: 820px;
+  }
+
   .interactive-model-shell {
     border-radius: 18px;
   }

@@ -30,7 +30,13 @@ permalink: /projects/ral-tendon-estimation/
 
 <div class="media-pair">
   {% include figure.html path="assets/img/ral/sjtu-iii-platform.png" alt="SJTU-III 绳驱超冗余机器人平台组成" caption="SJTU-III 系统组成：驱动箱、绳索导向机构、机器人本体、直线进给平台与移动平台。" %}
-  {% include figure.html path="assets/img/ral/sjtu-iii-pipe-tank-inspection.gif" alt="SJTU-III 机器人执行管罐系统巡检任务" caption="SJTU-III 在管罐系统中的受限空间巡检演示。" %}
+  <figure class="project-video project-video--paired">
+    <video controls muted playsinline preload="metadata" poster="{{ '/assets/img/ral/sjtu-iii-pipe-tank-inspection-poster.jpg' | relative_url }}">
+      <source src="{{ '/assets/video/ral/sjtu-iii-pipe-tank-inspection.mp4' | relative_url }}" type="video/mp4">
+      当前浏览器不支持内嵌视频，可<a href="{{ '/assets/video/ral/sjtu-iii-pipe-tank-inspection.mp4' | relative_url }}">直接打开视频</a>。
+    </video>
+    <figcaption>SJTU-III 在管罐系统中开展受限空间巡检的公开演示。</figcaption>
+  </figure>
 </div>
 
 ## 问题
@@ -65,7 +71,9 @@ permalink: /projects/ral-tendon-estimation/
 
 PG-CHTC 读取实机能够在线获得的关节角与驱动侧张力，逐节估计原本无法直接测量的关节侧张力，再将估计结果送入张力反馈支路。它替换的是**内部张力状态的获取方式**，而不是构型控制器、张力控制器、驱动与安全逻辑。
 
-{% include figure.html path="assets/img/ral/control-integration.svg" alt="PG-CHTC 作为虚拟张力传感器接入既有混合控制闭环" caption="灰色链路为既有控制系统；蓝色链路为本文新增的 PG-CHTC 在线状态估计器。" %}
+{% include figure.html path="assets/img/ral/fig-estimator-in-loop.png" alt="论文中的 PG-CHTC estimator-in-the-loop 控制框图" caption="论文原图：PG-CHTC 读取关节角与驱动侧张力，在线估计全臂关节侧张力，并将估计结果反馈至既有张力—构型混合控制器。图源：He et al., IEEE RA-L 2026；© 2026 IEEE。" %}
+
+[打开高清控制框图]({{ '/assets/img/ral/fig-estimator-in-loop.png' | relative_url }})
 
 ### 一个 10 Hz 闭环周期
 
