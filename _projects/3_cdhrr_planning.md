@@ -62,8 +62,8 @@ permalink: /projects/cdhrr-planning/
 训练阶段使用完整 MuJoCo 与绳驱控制链进行闭环随机尝试，只保留真实到达目标的成功回合，并转化为“当前观测—未来关节增量块”监督。部署阶段，条件扩散策略一次提出 32 个 <em>8×24</em> 动作块，先以链上锚点进行快速全臂筛选，再对前五个候选计算 MuJoCo 胶囊间隙；系统仅执行最优候选的前四步，随后根据新观测滚动重规划。
 
 <figure class="project-figure project-figure--wide">
-  <img src="{{ '/assets/img/cast/cast_method_summary.svg' | relative_url }}" alt="CAST 从闭环成功回合到扩散策略与全臂几何选择的四步方法链">
-  <figcaption>概览图只呈现四步主链；网络结构、候选数量和筛选细节可在上方交互展示中继续展开。</figcaption>
+  <img src="{{ '/assets/img/cast/cast_method_summary.svg' | relative_url }}" alt="CAST 从闭环成功搜索、动作块扩散策略到筛选与滚动执行的三步方法链">
+  <figcaption>概览图只呈现三段主链；网络结构、候选数量和筛选细节可在上方交互展示中继续展开。</figcaption>
 </figure>
 
 ## 锁定 Benchmark 与主要结果
