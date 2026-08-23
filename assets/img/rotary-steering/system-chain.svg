@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">旋转导向钻井闭环信息链</title>
+  <desc id="desc">地面系统根据测量信息预测轨迹并生成指令，经泥浆脉冲下传到井下控制器与执行机构，再由井下测量反馈。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4777b8"/>
+    </marker>
+    <style>
+      .title{font:700 28px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#172235}
+      .label{font:700 20px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#1d2939}
+      .sub{font:400 15px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#667085}
+      .tag{font:600 14px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#4777b8}
+    </style>
+  </defs>
+
+  <text class="title" x="70" y="48">旋转导向钻井闭环信息链</text>
+
+  <text class="tag" x="70" y="84">地面</text>
+  <rect x="70" y="98" width="250" height="118" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+  <text class="label" x="100" y="144">轨迹预测与指令</text>
+  <text class="sub" x="100" y="180">融合历史测量与目标工况</text>
+
+  <line x1="320" y1="157" x2="385" y2="157" stroke="#4777b8" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="400" y="98" width="230" height="118" rx="18" fill="#f3f7fc" stroke="#90acd2" stroke-width="2"/>
+  <text class="label" x="430" y="144">泥浆脉冲下传</text>
+  <text class="sub" x="430" y="180">控制指令编码与解码</text>
+
+  <line x1="630" y1="157" x2="695" y2="157" stroke="#4777b8" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <text class="tag" x="710" y="84">井下</text>
+  <rect x="710" y="98" width="220" height="118" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+  <text class="label" x="740" y="144">控制与执行</text>
+  <text class="sub" x="740" y="180">控制器驱动导向机构</text>
+
+  <line x1="930" y1="157" x2="975" y2="157" stroke="#4777b8" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="990" y="98" width="160" height="118" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+  <text class="label" x="1020" y="144">状态测量</text>
+  <text class="sub" x="1020" y="180">姿态与工具状态</text>
+
+  <path d="M1070 216 V264 H195 V230" fill="none" stroke="#4777b8" stroke-width="3" marker-end="url(#arrow)"/>
+  <text class="tag" x="545" y="292">测量信息反馈到下一次预测与决策</text>
+</svg>
