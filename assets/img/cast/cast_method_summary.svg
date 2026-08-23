@@ -1,53 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">CAST 方法概览</title>
-  <desc id="desc">从控制器在环成功搜索，经成功回合蒸馏与扩散策略提案，到全臂几何选择的四步方法链。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">CAST 规划方法</title>
+  <desc id="desc">先通过控制器在环搜索生成成功回合，再训练动作块扩散策略，最后在在线规划中筛选候选并滚动执行。</desc>
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L10,5 L0,10 z" fill="#277d83"/>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#4777b8"/>
     </marker>
     <style>
-      .title{font:700 31px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#163242}
-      .step{font:600 16px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#277d83;letter-spacing:.04em}
-      .head{font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#182c38}
-      .body{font:400 16px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#60727c}
-      .note{font:500 15px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#60727c}
+      .title{font:700 28px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#172235}
+      .phase{font:600 14px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#4777b8;letter-spacing:1px}
+      .label{font:700 22px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#1d2939}
+      .sub{font:400 16px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#667085}
     </style>
   </defs>
-  <rect width="1200" height="360" rx="24" fill="#fbfcfc"/>
-  <text class="title" x="58" y="62">从闭环成功回合到毫秒级局部规划</text>
 
-  <g transform="translate(58 105)">
-    <rect width="244" height="142" rx="18" fill="#fff" stroke="#cfd9da" stroke-width="2"/>
-    <text class="step" x="24" y="34">01 · 闭环搜索</text>
-    <text class="head" x="24" y="73">成功回合</text>
-    <text class="body" x="24" y="106">MuJoCo + 绳驱控制器</text>
-  </g>
-  <path d="M314 176 H347" fill="none" stroke="#277d83" stroke-width="4" marker-end="url(#arrow)"/>
+  <text class="title" x="70" y="48">控制器在环的扩散式全臂规划</text>
 
-  <g transform="translate(361 105)">
-    <rect width="244" height="142" rx="18" fill="#fff" stroke="#cfd9da" stroke-width="2"/>
-    <text class="step" x="24" y="34">02 · 数据蒸馏</text>
-    <text class="head" x="24" y="73">动作块监督</text>
-    <text class="body" x="24" y="106">观测 → 未来关节增量</text>
-  </g>
-  <path d="M617 176 H650" fill="none" stroke="#277d83" stroke-width="4" marker-end="url(#arrow)"/>
+  <text class="phase" x="90" y="83">数据生成</text>
+  <rect x="70" y="98" width="280" height="130" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+  <text class="label" x="105" y="145">闭环成功搜索</text>
+  <text class="sub" x="105" y="181">在控制器中验证候选轨迹</text>
+  <text class="sub" x="105" y="207">保留可执行的成功回合</text>
 
-  <g transform="translate(664 105)">
-    <rect width="244" height="142" rx="18" fill="#fff" stroke="#cfd9da" stroke-width="2"/>
-    <text class="step" x="24" y="34">03 · 策略提案</text>
-    <text class="head" x="24" y="73">并行候选动作</text>
-    <text class="body" x="24" y="106">条件扩散策略</text>
-  </g>
-  <path d="M920 176 H953" fill="none" stroke="#277d83" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="350" y1="163" x2="455" y2="163" stroke="#4777b8" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <g transform="translate(967 105)">
-    <rect width="175" height="142" rx="18" fill="#e8f3f3" stroke="#277d83" stroke-width="2"/>
-    <text class="step" x="20" y="34">04 · 几何选择</text>
-    <text class="head" x="20" y="73">滚动执行</text>
-    <text class="body" x="20" y="106">全臂筛选</text>
-  </g>
+  <text class="phase" x="490" y="83">策略学习</text>
+  <rect x="470" y="98" width="280" height="130" rx="18" fill="#f3f7fc" stroke="#90acd2" stroke-width="2"/>
+  <text class="label" x="505" y="145">动作块扩散策略</text>
+  <text class="sub" x="505" y="181">由当前状态生成多步动作</text>
+  <text class="sub" x="505" y="207">学习成功回合中的规避模式</text>
 
-  <line x1="58" y1="286" x2="1142" y2="286" stroke="#dce4e5"/>
-  <text class="note" x="58" y="322">离线：允许控制器 rollout</text>
-  <text class="note" x="356" y="322">在线：策略推理、运动学与精确几何检查</text>
+  <line x1="750" y1="163" x2="855" y2="163" stroke="#4777b8" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <text class="phase" x="890" y="83">在线规划</text>
+  <rect x="870" y="98" width="260" height="130" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+  <text class="label" x="905" y="145">筛选与滚动执行</text>
+  <text class="sub" x="905" y="181">全臂约束检查候选动作</text>
+  <text class="sub" x="905" y="207">执行首步并重新规划</text>
 </svg>
