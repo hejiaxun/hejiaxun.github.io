@@ -45,11 +45,38 @@ permalink: /projects/ral-tendon-estimation/
 
 {% include figure.html path="assets/img/ral/method.png" alt="PG-CHTC 物理引导级联模型" caption="共享级联单元将静态传动模型、物理先验与因果时序修正结合起来。" %}
 
-## 真机部署
+## 状态估计如何进入机器人控制
 
-估计器以独立 CPU 推理服务部署，并通过 UDP 接入既有 Qt 控制器。在不改动控制器主逻辑的前提下，模型估计结果进入 10 Hz 张力—构型混合控制闭环，用于验证状态估计对真实机器人动态响应的作用。
+闭环实验并不是另起一套控制器，而是将 PG-CHTC 作为虚拟传感器，接入课题组已有的**张力—构型混合控制器**。下面先用控制器论文原图说明完整控制关系，再单独标出本文新增模块。
 
-{% include figure.html path="assets/img/ral/deployment.png" alt="张力估计器接入真机闭环" caption="PG-CHTC 在线推理服务与既有控制系统的闭环集成。" %}
+### 既有张力—构型混合控制器
+
+既有控制器以关节角跟踪为主支路，同时用绳张力反馈维持传动链稳定。多节系统还需要补偿绳孔间隔、绳索变形与摩擦传递，并依据收紧/放松状态及张力上下界约束驱动命令。
+
+{% include figure.html path="assets/img/ral/zhu-2025-hybrid-control-fig4.png" alt="Zhu 等提出的单节与多节张力—构型混合控制器" caption="既有单节与多节张力—构型混合控制器。图源：Zhu et al., IEEE RA-L 2025, Fig. 4；© 2025 IEEE。此处仅作学术说明，原图及版权归原作者与 IEEE。" %}
+
+[打开高清控制框图]({{ '/assets/img/ral/zhu-2025-hybrid-control-fig4.png' | relative_url }}) · [查看既有控制器论文原文](https://doi.org/10.1109/LRA.2025.3559829)
+
+- **构型反馈：**根据参考关节角与实测关节角之间的误差生成构型校正量，并通过运动学/绳长映射作用于驱动绳。
+- **张力反馈：**根据目标张力与关节侧张力之间的误差生成分段张力校正量，避免绳索松弛或过张紧造成跟踪不稳。
+- **多节协调与安全：**将两类校正量与绳孔间隔、绳索变形及摩擦传递补偿合成；根据绳索收紧/放松状态和张力边界约束输出驱动命令。
+
+### PG-CHTC 接入位置
+
+PG-CHTC 读取实机能够在线获得的关节角与驱动侧张力，逐节估计原本无法直接测量的关节侧张力，再将估计结果送入张力反馈支路。它替换的是**内部张力状态的获取方式**，而不是构型控制器、张力控制器、驱动与安全逻辑。
+
+{% include figure.html path="assets/img/ral/control-integration.svg" alt="PG-CHTC 作为虚拟张力传感器接入既有混合控制闭环" caption="灰色链路为既有控制系统；蓝色链路为本文新增的 PG-CHTC 在线状态估计器。" %}
+
+### 一个 10 Hz 闭环周期
+
+1. Qt 控制器读取当前关节角 `θ(t)` 和驱动侧张力 `T_act(t)`。
+2. 独立 CPU 推理服务按绳路级联顺序执行 PG-CHTC 因果前向推理，得到全臂关节侧张力估计 `T̂_joint(t)`。
+3. 构型支路计算 `θ_ref − θ(t)`，张力支路计算 `T_ref − T̂_joint(t)`，分别形成校正量。
+4. 控制器合成校正量并执行传动补偿与安全检查，随后驱动绳索；下一帧传感数据再次进入闭环。
+
+### 工程接入与来源边界
+
+PG-CHTC 以独立 CPU 服务运行，通过 UDP 接入既有 Qt 上位机，在不改动控制器主逻辑的前提下完成 10 Hz 在线调用。既有控制框架来源于 Zhenpu Zhu、Ziqing Li、Zhanxuan Peng、Chao Liu 与 Guoying Gu 的论文 [*Hybrid Tension and Configuration Control of Cable-Driven Hyper-Redundant Robots for High Accuracy and Stability*](https://doi.org/10.1109/LRA.2025.3559829)，发表于 *IEEE Robotics and Automation Letters*，2025。本文工作的贡献边界是 PG-CHTC 状态估计、CPU/UDP 部署及其闭环验证，不主张对既有控制器的设计所有权。
 
 ## 实验结果
 
