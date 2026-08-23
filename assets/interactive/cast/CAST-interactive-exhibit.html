@@ -48,6 +48,9 @@ a { color: inherit; }
   padding: 0 max(24px, calc((100vw - 1320px) / 2)); background: rgba(247,247,243,.92);
   border-bottom: 1px solid rgba(23,33,43,.1); backdrop-filter: blur(16px);
 }
+body.embed-mode .site-header { display: none; }
+body.embed-mode .hero { min-height: auto; padding-top: 48px; }
+body.embed-mode .section { scroll-margin-top: 16px; }
 .brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; margin-right: auto; }
 .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; color: white; background: var(--blue-deep); border-radius: 50%; font-weight: 800; }
 .brand strong, .brand small { display: block; }
@@ -304,6 +307,11 @@ footer p { margin-right: auto; }
 </style>
   </head>
   <body>
+    <script>
+      if (new URLSearchParams(window.location.search).get('embed') === '1') {
+        document.body.classList.add('embed-mode');
+      }
+    </script>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" id="top">
       <a class="brand" href="#top" aria-label="CAST home">

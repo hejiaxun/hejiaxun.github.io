@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">CAST 方法概览</title>
+  <desc id="desc">从控制器在环成功搜索，经成功回合蒸馏与扩散策略提案，到全臂几何选择的四步方法链。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#277d83"/>
+    </marker>
+    <style>
+      .title{font:700 31px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#163242}
+      .step{font:600 16px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#277d83;letter-spacing:.04em}
+      .head{font:700 24px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#182c38}
+      .body{font:400 16px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#60727c}
+      .note{font:500 15px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;fill:#60727c}
+    </style>
+  </defs>
+  <rect width="1200" height="360" rx="24" fill="#fbfcfc"/>
+  <text class="title" x="58" y="62">从闭环成功回合到毫秒级局部规划</text>
+
+  <g transform="translate(58 105)">
+    <rect width="244" height="142" rx="18" fill="#fff" stroke="#cfd9da" stroke-width="2"/>
+    <text class="step" x="24" y="34">01 · 闭环搜索</text>
+    <text class="head" x="24" y="73">成功回合</text>
+    <text class="body" x="24" y="106">MuJoCo + 绳驱控制器</text>
+  </g>
+  <path d="M314 176 H347" fill="none" stroke="#277d83" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(361 105)">
+    <rect width="244" height="142" rx="18" fill="#fff" stroke="#cfd9da" stroke-width="2"/>
+    <text class="step" x="24" y="34">02 · 数据蒸馏</text>
+    <text class="head" x="24" y="73">动作块监督</text>
+    <text class="body" x="24" y="106">观测 → 未来关节增量</text>
+  </g>
+  <path d="M617 176 H650" fill="none" stroke="#277d83" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(664 105)">
+    <rect width="244" height="142" rx="18" fill="#fff" stroke="#cfd9da" stroke-width="2"/>
+    <text class="step" x="24" y="34">03 · 策略提案</text>
+    <text class="head" x="24" y="73">并行候选动作</text>
+    <text class="body" x="24" y="106">条件扩散策略</text>
+  </g>
+  <path d="M920 176 H953" fill="none" stroke="#277d83" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(967 105)">
+    <rect width="175" height="142" rx="18" fill="#e8f3f3" stroke="#277d83" stroke-width="2"/>
+    <text class="step" x="20" y="34">04 · 几何选择</text>
+    <text class="head" x="20" y="73">滚动执行</text>
+    <text class="body" x="20" y="106">全臂筛选</text>
+  </g>
+
+  <line x1="58" y1="286" x2="1142" y2="286" stroke="#dce4e5"/>
+  <text class="note" x="58" y="322">离线：允许控制器 rollout</text>
+  <text class="note" x="356" y="322">在线：策略推理、运动学与精确几何检查</text>
+</svg>

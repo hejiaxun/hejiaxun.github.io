@@ -66,36 +66,19 @@
 </div>
 </div>
 
-<section class="interactive-feature" aria-labelledby="cast-interactive-title">
+<section class="interactive-feature interactive-feature--cast" aria-labelledby="cast-interactive-title">
   <div class="interactive-feature-head">
     <div>
-      <p class="eyebrow">Interactive Technical Exhibit</p>
-      <h2 id="cast-interactive-title">交互式技术展示</h2>
-      <p>浏览机器人系统、九类 Benchmark、方法链、对比结果与仿真—实测标定。交互页默认英文，可在页面内切换中文。</p>
+      <p class="eyebrow">CAST Interactive</p>
+      <h2 id="cast-interactive-title">交互式方法与评测浏览器</h2>
+      <p>直接浏览机器人系统、九类 Benchmark、方法链、对比结果与仿真—实测标定；可在交互页内切换中英文。</p>
     </div>
     <a class="button button-primary" href="/assets/interactive/cast/CAST-interactive-exhibit.html" target="_blank" rel="noopener">全屏打开 ↗</a>
   </div>
-  <div class="interactive-embed-shell">
-    <button class="interactive-load-button" type="button" data-cast-src="/assets/interactive/cast/CAST-interactive-exhibit.html">
-      <strong>在本页加载交互展示</strong>
-      <span>完整方法、场景与结果将在下方展开</span>
-    </button>
-    <iframe class="cast-interactive-frame" hidden="" loading="lazy" title="CAST 交互式技术展示"></iframe>
+  <div class="interactive-embed-shell interactive-embed-shell--cast">
+    <iframe class="cast-interactive-frame" src="/assets/interactive/cast/CAST-interactive-exhibit.html?embed=1" loading="eager" title="CAST 交互式技术展示"></iframe>
   </div>
 </section>
-
-<script>
-  (() => {
-    const button = document.querySelector('.interactive-load-button');
-    const frame = document.querySelector('.cast-interactive-frame');
-    if (!button || !frame) return;
-    button.addEventListener('click', () => {
-      frame.src = button.dataset.castSrc;
-      frame.hidden = false;
-      button.hidden = true;
-    }, { once: true });
-  })();
-</script>
 
 <h2 id="为什么普通路径规划不够">为什么普通路径规划不够</h2>
 
@@ -122,8 +105,8 @@
 <p>训练阶段使用完整 MuJoCo 与绳驱控制链进行闭环随机尝试，只保留真实到达目标的成功回合，并转化为“当前观测—未来关节增量块”监督。部署阶段，条件扩散策略一次提出 32 个 <em>8×24</em> 动作块，先以链上锚点进行快速全臂筛选，再对前五个候选计算 MuJoCo 胶囊间隙；系统仅执行最优候选的前四步，随后根据新观测滚动重规划。</p>
 
 <figure class="project-figure project-figure--wide">
-  <img src="/assets/img/cast/system_method_overview.png" alt="从控制器在环成功回合到扩散策略与部署时全臂几何选择的 CAST 方法链">
-  <figcaption>从控制器在环成功回合、条件扩散蒸馏，到部署时粗到细全臂几何选择的完整链路。</figcaption>
+  <img src="/assets/img/cast/cast_method_summary.svg" alt="CAST 从闭环成功回合到扩散策略与全臂几何选择的四步方法链">
+  <figcaption>概览图只呈现四步主链；网络结构、候选数量和筛选细节可在上方交互展示中继续展开。</figcaption>
 </figure>
 
 <h2 id="锁定-benchmark-与主要结果">锁定 Benchmark 与主要结果</h2>
