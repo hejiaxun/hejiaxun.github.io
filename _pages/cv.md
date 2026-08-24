@@ -2,10 +2,17 @@
 layout: page
 permalink: /cv/
 title: 简历
-description: 公开简历将在个人信息和披露边界复核后提供。
+description: 贺加勋的中文技术简历。
 kicker: Curriculum Vitae
 ---
 
-公开下载版简历暂不在首轮主页中提供，以避免未经处理的联系方式和内部项目边界直接公开。
+当前提供两页中文技术简历，集中展示机器人控制、具身智能、规划仿真、嵌入式与真实系统经验。
 
-目前可通过[学术研究](/research/)、[项目](/projects/)、[竞赛](/competitions/)和[经历](/experience/)了解我的公开工作。后续将同步维护中文版和英文版简历入口。
+<div class="page-actions">
+  <a class="button primary" href="{{ '/assets/pdf/Jiaxun-He-Resume-CN.pdf' | relative_url }}" target="_blank" rel="noopener">打开中文简历 PDF ↗</a>
+  <a class="button" href="{{ '/assets/pdf/Jiaxun-He-Resume-CN.pdf' | relative_url }}" download>下载 PDF</a>
+</div>
+
+<p class="page-updated">更新日期：2026 年 8 月 24 日</p>
+
+英文版简历将在后续完成一致性复核后补充。

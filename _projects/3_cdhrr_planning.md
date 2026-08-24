@@ -33,7 +33,7 @@ permalink: /projects/cdhrr-planning/
     <a class="button button-primary" href="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html' | relative_url }}" target="_blank" rel="noopener">全屏打开 ↗</a>
   </div>
   <div class="interactive-embed-shell interactive-embed-shell--cast">
-    <iframe class="cast-interactive-frame" src="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html?embed=1' | relative_url }}" loading="eager" title="CAST 交互式技术展示"></iframe>
+    <iframe class="cast-interactive-frame" src="{{ '/assets/interactive/cast/CAST-interactive-exhibit.html?embed=1' | relative_url }}" loading="lazy" title="CAST 交互式技术展示"></iframe>
   </div>
 </section>
 

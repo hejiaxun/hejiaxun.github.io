@@ -5,37 +5,9 @@ permalink: /
 description: 贺加勋的机器人研究与工程个人主页。
 ---
 
-## 🎓 教育经历
+## 代表工作
 
-<div class="education-list">
-  <div class="education-item">
-    <div>
-      <h3>上海交通大学</h3>
-      <p>自动化与感知学院 · 控制科学与工程（学术硕士）</p>
-    </div>
-    <time>2024.09 – 2027.03（预计）</time>
-  </div>
-  <div class="education-item">
-    <div>
-      <h3>武汉大学</h3>
-      <p>自动化（工学学士）</p>
-    </div>
-    <time>2020.09 – 2024.06</time>
-  </div>
-</div>
-
-## 🔬 研究方向
-
-我的研究兴趣包括**机器人状态估计与控制、高自由度机械臂规划、物理引导学习、机器人仿真与具身智能系统**。我尤其关注如何把物理模型、学习方法、传感与嵌入式系统连接起来，并在真实机器人上完成可验证的部署。
-
-## 📌 最新动态
-
-<div class="news-list">
-  <div class="news-item"><time>2026.07</time><p>第一作者论文 <em>Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</em> 正式发表于 IEEE Robotics and Automation Letters。</p></div>
-  <div class="news-item"><time>2026.05</time><p>加入穹彻智能担任具身智能实习生，开展 DexUMI / XHand 灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 研究。</p></div>
-</div>
-
-## 🧩 代表工作
+<h3 class="work-tier-title">核心研究与实习</h3>
 
 <div class="work-list">
   <article class="work-item">
@@ -51,17 +23,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item">
-    <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/dexumi-codesign-cover.jpg' | relative_url }}" alt="MANO 人手与 DexUMI 穿戴仿真"></a>
-    <div class="work-body">
-      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
-      <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 无本体数采装置 Co-design</a></h3>
-      <p>在目标执行器固定条件下，围绕灵巧手数采、MANO 驱动的穿戴控制、人体工效诊断与参数化 CAD，研究从装置设计、物理验证到方案比较的 Co-design 设计评价回环。</p>
-      <p class="work-links"><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">项目主页</a></p>
-    </div>
-  </article>
-
-  <article class="work-item">
-    <a class="work-media work-media--video-cover" href="{{ '/projects/cdhrr-planning/' | relative_url }}"><video muted autoplay loop playsinline preload="auto" poster="{{ '/assets/img/cast/zigzag-corridor-poster.png' | relative_url }}"><source src="{{ '/assets/video/cast/zigzag-corridor-comparison.mp4' | relative_url }}" type="video/mp4"></video></a>
+    <a class="work-media work-media--video-cover" href="{{ '/projects/cdhrr-planning/' | relative_url }}"><video muted autoplay loop playsinline preload="metadata" poster="{{ '/assets/img/cast/zigzag-corridor-poster.png' | relative_url }}"><source src="{{ '/assets/video/cast/zigzag-corridor-comparison.mp4' | relative_url }}" type="video/mp4"></video></a>
     <div class="work-body">
       <div class="work-meta"><span>学术研究</span><span>在研</span><span>2025–至今</span></div>
       <h3><a href="{{ '/projects/cdhrr-planning/' | relative_url }}">面向绳驱超冗余机器人的封闭空间闭环规划与评价（CAST）</a></h3>
@@ -71,6 +33,20 @@ description: 贺加勋的机器人研究与工程个人主页。
     </div>
   </article>
 
+  <article class="work-item">
+    <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/dexumi-codesign-cover.jpg' | relative_url }}" alt="MANO 人手与 DexUMI 穿戴仿真"></a>
+    <div class="work-body">
+      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
+      <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 无本体数采装置 Co-design</a></h3>
+      <p>在目标执行器固定条件下，围绕灵巧手数采、MANO 驱动的穿戴控制、人体工效诊断与参数化 CAD，研究从装置设计、物理验证到方案比较的 Co-design 设计评价回环。</p>
+      <p class="work-links"><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">项目主页</a></p>
+    </div>
+  </article>
+</div>
+
+<h3 class="work-tier-title">竞赛与工业项目</h3>
+
+<div class="work-list">
   <article class="work-item">
     <a class="work-media" href="{{ '/competitions/robocon-2022/' | relative_url }}"><video muted autoplay loop playsinline preload="metadata" poster="{{ '/assets/img/robocon/video/tongchuang-2022.jpg' | relative_url }}"><source src="{{ '/assets/video/previews/robocon-preview.mp4' | relative_url }}" type="video/mp4"></video></a>
     <div class="work-body">
@@ -90,4 +66,34 @@ description: 贺加勋的机器人研究与工程个人主页。
       <p class="work-links"><a href="{{ '/projects/rotary-steering-system/' | relative_url }}">项目主页</a></p>
     </div>
   </article>
+</div>
+
+## 研究方向
+
+我的研究兴趣包括**机器人状态估计与控制、高自由度机械臂规划、物理引导学习、机器人仿真与具身智能系统**。我尤其关注如何把物理模型、学习方法、传感与嵌入式系统连接起来，并在真实机器人上完成可验证的部署。
+
+## 最新动态
+
+<div class="news-list">
+  <div class="news-item"><time>2026.07</time><p>第一作者论文 <em>Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</em> 正式发表于 IEEE Robotics and Automation Letters。</p></div>
+  <div class="news-item"><time>2026.05</time><p>加入穹彻智能担任具身智能实习生，开展 DexUMI / XHand 灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 研究。</p></div>
+</div>
+
+## 教育经历
+
+<div class="education-list">
+  <div class="education-item">
+    <div>
+      <h3>上海交通大学</h3>
+      <p>自动化与感知学院 · 控制科学与工程（学术硕士）</p>
+    </div>
+    <time>2024.09 – 2027.03（预计）</time>
+  </div>
+  <div class="education-item">
+    <div>
+      <h3>武汉大学</h3>
+      <p>自动化（工学学士）</p>
+    </div>
+    <time>2020.09 – 2024.06</time>
+  </div>
 </div>
