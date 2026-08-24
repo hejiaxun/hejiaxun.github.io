@@ -23,6 +23,16 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item">
+    <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/dexumi-codesign-cover.jpg' | relative_url }}" alt="MANO 人手与 DexUMI 穿戴仿真"></a>
+    <div class="work-body">
+      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
+      <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 无本体数采装置 Co-design</a></h3>
+      <p>在目标执行器固定条件下，围绕灵巧手数采、MANO 驱动的穿戴控制、人体工效诊断与参数化 CAD，研究从装置设计、物理验证到方案比较的 Co-design 设计评价回环。</p>
+      <p class="work-links"><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">项目主页</a></p>
+    </div>
+  </article>
+
+  <article class="work-item">
     <a class="work-media work-media--video-cover" href="{{ '/projects/cdhrr-planning/' | relative_url }}"><video muted autoplay loop playsinline preload="metadata" poster="{{ '/assets/img/cast/zigzag-corridor-poster.png' | relative_url }}"><source src="{{ '/assets/video/cast/zigzag-corridor-comparison.mp4' | relative_url }}" type="video/mp4"></video></a>
     <div class="work-body">
       <div class="work-meta"><span>学术研究</span><span>在研</span><span>2025–至今</span></div>
@@ -30,16 +40,6 @@ description: 贺加勋的机器人研究与工程个人主页。
       <p class="work-title-en">Closed-loop Planning and Evaluation for Cable-Driven Hyper-Redundant Robots</p>
       <p>构建参数化机器人与绳驱控制、九类语义场景、闭环成功数据、扩散策略、全臂几何选择和绳驱遥测评价的一体化研究链。</p>
       <p class="work-links"><a href="{{ '/projects/cdhrr-planning/' | relative_url }}">项目主页</a></p>
-    </div>
-  </article>
-
-  <article class="work-item">
-    <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/dexumi-codesign-cover.jpg' | relative_url }}" alt="MANO 人手与 DexUMI 穿戴仿真"></a>
-    <div class="work-body">
-      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
-      <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 无本体数采装置 Co-design</a></h3>
-      <p>在目标执行器固定条件下，围绕灵巧手数采、MANO 驱动的穿戴控制、人体工效诊断与参数化 CAD，研究从装置设计、物理验证到方案比较的 Co-design 设计评价回环。</p>
-      <p class="work-links"><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">项目主页</a></p>
     </div>
   </article>
 </div>
