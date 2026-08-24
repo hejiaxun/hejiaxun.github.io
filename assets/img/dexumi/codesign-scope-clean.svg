@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
   <title id="title">DexUMI Co-design 设计评价回路</title>
-  <desc id="desc">参数化接口设计经过穿戴仿真与控制、人体与任务评价后进行方案比较，并反馈更新接口设计。</desc>
+  <desc id="desc">参数化装置设计经过穿戴仿真与控制、人体与任务评价后进行方案比较，并反馈更新装置设计。</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
       <path d="M0,0 L10,5 L0,10 Z" fill="#4777b8"/>
@@ -13,10 +13,10 @@
     </style>
   </defs>
 
-  <text class="title" x="70" y="48">DexUMI Co-design：人机接口设计评价回路</text>
+  <text class="title" x="70" y="48">DexUMI Co-design：无本体数采装置设计评价回路</text>
 
   <rect x="60" y="82" width="240" height="118" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
-  <text class="label" x="90" y="128">参数化接口设计</text>
+  <text class="label" x="90" y="128">参数化装置设计</text>
   <text class="sub" x="90" y="164">CAD 特征与装配参数</text>
 
   <line x1="300" y1="141" x2="345" y2="141" stroke="#4777b8" stroke-width="4" marker-end="url(#arrow)"/>

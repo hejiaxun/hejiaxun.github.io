@@ -90,6 +90,6 @@ permalink: /projects/dexumi-codesign/wearing-control/
 
 ## 在 Co-design 中的作用
 
-该模块把接口结构转化为可执行的设备运动与接触状态：夹爪式 UMI 采用优化求解，DexUMI 采用运动学投影与 PPO 物理控制；生成的轨迹、干涉和接触结果随后进入人体工效与任务评价，用于比较不同接口设计。
+该模块把装置结构转化为可执行的设备运动与接触状态：夹爪式 UMI 采用优化求解，DexUMI 采用运动学投影与 PPO 物理控制；生成的轨迹、干涉和接触结果随后进入人体工效与任务评价，用于比较不同装置设计。
 
 <p class="project-attribution"><strong>来源说明：</strong>人手表示采用 <a href="https://mano.is.tue.mpg.de/" target="_blank" rel="noopener">MANO</a>；DexUMI 的系统基线参考 <a href="https://github.com/real-stanford/DexUMI" target="_blank" rel="noopener">Stanford DexUMI 官方仓库</a>。本页展示的是在该基线之上开展的穿戴建模、运动学映射、优化求解与物理控制研究。</p>

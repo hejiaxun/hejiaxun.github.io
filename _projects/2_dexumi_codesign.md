@@ -1,7 +1,7 @@
 ---
 layout: page
-title: UMI / DexUMI 人机接口 Co-design
-description: 在目标执行器固定条件下，围绕人机接口设计建立“设计—穿戴控制—人体与任务评价—方案比较”的研究框架。
+title: UMI / DexUMI 无本体数采装置 Co-design
+description: 在目标执行器固定条件下，围绕无本体数采装置建立“装置设计—穿戴控制—人体与任务评价—方案比较”的研究框架。
 kicker: 穹彻智能 · 具身智能实习生
 importance: 1
 category: internship
@@ -16,10 +16,10 @@ permalink: /projects/dexumi-codesign/
   <span>2026.05 – 至今</span>
 </div>
 
-<p class="project-lead">本项研究在<strong>目标执行器固定</strong>的条件下，围绕 UMI / DexUMI 人机接口开展 Co-design。DexUMI–XHand 实物系统提供装配、标定与数采基线；参数化接口设计、MANO 驱动的穿戴仿真与控制、人体工效与任务评价共同构成设计评价回环。</p>
+<p class="project-lead">本项研究在<strong>目标执行器固定</strong>的条件下，围绕 UMI / DexUMI 无本体数采装置开展 Co-design。DexUMI–XHand 实物系统提供装配、标定与数采基线；参数化装置设计、MANO 驱动的穿戴仿真与控制、人体工效与任务评价共同构成设计评价回环。</p>
 
 <figure class="dexumi-overview-figure">
-  <img src="{{ '/assets/img/dexumi/codesign-scope-clean.svg' | relative_url }}" alt="UMI / DexUMI 人机接口 Co-design 设计评价回环">
+  <img src="{{ '/assets/img/dexumi/codesign-scope-clean.svg' | relative_url }}" alt="UMI / DexUMI 无本体数采装置 Co-design 设计评价回环">
 </figure>
 
 ## 四个工作模块
@@ -28,7 +28,7 @@ permalink: /projects/dexumi-codesign/
   <a class="dexumi-module-card" href="{{ '/projects/dexumi-codesign/baseline/' | relative_url }}">
     <span class="module-index">01 · SYSTEM BASELINE</span>
     <h3>DexUMI 全链路 baseline 与数采工程</h3>
-    <p>复现公开 DexUMI–XHand 的硬件、标定、采集、视觉处理与仿真遥操作链路，并从真实系统中识别人机接口设计问题。</p>
+    <p>复现公开 DexUMI–XHand 的硬件、标定、采集、视觉处理与仿真遥操作链路，并从真实系统中识别无本体数采装置的设计问题。</p>
     <strong>查看模块 →</strong>
   </a>
   <a class="dexumi-module-card" href="{{ '/projects/dexumi-codesign/wearing-control/' | relative_url }}">
