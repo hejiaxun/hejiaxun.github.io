@@ -43,10 +43,10 @@ permalink: /projects/ral-tendon-estimation/
 
 ### 测量链与估计目标
 
-<div class="evidence-metrics">
-  <div><strong>12 / 24 / 36</strong><span>关节模块 / 转动自由度 / 驱动绳</span></div>
-  <div><strong>24 + 36</strong><span>关节角 / 驱动侧张力通道</span></div>
-  <div><strong>10 Hz</strong><span>同步重采样与在线接口</span></div>
+<div class="platform-specs" aria-label="SJTU-Snake III 平台参数">
+  <div><span>机构规模</span><strong>12 节 · 24 DoF · 36 绳</strong></div>
+  <div><span>在线观测</span><strong>24 路角度 · 36 路张力</strong></div>
+  <div><span>模型与控制接口</span><strong>10 Hz</strong></div>
 </div>
 
 平台在线提供 24 路关节角与 36 路驱动侧张力。绳索逐级穿过导向孔，摩擦、换向、迟滞和历史状态使驱动侧张力不能直接等同于各节关节侧张力；训练与离线验证阶段仅在末节设置关节侧张力参考，PG-CHTC 从在线可测量量估计全臂各节关节侧张力。
