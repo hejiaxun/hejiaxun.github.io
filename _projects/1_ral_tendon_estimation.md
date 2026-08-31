@@ -24,9 +24,11 @@ permalink: /projects/ral-tendon-estimation/
   <p>论文问题、PG-CHTC 方法及真机闭环验证概览。视频仅在点击后播放。</p>
 </div>
 
-## SJTU-III 实验平台
+## SJTU-Snake III（SJTU-III）实验平台
 
-**SJTU-III 是上海交通大学机械与动力工程学院谷国迎团队自主研发的绳驱超冗余机器人平台。**系统由驱动箱、绳索导向机构、12 节机器人本体、直线进给平台与移动平台组成，面向管道、罐体等受限空间中的检测与作业任务。本研究基于该平台开展张力状态估计、在线部署和闭环实验。
+**SJTU-Snake III（SJTU-III）是上海交通大学机械与动力工程学院谷国迎团队自主研发的绳驱超冗余机器人平台。**平台由 12 个串联两自由度关节模块构成，形成 24 个转动自由度并由 36 根绳索驱动。系统集成驱动箱、绳索导向机构、直线进给与移动平台，面向管道、罐体等受限空间中的检测与作业任务。本文在既有平台上研究关节侧张力状态估计、CPU 在线部署和闭环验证。
+
+> **贡献边界：**平台本体、既有传感硬件与张力—构型混合控制器为课题组长期研发成果；本文个人贡献见文末。
 
 <div class="media-pair">
   {% include figure.html path="assets/img/ral/sjtu-iii-platform.png" alt="SJTU-III 绳驱超冗余机器人平台组成" caption="SJTU-III 系统组成：驱动箱、绳索导向机构、机器人本体、直线进给平台与移动平台。" %}
@@ -38,6 +40,25 @@ permalink: /projects/ral-tendon-estimation/
     <figcaption>SJTU-III 在管罐系统中开展受限空间巡检的公开演示。</figcaption>
   </figure>
 </div>
+
+### 测量链与估计目标
+
+<div class="evidence-metrics">
+  <div><strong>12 / 24 / 36</strong><span>关节模块 / 转动自由度 / 驱动绳</span></div>
+  <div><strong>24 + 36</strong><span>关节角 / 驱动侧张力通道</span></div>
+  <div><strong>10 Hz</strong><span>同步重采样与在线接口</span></div>
+</div>
+
+平台在线提供 24 路关节角与 36 路驱动侧张力。绳索逐级穿过导向孔，摩擦、换向、迟滞和历史状态使驱动侧张力不能直接等同于各节关节侧张力；训练与离线验证阶段仅在末节设置关节侧张力参考，PG-CHTC 从在线可测量量估计全臂各节关节侧张力。
+
+<div class="media-pair">
+  {% include figure.html path="assets/img/ral/sjtu-snake3-force-sensing.png" alt="SJTU-Snake III 驱动侧张力测量方案示意" caption="平台驱动侧张力测量方案示意。图源：课题组既有技术材料；用于说明本文实验条件。" %}
+  {% include figure.html path="assets/img/ral/sjtu-snake3-angle-sensing.png" alt="SJTU-Snake III 关节角测量方案示意" caption="平台关节角测量方案示意。图源：课题组既有技术材料；用于说明本文实验条件。" %}
+</div>
+
+[打开高清张力测量示意]({{ '/assets/img/ral/sjtu-snake3-force-sensing.png' | relative_url }}) · [打开高清关节角测量示意]({{ '/assets/img/ral/sjtu-snake3-angle-sensing.png' | relative_url }})
+
+关节角由各节 AS5600 绝对磁编码链测得；驱动箱侧布置 36 路串联张力测量。各通道在进入模型与控制回路前进行统一时间对齐、滤波与 10 Hz 重采样。这里的 **10 Hz 指同步后的模型与控制接口**，不等同于原始传感器采样率。
 
 ## 问题
 
