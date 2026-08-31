@@ -2548,6 +2548,46 @@ td {
   font-size: 0.88rem;
 }
 
+.platform-specs {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.72fr;
+  margin: 1.35rem 0 1.75rem;
+  border-top: 1px solid #dce4ee;
+  border-bottom: 1px solid #dce4ee;
+}
+
+.platform-specs > div {
+  min-width: 0;
+  padding: 1rem 1.15rem;
+}
+
+.platform-specs > div:first-child {
+  padding-left: 0;
+}
+
+.platform-specs > div + div {
+  border-left: 1px solid #e2e8f0;
+}
+
+.platform-specs span,
+.platform-specs strong {
+  display: block;
+}
+
+.platform-specs span {
+  margin-bottom: 0.35rem;
+  color: #758196;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+}
+
+.platform-specs strong {
+  color: #1f4f8f;
+  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+  line-height: 1.35;
+}
+
 .source-note {
   margin: 1.4rem 0;
   padding: 1rem 1.15rem;
@@ -2611,6 +2651,19 @@ td {
   .stage-grid--three,
   .evidence-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-specs > div {
+    padding: 0.85rem 0;
+  }
+
+  .platform-specs > div + div {
+    border-top: 1px solid #e2e8f0;
+    border-left: 0;
   }
 
 }
