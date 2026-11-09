@@ -61,6 +61,12 @@
 
 <p class="project-lead">本项研究在<strong>目标执行器固定</strong>的条件下，围绕 UMI / DexUMI 无本体数采装置开展 Co-design。DexUMI–XHand 实物系统提供装配、标定与数采基线；参数化装置设计、MANO 驱动的穿戴仿真与控制、人体工效与任务评价共同构成设计评价回环。</p>
 
+<h2 id="从系统复现走向装置设计评价">从系统复现走向装置设计评价</h2>
+
+<p>起点是把开源 DexUMI–XHand 的装配、编码器采集和标定链路跑通；在此基础上，自主搭建多模态工作站与 XHand 仿真遥操作，分别验证真实数据能否稳定记录、动作能否在仿真中回放与执行。</p>
+
+<p>进一步的问题是：<strong>改变数采装置的几何与装配参数，会怎样影响穿戴运动、人体负荷和任务表现？</strong> MANO 提供人体侧表示，参数化 CAD 提供装置侧设计变量，穿戴控制与人体工效诊断提供评价入口。当前工作形成可复用的模块与设计比较流程，整体 Co-design 研究仍在进行中。</p>
+
 <figure class="dexumi-overview-figure">
   <img src="/assets/img/dexumi/codesign-scope-clean.svg" alt="UMI / DexUMI 无本体数采装置 Co-design 设计评价回环">
 </figure>
@@ -95,6 +101,17 @@
 </div>
 
 <p class="project-attribution"><strong>开源基础与个人工作：</strong>DexUMI 由 Stanford REAL Lab 公开发布，详见<a href="https://github.com/real-stanford/DexUMI" target="_blank" rel="noopener">原始 GitHub 仓库</a>与<a href="https://dex-umi.github.io/" target="_blank" rel="noopener">项目主页</a>。本项目以其 XHand 系统为 baseline，页面重点展示我完成的系统复现、工程扩展，以及围绕穿戴控制、人体工效和参数化设计建立的 Co-design 研究工作。</p>
+
+<h2 id="已有基础与在研问题">已有基础与在研问题</h2>
+
+<ul>
+  <li>
+<strong>系统与数据：</strong>12 路编码器、OAK-1 RGB、iPhone RGB-D / 位姿组成真实采集链；XHand 动作与任务状态在独立的仿真遥操作链路中验证。</li>
+  <li>
+<strong>人体与装置：</strong>以 MANO 驱动穿戴轨迹和物理控制，将接触、负荷与疲劳等工程诊断用于定位设计问题；这些代理指标不等同于人体舒适度实测。</li>
+  <li>
+<strong>设计与验证：</strong>参数化 CAD 工程覆盖 4 类机器人 / 机械装配体、775 项完整回归测试；在此基础上继续研究设计变量、穿戴状态与任务评价的关系。</li>
+</ul>
 
   </article>
 </div>

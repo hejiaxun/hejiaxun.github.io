@@ -49,10 +49,12 @@
   <video muted="" autoplay="" loop="" playsinline="" preload="auto" poster="/assets/img/cast/zigzag-corridor-poster.png">
     <source src="/assets/video/cast/zigzag-corridor-comparison.mp4" type="video/mp4"></source>
   </video>
-  <p>折线通道 HARD 场景：对比方法发生碰撞，CAST 完成全臂无碰撞闭环规划。</p>
+  <p>历史固定基座实验中的折线通道案例，展示全臂避障与闭环执行；单个演示不代表总体方法排名。</p>
 </div>
 
-<p class="project-lead"><strong>CAST 将慢速闭环成功搜索蒸馏为毫秒级局部策略，并在部署时进行全臂几何选择。</strong>在锁定的五种子主协议中，方法达到 82.2% 成功率、69.8% HARD 场景成功率与 7.7 ms/step 规划时延。</p>
+<p class="project-lead"><strong>CAST 研究如何把闭环成功轨迹转化为快速局部规划，并通过全臂几何选择与短前缀执行持续反馈。</strong>工作覆盖参数化机器人、MuJoCo 绳驱控制、扩散动作块和任务 / 几何 / 绳驱三层评价，当前仍在推进规划与执行的一致性验证。</p>
+
+<p class="source-note"><strong>结果版本：</strong>下列数值、对比图与交互展示保留历史固定基座 v1 协议。基线接口与规划预算正在复核，这组历史结果不作为当前统一预算下的方法排名；参数化建模也不等于策略已实现跨形态泛化。</p>
 
 <div class="metric-row project-metrics project-metrics--three">
   <div class="metric">
@@ -109,9 +111,9 @@
   <figcaption>概览图只呈现三段主链；网络结构、候选数量和筛选细节可在上方交互展示中继续展开。</figcaption>
 </figure>
 
-<h2 id="锁定-benchmark-与主要结果">锁定 Benchmark 与主要结果</h2>
+<h2 id="历史固定基座-benchmark-与结果">历史固定基座 Benchmark 与结果</h2>
 
-<p>Benchmark 使用 EASY / MEDIUM / HARD 三档目标、五个随机种子和统一终止协议，同时评价任务结果、规划几何、控制跟踪和绳驱执行状态；主评测中每种方法覆盖 1,620 个 episode。对比对象包括同一 runner 下适配的 RRT-Connect、DLS / FABRIK IK、IK + null-space MPC、行为克隆扩散策略和优化式规划方法。</p>
+<p>历史 Benchmark 使用 EASY / MEDIUM / HARD 三档目标、五个随机种子和统一终止协议，同时评价任务结果、规划几何、控制跟踪和绳驱执行状态；原主评测中每种方法覆盖 1,620 个 episode。对比对象是同一 runner 下适配的 RRT-Connect、DLS / FABRIK IK、IK + null-space MPC、行为克隆扩散策略和优化式规划方法。接口修复前后的结果与不同规划预算不混合比较。</p>
 
 <figure class="project-figure project-figure--wide">
   <img src="/assets/img/cast/main_results.png" alt="CAST 在五种子协议下的成功率、时延和分难度结果">
