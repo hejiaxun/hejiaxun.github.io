@@ -13,7 +13,7 @@ permalink: /projects/dexumi-codesign/
 <div class="internship-role-strip">
   <strong>穹彻智能</strong>
   <span>具身智能实习生</span>
-  <span>2026.05 – 至今</span>
+  <span>2026.05 – 2026.10</span>
 </div>
 
 <p class="project-lead">本项研究在<strong>目标执行器固定</strong>的条件下，围绕 UMI / DexUMI 无本体数采装置开展 Co-design。DexUMI–XHand 实物系统提供装配、标定与数采基线；参数化装置设计、MANO 驱动的穿戴仿真与控制、人体工效与任务评价共同构成设计评价回环。</p>

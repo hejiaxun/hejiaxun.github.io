@@ -33,7 +33,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   <article class="work-item">
     <a class="work-media work-media--dexumi" href="{{ '/projects/dexumi-codesign/' | relative_url }}"><img src="{{ '/assets/img/dexumi/dexumi-codesign-cover.jpg' | relative_url }}" alt="MANO 人手与 DexUMI 穿戴仿真"></a>
     <div class="work-body">
-      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026–至今</span></div>
+      <div class="work-meta"><span>穹彻智能</span><span>具身智能实习生</span><span>2026.05–2026.10</span></div>
       <h3><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">UMI / DexUMI 无本体数采装置 Co-design</a></h3>
       <p>从开源 DexUMI–XHand 系统复现出发，自主扩展多模态数采与仿真遥操作，进一步连接 MANO 穿戴控制、人体工效诊断与参数化 CAD，支撑装置方案比较与迭代。</p>
       <p><strong>4 类装配体 · 775 项完整回归测试通过</strong></p>
@@ -81,9 +81,9 @@ description: 贺加勋的机器人研究与工程个人主页。
 ## 最新动态
 
 <div class="news-list">
-  <div class="news-item"><time>2026 秋</time><p>整理 DexUMI Co-design 四模块研究与演示：真实数采、MANO 驱动控制、人体工效诊断和参数化 CAD；CAD 工程覆盖 4 类装配体，775 项完整回归测试通过。<a href="{{ '/projects/dexumi-codesign/parametric-cad/' | relative_url }}">查看设计与验证</a>。</p></div>
+  <div class="news-item"><time>2026.10</time><p>完成穹彻智能具身智能算法实习。</p></div>
   <div class="news-item"><time>2026.07</time><p>第一作者论文 <em>Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</em> 正式发表于 IEEE Robotics and Automation Letters。</p></div>
-  <div class="news-item"><time>2026.05</time><p>加入穹彻智能担任具身智能实习生，开展 DexUMI / XHand 灵巧手数采、MANO 驱动控制、人体工效诊断与参数化 Co-design 研究。</p></div>
+  <div class="news-item"><time>2026.05</time><p>加入穹彻智能，担任具身智能算法实习生。</p></div>
 </div>
 
 ## 教育经历
