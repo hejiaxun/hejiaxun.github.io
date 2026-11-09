@@ -30,9 +30,9 @@ permalink: /projects/dexumi-codesign/parametric-cad/
 
 <div class="evidence-metrics" aria-label="参数化 CAD 交互范围">
   <div><strong>4</strong><span>类完整装配体</span></div>
-  <div><strong>8</strong><span>名义/参数化状态</span></div>
+  <div><strong>8</strong><span>名义/参数化状态 · 离线 WebGL</span></div>
+  <div><strong>775</strong><span>项完整回归测试通过</span></div>
   <div><strong>B-rep</strong><span>面级候选特征诊断</span></div>
-  <div><strong>WebGL</strong><span>离线完整交互</span></div>
 </div>
 
 ## 技术路线

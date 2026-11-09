@@ -19,14 +19,14 @@ permalink: /projects/dexumi-codesign/baseline/
 
 <figure class="project-figure project-figure--wide">
   <img src="{{ '/assets/img/dexumi/dexumi-real-sensor-callout.png' | relative_url }}" alt="DexUMI–XHand 真实整机与多模态采集硬件" loading="lazy">
-  <figcaption>真实整机与采集硬件：12 路编码器、第一视角相机、iPhone RGB-D / 6-DoF 位姿、MCU 与触觉采集接口共同构成多模态数据入口。</figcaption>
+  <figcaption>可核验的采集通道包括 12 路编码器、OAK-1 RGB 与 iPhone RGB-D / 6-DoF 位姿；Newton 状态来自独立的仿真遥操作链路。</figcaption>
 </figure>
 
 ## 系统链路
 
 <div class="module-route-grid">
   <div class="module-route-card"><span>01</span><strong>硬件与 CAD 装配</strong><p>依据公开硬件资料完成外骨骼、XHand 与采集硬件装配及接口适配。</p></div>
-  <div class="module-route-card"><span>02</span><strong>标定与同步采集</strong><p>统一编码器、第一视角视觉、RGB-D、位姿与触觉数据入口。</p></div>
+  <div class="module-route-card"><span>02</span><strong>标定与同步采集</strong><p>管理 12 路编码器、OAK-1 RGB 与 iPhone RGB-D / 位姿的采集、时间对齐和回放。</p></div>
   <div class="module-route-card"><span>03</span><strong>空间信息处理</strong><p>恢复手部、相机与场景点云之间的一致空间关系并支持回放。</p></div>
   <div class="module-route-card"><span>04</span><strong>仿真遥操作</strong><p>将真实 DexUMI 输入映射到 XHand，记录控制与仿真状态并验证操作任务。</p></div>
 </div>
@@ -38,7 +38,7 @@ permalink: /projects/dexumi-codesign/baseline/
     <video controls muted playsinline preload="metadata" poster="{{ '/assets/img/dexumi/posters/01-multimodal-workstation.jpg' | relative_url }}">
       <source src="{{ '/assets/video/dexumi/01_multimodal_workstation.mp4' | relative_url }}" type="video/mp4">
     </video>
-    <p><strong>多模态数采上位机。</strong>自主搭建统一工作站，将 12 路编码器、iPhone RGB-D / Pose、OAK-1、触觉与 Newton 状态纳入同一条可保存、可回放的时间轴。</p>
+    <p><strong>多模态数采上位机。</strong>自主搭建统一工作站，分别记录并回放 12 路编码器、iPhone RGB-D / Pose、OAK-1 RGB 与 Newton 仿真状态。</p>
   </div>
   <div class="project-video">
     <video controls muted playsinline preload="metadata" poster="{{ '/assets/img/dexumi/posters/02-spatial-reconstruction.jpg' | relative_url }}">
