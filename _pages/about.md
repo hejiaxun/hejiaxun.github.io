@@ -5,13 +5,7 @@ permalink: /
 description: 贺加勋的机器人研究与工程个人主页。
 ---
 
-## 近期工作
-
-<div class="news-list">
-  <div class="news-item"><time>灵巧操作</time><p>以 DexUMI / XHand 复现为基础，将真实数采、仿真遥操作、MANO 穿戴控制与人体工效诊断连接到参数化装置设计，研究<strong>固定目标执行器下的数采装置 Co-design</strong>。<a href="{{ '/projects/dexumi-codesign/' | relative_url }}">四个工作模块 →</a></p></div>
-  <div class="news-item"><time>规划控制</time><p>围绕 CAST 建立<strong>参数化机器人—绳驱控制—闭环规划—执行评价</strong>研究链，联合考察任务到达、全臂避障与绳驱执行状态。<a href="{{ '/projects/cdhrr-planning/' | relative_url }}">研究方法与验证 →</a></p></div>
-  <div class="news-item"><time>物理学习</time><p>从 RA-L 的全臂张力估计出发，关注物理先验与时序学习如何服务机器人状态感知，并完成<strong>估计器在环的真机验证</strong>。<a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">论文与实验 →</a></p></div>
-</div>
+<div id="work"></div>
 
 ## 代表工作
 
@@ -26,7 +20,8 @@ description: 贺加勋的机器人研究与工程个人主页。
       <p class="work-title-en">Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</p>
       <p class="work-authors"><strong>Jiaxun He</strong>, Jun-Guo Lu, Qing-Hao Zhang, Zhenpu Zhu, Zhanxuan Peng, Guoying Gu</p>
       <p>提出物理引导级联状态估计模型 PG-CHTC，在仅有末端关节侧监督的条件下在线估计全臂张力，并部署到 10 Hz 真机闭环。</p>
-      <p class="work-links"><a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">项目主页</a><a href="https://doi.org/10.1109/LRA.2026.3709642">论文</a><a href="{{ '/assets/video/ral/pg-chtc-overview.mp4' | relative_url }}">视频</a></p>
+      <p class="work-evidence">24 DoF 实机 · 6.8 万帧 · 37.6→11.2 N RMSE · 23.5 ms</p>
+      <p class="work-links"><a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">项目主页</a><a href="https://doi.org/10.1109/LRA.2026.3709642">论文</a></p>
     </div>
   </article>
 
@@ -38,6 +33,16 @@ description: 贺加勋的机器人研究与工程个人主页。
       <p>从开源 DexUMI–XHand 系统复现出发，自主扩展多模态数采与仿真遥操作，进一步连接 MANO 穿戴控制、人体工效诊断与参数化 CAD，支撑装置方案比较与迭代。</p>
       <p><strong>4 类装配体 · 775 项完整回归测试通过</strong></p>
       <p class="work-links"><a href="{{ '/projects/dexumi-codesign/' | relative_url }}">项目主页</a></p>
+    </div>
+  </article>
+
+  <article class="work-item" id="astribot">
+    <div class="work-media" style="display:flex;align-items:center;justify-content:center;background:var(--surface,#f2f4f5);min-height:170px"><span style="font-size:1.5rem;letter-spacing:.06em">机器人应用与仿真</span></div>
+    <div class="work-body">
+      <div class="work-meta"><span>星尘智能</span><span>实习生</span><span>2026.10–至今</span></div>
+      <h3>机器人应用与仿真</h3>
+      <p>参与机器人应用开发、接口适配与仿真验证，关注任务执行、状态反馈和效果评估。</p>
+      <p class="work-links"><a href="{{ '/experience/#astribot' | relative_url }}">经历概览</a></p>
     </div>
   </article>
 
@@ -63,6 +68,7 @@ description: 贺加勋的机器人研究与工程个人主页。
       <div class="work-meta"><span>机器人竞赛</span><span>全国一等奖 ×2</span><span>全国二等奖 ×1</span></div>
       <h3><a href="{{ '/competitions/robocon-2022/' | relative_url }}">ROBOCON 2022 机器人电控与整机联调</a></h3>
       <p>担任电控硬件负责人，完成 PCB、传感采集、电机与通信接口，以及四台参赛机器人的布线、调试与赛场保障。</p>
+      <p class="work-evidence">4 台机器人 · 全国一等奖 ×2 · 全国二等奖 ×1</p>
       <p class="work-links"><a href="{{ '/competitions/robocon-2022/' | relative_url }}">竞赛主页</a></p>
     </div>
   </article>
@@ -73,17 +79,37 @@ description: 贺加勋的机器人研究与工程个人主页。
       <div class="work-meta"><span>工业项目</span><span>算法与嵌入式</span><span>2024–至今</span></div>
       <h3><a href="{{ '/projects/rotary-steering-system/' | relative_url }}">旋转导向钻井轨迹预测与下传解码</a></h3>
       <p>围绕地面—井下信息链路开展轨迹趋势预测与泥浆脉冲下传解码研究，覆盖物理—数据融合时序建模及嵌入式仪器链路。</p>
+      <p class="work-evidence">轨迹趋势预测 · 10 Hz 下传解码 · 252 条历史回放</p>
       <p class="work-links"><a href="{{ '/projects/rotary-steering-system/' | relative_url }}">项目主页</a></p>
     </div>
   </article>
 </div>
 
-## 最新动态
+<div id="videos"></div>
 
-<div class="news-list">
-  <div class="news-item"><time>2026.10</time><p>完成穹彻智能具身智能算法实习。</p></div>
-  <div class="news-item"><time>2026.07</time><p>第一作者论文 <em>Physics-Guided Learning for Tendon State Estimation of Cable-Driven Hyper-Redundant Robots</em> 正式发表于 IEEE Robotics and Automation Letters。</p></div>
-  <div class="news-item"><time>2026.05</time><p>加入穹彻智能，担任具身智能算法实习生。</p></div>
+## 机器人与实验视频
+
+<div class="video-grid">
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/ral/problem.png' | relative_url }}"><source src="{{ '/assets/video/ral/pg-chtc-overview.mp4' | relative_url }}" type="video/mp4"></video>
+    <figcaption><strong>绳驱机械臂张力估计</strong> · 论文方法与真机闭环验证。<a href="{{ '/projects/ral-tendon-estimation/' | relative_url }}">项目详情</a></figcaption>
+  </figure>
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/ral/sjtu-iii-pipe-tank-inspection-poster.jpg' | relative_url }}"><source src="{{ '/assets/video/ral/sjtu-iii-pipe-tank-inspection.mp4' | relative_url }}" type="video/mp4"></video>
+    <figcaption><strong>SJTU-Snake III 真机</strong> · 课题组实验平台的管罐巡检演示。</figcaption>
+  </figure>
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/dexumi/posters/01-multimodal-workstation.jpg' | relative_url }}"><source src="{{ '/assets/video/dexumi/01_multimodal_workstation.mp4' | relative_url }}" type="video/mp4"></video>
+    <figcaption><strong>DexUMI 多模态数采</strong> · 穿戴装置与真实数据采集。<a href="{{ '/projects/dexumi-codesign/baseline/' | relative_url }}">项目详情</a></figcaption>
+  </figure>
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/dexumi/posters/04-task-execution-success.jpg' | relative_url }}"><source src="{{ '/assets/video/dexumi/04_task_execution_success.mp4' | relative_url }}" type="video/mp4"></video>
+    <figcaption><strong>XHand 遥操作</strong> · 真实穿戴输入驱动仿真推块任务。</figcaption>
+  </figure>
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/robocon/video/tongchuang-2022.jpg' | relative_url }}"><source src="{{ '/assets/video/robocon/tongchuang-2022-second-match.mp4' | relative_url }}" type="video/mp4"></video>
+    <figcaption><strong>ROBOCON 2022</strong> · “同创辉煌”比赛实况。<a href="{{ '/competitions/robocon-2022/' | relative_url }}">竞赛经历</a></figcaption>
+  </figure>
 </div>
 
 ## 教育经历

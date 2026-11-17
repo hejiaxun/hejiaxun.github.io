@@ -8,6 +8,7 @@
 {% assign canonical_url = page.url | replace:'index.html','' | absolute_url %}
 <title>{% if page.permalink == '/' %}{{ site.title }} · 机器人研究与工程{% else %}{{ page_title }} · {{ site.title }}{% endif %}</title>
 <meta name="author" content="Jiaxun He">
+{% if page.permalink == '/' %}<meta name="robots" content="index,follow">{% else %}<meta name="robots" content="noindex,follow">{% endif %}
 <meta name="description" content="{{ page_description }}">
 <meta name="keywords" content="{{ site.keywords }}">
 <meta property="og:site_name" content="{{ site.title }}">

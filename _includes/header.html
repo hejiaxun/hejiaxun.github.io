@@ -5,9 +5,8 @@
     </a>
     <nav class="site-nav" aria-label="主导航">
       <a {% if page.permalink == '/' %}class="active"{% endif %} href="{{ '/' | relative_url }}">主页</a>
-      <a {% if page.url contains '/research/' or page.category == 'research' %}class="active"{% endif %} href="{{ '/research/' | relative_url }}">学术研究</a>
-      <a {% if page.url contains '/projects/' and page.category != 'research' %}class="active"{% endif %} href="{{ '/projects/' | relative_url }}">项目</a>
-      <a {% if page.url contains '/competitions/' or page.category == 'competition' %}class="active"{% endif %} href="{{ '/competitions/' | relative_url }}">竞赛</a>
+      <a href="{{ '/#work' | relative_url }}">作品</a>
+      <a href="{{ '/#videos' | relative_url }}">视频</a>
       <a {% if page.url contains '/experience/' %}class="active"{% endif %} href="{{ '/experience/' | relative_url }}">经历</a>
       <a {% if page.url contains '/cv/' %}class="active"{% endif %} href="{{ '/cv/' | relative_url }}">简历</a>
     </nav>
