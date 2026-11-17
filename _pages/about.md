@@ -37,12 +37,13 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item" id="astribot">
-    <div class="work-media" style="display:flex;align-items:center;justify-content:center;background:var(--surface,#f2f4f5);min-height:170px"><span style="font-size:1.5rem;letter-spacing:.06em">机器人应用与仿真</span></div>
+    <a class="work-media" href="{{ '/projects/astribot-app-agent/' | relative_url }}"><img src="{{ '/assets/img/astribot/xiangqi-overview.jpg' | relative_url }}" alt="T1机器人在仿真中执行象棋走子"></a>
     <div class="work-body">
       <div class="work-meta"><span>星尘智能</span><span>实习生</span><span>2026.10–至今</span></div>
-      <h3>机器人应用与仿真</h3>
-      <p>参与机器人应用开发、接口适配与仿真验证，关注任务执行、状态反馈和效果评估。</p>
-      <p class="work-links"><a href="{{ '/experience/#astribot' | relative_url }}">经历概览</a></p>
+      <h3><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">机器人象棋应用与 Agent 执行适配</a></h3>
+      <p>参与星尘 OS 象棋应用开发与 SDK 联调，以及 ASPIRE 在 T1 平台的复现与适配，连接任务请求、动作执行、状态反馈与仿真验证。</p>
+      <p class="work-evidence">三回合走子与吃子 · App / SDK 联调 · 仿真抓取抬升</p>
+      <p class="work-links"><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">项目与视频</a></p>
     </div>
   </article>
 
@@ -105,6 +106,14 @@ description: 贺加勋的机器人研究与工程个人主页。
   <figure class="project-video">
     <video controls playsinline preload="none" poster="{{ '/assets/img/dexumi/posters/04-task-execution-success.jpg' | relative_url }}"><source src="{{ '/assets/video/dexumi/04_task_execution_success.mp4' | relative_url }}" type="video/mp4"></video>
     <figcaption><strong>XHand 遥操作</strong> · 真实穿戴输入驱动仿真推块任务。</figcaption>
+  </figure>
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/astribot/xiangqi-overview.jpg' | relative_url }}"><source src="{{ '/assets/video/astribot/xiangqi-overview.mp4' | relative_url }}" type="video/mp4">可<a href="{{ '/assets/video/astribot/xiangqi-overview.mp4' | relative_url }}">直接打开视频</a>。</video>
+    <figcaption><strong>星尘 · 机器人象棋</strong> · 28 秒，固定三回合含吃子，仿真原状态回放。<a href="{{ '/projects/astribot-app-agent/#xiangqi' | relative_url }}">项目与完整演示</a></figcaption>
+  </figure>
+  <figure class="project-video">
+    <video controls playsinline preload="none" poster="{{ '/assets/img/astribot/agent-lift.jpg' | relative_url }}"><source src="{{ '/assets/video/astribot/agent-lift.mp4' | relative_url }}" type="video/mp4">可<a href="{{ '/assets/video/astribot/agent-lift.mp4' | relative_url }}">直接打开视频</a>。</video>
+    <figcaption><strong>星尘 · Agent 执行适配</strong> · 23 秒，T1 / SDK 仿真中的单次抓取抬升。<a href="{{ '/projects/astribot-app-agent/#agent' | relative_url }}">项目详情</a></figcaption>
   </figure>
   <figure class="project-video">
     <video controls playsinline preload="none" poster="{{ '/assets/img/robocon/video/tongchuang-2022.jpg' | relative_url }}"><source src="{{ '/assets/video/robocon/tongchuang-2022-second-match.mp4' | relative_url }}" type="video/mp4"></video>
