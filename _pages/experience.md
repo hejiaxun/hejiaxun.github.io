@@ -32,7 +32,7 @@ kicker: Experience
   </article>
   <article class="experience-entry" id="astribot">
     <time>2026.10 – 至今</time>
-    <div><h3>星尘智能 · 实习生（机器人应用与仿真）</h3><p>参与星尘 OS 象棋应用开发与 SDK 联调、ASPIRE 在 T1 平台的复现与适配，以及任务执行、反馈与仿真验证。</p><p class="experience-links"><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">查看项目与视频</a></p></div>
+    <div><h3>星尘智能 · 实习生（机器人应用与仿真）</h3><p>参与机器人象棋应用开发与 SDK 联调、开源 Agent 框架的平台适配，以及任务执行、反馈与仿真验证。</p><p class="experience-links"><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">查看项目与视频</a></p></div>
   </article>
   <article class="experience-entry">
     <time>2025 – 至今</time>
