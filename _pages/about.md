@@ -37,12 +37,12 @@ description: 贺加勋的机器人研究与工程个人主页。
   </article>
 
   <article class="work-item" id="astribot">
-    <a class="work-media" href="{{ '/projects/astribot-app-agent/' | relative_url }}"><img src="{{ '/assets/img/astribot/xiangqi-overview.jpg' | relative_url }}" alt="T1机器人在仿真中执行象棋走子"></a>
+    <a class="work-media" href="{{ '/projects/astribot-app-agent/' | relative_url }}"><img src="{{ '/assets/img/astribot/xiangqi-real.jpg' | relative_url }}" alt="妙手象棋应用的T1真机对局展示"></a>
     <div class="work-body">
       <div class="work-meta"><span>星尘智能</span><span>实习生</span><span>2026.10–至今</span></div>
       <h3><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">机器人象棋应用与 Agent 执行适配</a></h3>
       <p>参与星尘 OS 象棋应用开发与 SDK 联调，以及 ASPIRE 在 T1 平台的复现与适配，连接任务请求、动作执行、状态反馈与仿真验证。</p>
-      <p class="work-evidence">三回合走子与吃子 · App / SDK 联调 · 仿真抓取抬升</p>
+      <p class="work-evidence">象棋真机演示 · Agent 任务执行 · Lift / Stack / 抓取入篮</p>
       <p class="work-links"><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">项目与视频</a></p>
     </div>
   </article>
@@ -108,12 +108,12 @@ description: 贺加勋的机器人研究与工程个人主页。
     <figcaption><strong>XHand 遥操作</strong> · 真实穿戴输入驱动仿真推块任务。</figcaption>
   </figure>
   <figure class="project-video">
-    <video controls playsinline preload="none" poster="{{ '/assets/img/astribot/xiangqi-overview.jpg' | relative_url }}"><source src="{{ '/assets/video/astribot/xiangqi-overview.mp4' | relative_url }}" type="video/mp4">可<a href="{{ '/assets/video/astribot/xiangqi-overview.mp4' | relative_url }}">直接打开视频</a>。</video>
-    <figcaption><strong>星尘 · 机器人象棋</strong> · 28 秒，固定三回合含吃子，仿真原状态回放。<a href="{{ '/projects/astribot-app-agent/#xiangqi' | relative_url }}">项目与完整演示</a></figcaption>
+    <video controls playsinline preload="none" poster="{{ '/assets/img/astribot/xiangqi-real.jpg' | relative_url }}"><source src="{{ '/assets/video/astribot/xiangqi-real.mp4' | relative_url }}" type="video/mp4">可<a href="{{ '/assets/video/astribot/xiangqi-real.mp4' | relative_url }}">直接打开视频</a>。</video>
+    <figcaption><strong>星尘 · 机器人象棋</strong> · 约 74 秒，团队应用的真机对局与悔棋展示。<a href="{{ '/projects/astribot-app-agent/#xiangqi' | relative_url }}">项目与完整演示</a></figcaption>
   </figure>
   <figure class="project-video">
-    <video controls playsinline preload="none" poster="{{ '/assets/img/astribot/agent-lift.jpg' | relative_url }}"><source src="{{ '/assets/video/astribot/agent-lift.mp4' | relative_url }}" type="video/mp4">可<a href="{{ '/assets/video/astribot/agent-lift.mp4' | relative_url }}">直接打开视频</a>。</video>
-    <figcaption><strong>星尘 · Agent 执行适配</strong> · 23 秒，T1 / SDK 仿真中的单次抓取抬升。<a href="{{ '/projects/astribot-app-agent/#agent' | relative_url }}">项目详情</a></figcaption>
+    <video controls playsinline preload="none" poster="{{ '/assets/img/astribot/agent-stack.jpg' | relative_url }}"><source src="{{ '/assets/video/astribot/agent-stack.mp4' | relative_url }}" type="video/mp4">可<a href="{{ '/assets/video/astribot/agent-stack.mp4' | relative_url }}">直接打开视频</a>。</video>
+    <figcaption><strong>星尘 · Agent 执行适配</strong> · 30.5 秒，叠块任务的提示词、失败反馈与成功迭代；动作段约 1.6 倍速。<a href="{{ '/projects/astribot-app-agent/#agent' | relative_url }}">项目详情</a></figcaption>
   </figure>
   <figure class="project-video">
     <video controls playsinline preload="none" poster="{{ '/assets/img/robocon/video/tongchuang-2022.jpg' | relative_url }}"><source src="{{ '/assets/video/robocon/tongchuang-2022-second-match.mp4' | relative_url }}" type="video/mp4"></video>
