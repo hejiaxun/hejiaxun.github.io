@@ -39,7 +39,7 @@ description: 贺加勋的机器人研究与工程个人主页。
   <article class="work-item" id="astribot">
     <a class="work-media" href="{{ '/projects/astribot-app-agent/' | relative_url }}"><img src="{{ '/assets/img/astribot/xiangqi-real.jpg?v=20261117-redacted' | relative_url }}" alt="机器人象棋真机操作脱敏展示"></a>
     <div class="work-body">
-      <div class="work-meta"><span>星尘智能</span><span>实习生</span><span>2026.10–至今</span></div>
+      <div class="work-meta"><span>星尘智能</span><span>机器人算法工程师（全栈）</span><span>2026.10–至今</span></div>
       <h3><a href="{{ '/projects/astribot-app-agent/' | relative_url }}">机器人象棋应用与 Agent 执行适配</a></h3>
       <p>参与机器人象棋应用开发与 SDK 联调，以及开源 Agent 框架的平台适配，连接任务请求、动作执行、状态反馈与仿真验证。</p>
       <p class="work-evidence">象棋真机演示 · Agent 任务执行 · Lift / Stack / 抓取入篮</p>

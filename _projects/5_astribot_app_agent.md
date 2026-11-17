@@ -2,7 +2,7 @@
 layout: page
 title: 机器人象棋应用与 Agent 执行适配
 description: 机器人应用开发、SDK 联调与 Agent 仿真执行验证。
-kicker: 星尘智能 · 实习 · 2026.10–至今
+kicker: 星尘智能 · 机器人算法工程师（全栈） · 2026.10–至今
 img: assets/img/astribot/xiangqi-overview.jpg
 importance: 3
 category: internship
