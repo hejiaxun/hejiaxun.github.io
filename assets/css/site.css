@@ -875,6 +875,15 @@ img {
   font-size: 0.84rem !important;
 }
 
+.work-evidence {
+  margin-top: 9px !important;
+  color: #34465f !important;
+  font-size: 0.84rem !important;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  font-variant-numeric: tabular-nums;
+}
+
 .work-links {
   display: flex;
   gap: 16px;
@@ -1700,12 +1709,110 @@ img {
   font-size: 0.94rem;
 }
 
+.project-card .project-card-signal {
+  margin-top: 11px;
+  color: #34465f;
+  font-size: 0.84rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
 .project-card-more {
   display: inline-block;
   margin-top: 14px;
   color: var(--accent);
   font-size: 0.86rem;
   font-weight: 700;
+}
+
+.page-intro-note {
+  margin: 0 0 2rem;
+  padding: 1rem 1.15rem;
+  color: #536176;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: #f7f9fc;
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+.project-signal-strip {
+  display: grid;
+  gap: 0;
+  margin: 1.4rem 0 2rem;
+  overflow: hidden;
+  border: 1px solid #dce3ec;
+  border-radius: 10px;
+  background: #fbfcfe;
+}
+
+.project-signal-strip p {
+  display: grid;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  color: #4b596d;
+}
+
+.project-signal-strip p + p {
+  border-top: 1px solid #e7ebf1;
+}
+
+.project-signal-strip strong {
+  color: var(--accent);
+  font-size: 0.84rem;
+  letter-spacing: 0.04em;
+}
+
+.experience-timeline {
+  margin: 0 0 2.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.experience-entry {
+  display: grid;
+  padding: 1.25rem 0;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-entry time {
+  padding-top: 0.18rem;
+  color: #617087;
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.experience-entry h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.08rem;
+}
+
+.experience-entry p {
+  margin: 0.22rem 0 0;
+  color: #4c596c;
+}
+
+.experience-entry--accent h3 {
+  color: var(--accent);
+}
+
+.experience-links {
+  margin-top: 0.55rem !important;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .project-signal-strip p,
+  .experience-entry {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
 }
 
 .media-figure {
