@@ -13,12 +13,12 @@
 <title>机器人象棋应用与 Agent 执行适配 · 贺加勋</title>
 <meta name="author" content="Jiaxun He">
 <meta name="robots" content="noindex,follow">
-<meta name="description" content="星尘 OS 象棋应用、SDK 联调与 ASPIRE 到 T1 的仿真执行适配。">
+<meta name="description" content="机器人应用开发、SDK 联调与 Agent 仿真执行验证。">
 <meta name="keywords" content="机器人, 具身智能, 机器人学习, 规划, 控制, 状态估计">
 <meta property="og:site_name" content="贺加勋">
 <meta property="og:type" content="website">
 <meta property="og:title" content="机器人象棋应用与 Agent 执行适配 · 贺加勋">
-<meta property="og:description" content="星尘 OS 象棋应用、SDK 联调与 ASPIRE 到 T1 的仿真执行适配。">
+<meta property="og:description" content="机器人应用开发、SDK 联调与 Agent 仿真执行验证。">
 <meta property="og:url" content="https://hejiaxun.github.io/projects/astribot-app-agent/">
 <meta property="og:locale" content="zh_CN">
 <link rel="canonical" href="https://hejiaxun.github.io/projects/astribot-app-agent/">
@@ -43,75 +43,66 @@
   <header class="page-header">
     <p class="eyebrow">星尘智能 · 实习 · 2026.10–至今</p>
     <h1>机器人象棋应用与 Agent 执行适配</h1>
-    <p class="page-description">星尘 OS 象棋应用、SDK 联调与 ASPIRE 到 T1 的仿真执行适配。</p>
+    <p class="page-description">机器人应用开发、SDK 联调与 Agent 仿真执行验证。</p>
   </header>
   <article class="prose">
-    <p>围绕机器人应用落地，参与将上层任务请求接入机器人执行接口，并通过状态反馈、执行记录和仿真演示检查应用行为。当前展示包含象棋应用与机器人 Agent 平台适配两个模块。</p>
+    <p>参与机器人应用开发、机器人接口适配与仿真验证，连接上层任务请求、动作执行及状态反馈。</p>
 
 <div class="project-signal-strip">
-  <p><strong>个人贡献</strong><span>参与应用开发与联调、开源框架复现、T1 平台接口适配和仿真验证。</span></p>
-  <p><strong>展示范围</strong><span>象棋应用真机演示与仿真联调；Agent 的 Lift、Stack 和抓取入篮仿真成功回合。</span></p>
+  <p><strong>个人贡献</strong><span>参与应用开发与联调、开源框架复现、平台接口适配和执行验证。</span></p>
+  <p><strong>展示范围</strong><span>团队象棋应用真机演示与仿真联调；Agent 抬块、叠块和抓取入篮仿真样例。</span></p>
 </div>
 
-<h2 id="xiangqi">星尘 OS 机器人象棋应用</h2>
+<p>视频均为无声脱敏版本，仅展示操作局部；真机与仿真分别标注。</p>
 
-<h3 id="妙手象棋真机演示">妙手象棋：真机演示</h3>
+<h2 id="xiangqi">机器人象棋应用</h2>
 
-<figure class="project-video">
-  <video controls="" playsinline="" preload="none" poster="/assets/img/astribot/xiangqi-real.jpg"><source src="/assets/video/astribot/xiangqi-real.mp4" type="video/mp4"></source>可<a href="/assets/video/astribot/xiangqi-real.mp4">直接打开视频</a>。</video>
-  <figcaption><strong>真机对局与悔棋 · 约 74 秒。</strong>“过河小兵”团队的妙手象棋应用真实拍摄成片，展示 T1 与实体棋盘、真人交互。</figcaption>
-</figure>
-
-<p>路演材料中的个人分工为操作 / App，杨浩俊负责识别 / App；共同完成团队应用演示。此片呈现真机效果，未按成片推算完整整局成功率或全部环节的自主程度。</p>
-
-<h3 id="app--sdk-仿真联调">App / SDK 仿真联调</h3>
-
-<p>将 App 棋局请求与 SDK 动作执行衔接，联调走子、吃子、执行状态及异常处理。固定场景中完成连续三回合走子，吃子过程包含将被吃棋子移至盘外，再移动主动棋子。</p>
-
-<p><strong>执行链：</strong>棋局请求 → 动作执行与反馈 → 棋局状态提交 → 仿真记录与回放。</p>
+<h3 id="真机演示">真机演示</h3>
 
 <figure class="project-video">
-  <video controls="" playsinline="" preload="none" poster="/assets/img/astribot/xiangqi-overview.jpg"><source src="/assets/video/astribot/xiangqi-overview.mp4" type="video/mp4"></source>可<a href="/assets/video/astribot/xiangqi-overview.mp4">直接打开视频</a>。</video>
-  <figcaption><strong>三回合概览 · 28 秒。</strong>固定 32 子场景，包含走子和吃子；由记录的仿真原状态离线渲染，按原墙钟速度回放。</figcaption>
+  <video controls="" muted="" playsinline="" preload="none" poster="/assets/img/astribot/xiangqi-real.jpg?v=20261117-redacted"><source src="/assets/video/astribot/xiangqi-real.mp4?v=20261117-redacted" type="video/mp4"></source>可<a href="/assets/video/astribot/xiangqi-real.mp4?v=20261117-redacted">直接打开视频</a>。</video>
+  <figcaption><strong>真机象棋操作 · 约 74 秒。</strong>团队应用演示的局部画面，保留原动作顺序与速度。</figcaption>
 </figure>
+
+<p>个人参与操作 / App 开发与联调，视觉识别为团队协作模块。视频展示真机效果，不据此推算完整整局成功率或所有环节的自主程度。</p>
+
+<h3 id="仿真联调">仿真联调</h3>
+
+<p>将 App 棋局请求与 SDK 动作执行衔接，联调走子、吃子、执行状态及异常处理。</p>
 
 <figure class="project-video">
-  <video controls="" playsinline="" preload="none" poster="/assets/img/astribot/xiangqi-app-sdk.jpg"><source src="/assets/video/astribot/xiangqi-app-sdk.mp4" type="video/mp4"></source>可<a href="/assets/video/astribot/xiangqi-app-sdk.mp4">直接打开视频</a>。</video>
-  <figcaption><strong>App / SDK 联调演示 · 53 秒。</strong>结合实际 App 执行证据与仿真状态回放，展示三回合六个半回合；删去章节间人工审图等待，动作内部保持原速。</figcaption>
+  <video controls="" muted="" playsinline="" preload="none" poster="/assets/img/astribot/xiangqi-overview.jpg?v=20261117-redacted"><source src="/assets/video/astribot/xiangqi-overview.mp4?v=20261117-redacted" type="video/mp4"></source>可<a href="/assets/video/astribot/xiangqi-overview.mp4?v=20261117-redacted">直接打开视频</a>。</video>
+  <figcaption><strong>三回合仿真概览 · 约 28 秒。</strong>固定场景中的走子与吃子；由记录的仿真状态回放，动作保持原墙钟速度。</figcaption>
 </figure>
 
-<p>这两段仿真演示来自不同迭代版本，均为固定脚本场景。人步由模拟摆子完成；当前材料验证应用与执行链衔接，不代表在线视觉识别人步、任意整局对弈或真机验收。</p>
+<p>人步由模拟摆子完成，当前材料验证应用与执行链衔接，不代表在线视觉识别人步或任意整局对弈。</p>
 
-<h2 id="agent">ASPIRE 到 T1 的机器人 Agent 适配</h2>
+<h2 id="agent">机器人 Agent 执行适配</h2>
 
-<p>基于既有 ASPIRE 框架，参与 T1 观测、动作执行、任务复位与评价接口适配，连接代码策略执行、反馈记录与失败分析。框架本身为开源复现，个人工作侧重平台接入与验证。</p>
+<p>基于开源框架，参与机器人观测、动作执行、任务复位与评价接口适配，连接代码策略执行、状态反馈和失败分析。个人工作侧重平台接入与验证。</p>
 
-<p><strong>执行链：</strong>任务与观测 → 代码策略调用机器人接口 → 动作执行与状态反馈 → 任务结果检查。</p>
-
-<h3 id="stack从提示词到成功回合">Stack：从提示词到成功回合</h3>
+<h3 id="叠块">叠块</h3>
 
 <figure class="project-video">
-  <video controls="" playsinline="" preload="none" poster="/assets/img/astribot/agent-stack.jpg"><source src="/assets/video/astribot/agent-stack.mp4" type="video/mp4"></source>可<a href="/assets/video/astribot/agent-stack.mp4">直接打开视频</a>。</video>
-  <figcaption><strong>叠方块 · 30.5 秒。</strong>任务提示词 → SAM3 感知 → 初版失败反馈 → 策略修改 → 四路相机中的成功回合。动作素材原采样为 5 fps，成片动作段约 1.6 倍速。</figcaption>
+  <video controls="" muted="" playsinline="" preload="none" poster="/assets/img/astribot/agent-stack.jpg?v=20261117-redacted"><source src="/assets/video/astribot/agent-stack.mp4?v=20261117-redacted" type="video/mp4"></source>可<a href="/assets/video/astribot/agent-stack.mp4?v=20261117-redacted">直接打开视频</a>。</video>
+  <figcaption><strong>叠方块 · 12 秒。</strong>成功回合的动作片段，单视角裁切；沿用原成片约 1.6 倍动作速度。</figcaption>
 </figure>
 
-<p>视频中的单回合通过原任务谓词；开发集与一次未见检查分别为 19/25、4/5，不是正式留出结果。该条件末尾曾出现 step 失败反馈，因此不将成功画面外推为稳定保持能力。</p>
-
-<h3 id="lift多视角与执行反馈">Lift：多视角与执行反馈</h3>
+<h3 id="抬块">抬块</h3>
 
 <figure class="project-video">
-  <video controls="" playsinline="" preload="none" poster="/assets/img/astribot/agent-lift-v06.jpg"><source src="/assets/video/astribot/agent-lift-v06.mp4" type="video/mp4"></source>可<a href="/assets/video/astribot/agent-lift-v06.mp4">直接打开视频</a>。</video>
-  <figcaption><strong>抬方块 · 25.8 秒。</strong>Actor v06 开发场景中的成功样例，结合第三视角、头部相机和执行事件，展示接近、闭爪与抬升。</figcaption>
+  <video controls="" muted="" playsinline="" preload="none" poster="/assets/img/astribot/agent-lift-v06.jpg?v=20261117-redacted"><source src="/assets/video/astribot/agent-lift-v06.mp4?v=20261117-redacted" type="video/mp4"></source>可<a href="/assets/video/astribot/agent-lift-v06.mp4?v=20261117-redacted">直接打开视频</a>。</video>
+  <figcaption><strong>抬方块 · 约 26 秒。</strong>仿真中的接近、闭爪与抬升，保留动作视角。</figcaption>
 </figure>
 
-<h3 id="抓取入篮完整抓放流程样例">抓取入篮：完整抓放流程样例</h3>
+<h3 id="抓取入篮">抓取入篮</h3>
 
 <figure class="project-video">
-  <video controls="" playsinline="" preload="none" poster="/assets/img/astribot/agent-basket.jpg"><source src="/assets/video/astribot/agent-basket.mp4" type="video/mp4"></source>可<a href="/assets/video/astribot/agent-basket.mp4">直接打开视频</a>。</video>
-  <figcaption><strong>抓取入篮 · 8.06 秒仿真时间。</strong>原 T1 / no-SDK 场景 seed280 的第三视角，原任务与完整抓放判定通过；画面分辨率为 256×192，目标存在遮挡。</figcaption>
+  <video controls="" muted="" playsinline="" preload="none" poster="/assets/img/astribot/agent-basket.jpg?v=20261117-redacted"><source src="/assets/video/astribot/agent-basket.mp4?v=20261117-redacted" type="video/mp4"></source>可<a href="/assets/video/astribot/agent-basket.mp4?v=20261117-redacted">直接打开视频</a>。</video>
+  <figcaption><strong>抓取入篮 · 约 8 秒仿真时间。</strong>低分辨率仿真样例，目标存在遮挡。</figcaption>
 </figure>
 
-<p>这些样例来自不同任务与执行条件，不能合并计算成功率。入篮片按仿真时间编码；与 SDK 任务分开记录。当前展示体现仿真中的任务执行与反馈迭代，不代表真机部署、完整物理安全验证或新增持续学习技能已通过独立验证。</p>
+<p>各样例来自不同任务和执行条件，不合并计算成功率，也不代表稳定泛化、真机部署或完整物理安全验证。</p>
 
   </article>
 </div>
